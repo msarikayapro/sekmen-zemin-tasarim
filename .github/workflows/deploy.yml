@@ -1,0 +1,43 @@
+name: Deploy to cPanel via FTP
+
+on:
+  push:
+    branches: [ main ]   # Sadece main'e push yapınca çalışır
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Kodları Getir
+        uses: actions/checkout@v4
+
+      - name: Node.js Kur (Vite/Tailwind build için)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Paketleri Kur ve Build Et
+        run: |
+          npm ci
+          npm run build
+
+      - name: FTP ile Sunucuya Gönder
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps           # TLS desteği için MUTLAKA ftps
+          timeout: 600000          # En az 10 dk
+          server-dir: ./           # FTP hesabı zaten proje içinde
+          exclude: |
+            **/.git*
+            **/.github/**
+            **/node_modules/**
+            **/vendor/**
+            .env
+            bootstrap/cache/*
+            storage/*.key
+            storage/logs/**
+            stitch/**
+            *.md

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sekmen Zemin Tasarım - Sistem Ayarları</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Hanken+Grotesk:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #141313;
+            color: #e5e2e1;
+            font-family: 'Hanken Grotesk', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(22, 22, 22, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(142, 145, 146, 0.1);
+        }
+        .gold-glow:hover {
+            box-shadow: 0 0 15px rgba(182, 134, 62, 0.2);
+            border-color: #B6863E;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0e0e0e;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #353434;
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #f4bd6f;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#f4bd6f",
+                        "surface-bright": "#3a3939",
+                        "on-primary-fixed-variant": "#474646",
+                        "tertiary-fixed-dim": "#f4bd6f",
+                        "outline": "#8e9192",
+                        "surface-container-high": "#2b2a2a",
+                        "on-background": "#e5e2e1",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "surface-container": "#201f1f",
+                        "on-error": "#690005",
+                        "on-primary-container": "#7b7979",
+                        "on-error-container": "#ffdad6",
+                        "surface-tint": "#c9c6c5",
+                        "tertiary-container": "#120800",
+                        "on-secondary-fixed-variant": "#474746",
+                        "cream-white": "#F5F2EC",
+                        "primary-fixed": "#e5e2e1",
+                        "inverse-on-surface": "#313030",
+                        "stone-grey": "#8A8A8A",
+                        "inverse-primary": "#5f5e5e",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container-highest": "#353434",
+                        "on-tertiary-container": "#9e712b",
+                        "background": "#141313",
+                        "surface-variant": "#353434",
+                        "surface": "#141313",
+                        "error-container": "#93000a",
+                        "on-secondary": "#313030",
+                        "gold-dark": "#8C6526",
+                        "on-primary": "#313030",
+                        "tertiary-fixed": "#ffddb2",
+                        "on-surface": "#e5e2e1",
+                        "surface-container-low": "#1c1b1b",
+                        "on-surface-variant": "#c4c7c7",
+                        "surface-dim": "#141313",
+                        "secondary": "#c8c6c5",
+                        "on-tertiary-fixed-variant": "#624000",
+                        "on-tertiary": "#452b00",
+                        "on-tertiary-fixed": "#291800",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "outline-variant": "#444748",
+                        "gold-light": "#D4A95C",
+                        "primary-container": "#0a0a0a",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-secondary-container": "#b7b4b4",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-primary-fixed": "#1c1b1b",
+                        "secondary-container": "#474746",
+                        "primary": "#c9c6c5",
+                        "error": "#ffb4ab"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Montserrat"],
+                        "headline-xl": ["Montserrat"],
+                        "body-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-caps": ["Montserrat"],
+                        "headline-md": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                        "headline-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                        "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="flex min-h-screen bg-background overflow-hidden">
+<!-- SideNavBar -->
+<aside class="docked left-0 h-screen w-64 flex flex-col bg-surface-container-low border-r border-outline-variant shadow-md py-8">
+<div class="px-6 mb-10">
+<h1 class="font-headline-md text-headline-md font-bold text-tertiary">Sekmen Zemin</h1>
+<p class="text-stone-grey font-body-md">Yönetim Paneli</p>
+</div>
+<nav class="flex-1 space-y-2 px-4 overflow-y-auto custom-scrollbar">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">architecture</span>
+<span class="font-body-md">Projeler</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">construction</span>
+<span class="font-body-md">Hizmetler</span>
+</a>
+<!-- Active Tab -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-tertiary font-bold border-r-2 border-tertiary bg-surface-container-high transition-colors duration-200 shadow-[0_0_15px_rgba(140,101,38,0.2)]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-body-md">Sistem Ayarları</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-body-md">Mesajlar</span>
+</a>
+</nav>
+<div class="px-4 mt-auto">
+<button class="w-full mb-6 bg-tertiary text-on-primary py-3 rounded-lg font-label-caps font-bold hover:bg-gold-light transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">add</span>
+                Yeni Proje Ekle
+            </button>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-error transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-body-md">Çıkış</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col h-screen overflow-hidden">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 flex justify-between items-center px-8 h-20 bg-surface/85 backdrop-blur-md border-b border-outline-variant shadow-sm">
+<h2 class="font-headline-md text-headline-md text-tertiary">Sistem Ayarları</h2>
+<div class="flex items-center gap-6">
+<div class="relative group">
+<input class="bg-surface-container-high border-none text-on-surface text-body-md rounded-full px-5 py-2 w-64 focus:ring-1 focus:ring-tertiary transition-all" placeholder="Ayarlarda ara..." type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-2.5 text-stone-grey group-hover:text-tertiary">search</span>
+</div>
+<div class="flex items-center gap-4 border-l border-outline-variant pl-6">
+<button class="text-on-surface-variant hover:text-tertiary transition-all duration-300">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-tertiary transition-all duration-300 flex items-center gap-2">
+<img alt="Admin Avatar" class="w-8 h-8 rounded-full border border-tertiary/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB43DlPdSYPPNJMUT-8SpKrXyqgIpVty5nt80JS0kI-XqmG9mRTBZxUVvX7ICng7GipkwIqUFJTWD_6ll7WdOqecLDIdZhkAA4dYzAIfLVLScNu2ntRpodSR9LMRJsmjTxh4fNORZm712vnci2oE9vzhxyGAbIKT1HjsnZ-czCJ6t7cgV3aFvNnwMHKhbzx055zXFfX3sZAZivi7fhGH8VkyWpNpnqOAGQn4r41fRqQRS-zirusXp_flBQLPA_STSHpghf7ES0eaKFX"/>
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<main class="flex-1 overflow-y-auto custom-scrollbar p-8 bg-surface-container-lowest">
+<div class="max-w-6xl mx-auto space-y-8">
+<!-- Layout Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Brand Assets -->
+<section class="glass-panel rounded-xl p-8 gold-glow transition-all">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline-md text-body-lg font-bold text-tertiary uppercase tracking-wider flex items-center gap-2">
+<span class="material-symbols-outlined">branding_watermark</span> Marka Varlıkları
+                            </h3>
+</div>
+<div class="space-y-6">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="font-label-caps text-stone-grey">Logo (Açık Tema)</label>
+<div class="h-32 border-2 border-dashed border-outline-variant rounded-lg flex flex-col items-center justify-center bg-surface-container hover:border-tertiary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-stone-grey group-hover:text-tertiary mb-2">upload_file</span>
+<span class="text-xs text-stone-grey group-hover:text-tertiary">Dosya Seçin</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-stone-grey">Logo (Koyu Tema)</label>
+<div class="h-32 border-2 border-dashed border-outline-variant rounded-lg flex flex-col items-center justify-center bg-surface-container hover:border-tertiary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-stone-grey group-hover:text-tertiary mb-2">upload_file</span>
+<span class="text-xs text-stone-grey group-hover:text-tertiary">Dosya Seçin</span>
+</div>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-stone-grey">Favicon</label>
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 border border-outline-variant bg-surface-container flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-stone-grey">image</span>
+</div>
+<button class="bg-surface-container-highest px-4 py-2 rounded text-body-md hover:bg-tertiary hover:text-on-primary transition-all">Görsel Seç</button>
+</div>
+</div>
+<button class="w-full py-3 bg-gold-dark text-on-surface font-bold font-label-caps rounded-lg hover:bg-tertiary transition-all">Kaydet</button>
+</div>
+</section>
+<!-- Contact Info -->
+<section class="glass-panel rounded-xl p-8 gold-glow transition-all">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline-md text-body-lg font-bold text-tertiary uppercase tracking-wider flex items-center gap-2">
+<span class="material-symbols-outlined">contact_phone</span> İletişim Bilgileri
+                            </h3>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="font-label-caps text-stone-grey text-[10px]">Telefon 1</label>
+<input class="w-full bg-surface-container-high border-none rounded p-3 text-on-surface focus:ring-1 focus:ring-tertiary" type="text" value="+90 (332) 222 22 22"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-caps text-stone-grey text-[10px]">Telefon 2</label>
+<input class="w-full bg-surface-container-high border-none rounded p-3 text-on-surface focus:ring-1 focus:ring-tertiary" placeholder="Sabit hat..." type="text"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label-caps text-stone-grey text-[10px]">WhatsApp</label>
+<input class="w-full bg-surface-container-high border-none rounded p-3 text-on-surface focus:ring-1 focus:ring-tertiary" type="text" value="+90 532 000 00 00"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-caps text-stone-grey text-[10px]">E-posta</label>
+<input class="w-full bg-surface-container-high border-none rounded p-3 text-on-surface focus:ring-1 focus:ring-tertiary" type="email" value="info@sekmenzemin.com"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-caps text-stone-grey text-[10px]">Adres</label>
+<textarea class="w-full bg-surface-container-high border-none rounded p-3 text-on-surface focus:ring-1 focus:ring-tertiary" rows="2">Fevzi Çakmak Mh. 10433. Sk. No: 12, Karatay/Konya</textarea>
+</div>
+<button class="w-full py-3 bg-gold-dark text-on-surface font-bold font-label-caps rounded-lg hover:bg-tertiary transition-all mt-2">Kaydet</button>
+</div>
+</section>
+<!-- Hours & Maps -->
+<section class="glass-panel rounded-xl p-8 gold-glow transition-all">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline-md text-body-lg font-bold text-tertiary uppercase tracking-wider flex items-center gap-2">
+<span class="material-symbols-outlined">schedule</span> Çalışma Saatleri &amp; Harita
+                            </h3>
+</div>
+<div class="space-y-4">
+<div class="space-y-1">
+<label class="font-label-caps text-stone-grey text-[10px]">Çalışma Saatleri Metni</label>
+<input class="w-full bg-surface-container-high border-none rounded p-3 text-on-surface focus:ring-1 focus:ring-tertiary" type="text" value="Pazartesi - Cumartesi: 08:30 - 18:30"/>
+</div>
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<label class="font-label-caps text-stone-grey text-[10px]">Google Maps Embed Kodu</label>
+<span class="material-symbols-outlined text-stone-grey text-sm cursor-help" title="Google Haritalar üzerinden 'Paylaş &gt; Harita Yerleştir' kodunu kopyalayın.">info</span>
+</div>
+<textarea class="w-full bg-surface-container-high border-none rounded p-3 text-on-surface focus:ring-1 focus:ring-tertiary font-mono text-xs" rows="4">&lt;iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12591.314227092823!2d32.5513224!3d37.9111422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d08593c66f7f6f%3A0x7ed0641b99480d1e!2zS29ueWE!5e0!3m2!1str!2str!4v1715694200000!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"&gt;&lt;/iframe&gt;</textarea>
+</div>
+<div class="h-24 bg-surface-container-low rounded border border-outline-variant overflow-hidden">
+<div class="w-full h-full opacity-50 grayscale" data-location="Konya" style=""></div>
+</div>
+<button class="w-full py-3 bg-gold-dark text-on-surface font-bold font-label-caps rounded-lg hover:bg-tertiary transition-all">Kaydet</button>
+</div>
+</section>
+<!-- Marketing & Tracking -->
+<section class="glass-panel rounded-xl p-8 gold-glow transition-all">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline-md text-body-lg font-bold text-tertiary uppercase tracking-wider flex items-center gap-2">
+<span class="material-symbols-outlined">analytics</span> Pazarlama &amp; Takip
+                            </h3>
+</div>
+<div class="space-y-4">
+<div class="flex gap-6 mb-4">
+<label class="flex items-center gap-2 cursor-pointer">
+<div class="relative">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-5 bg-surface-container-highest rounded-full peer peer-checked:bg-tertiary transition-all"></div>
+<div class="absolute top-0.5 left-0.5 w-4 h-4 bg-white rounded-full peer-checked:translate-x-5 transition-all"></div>
+</div>
+<span class="font-label-caps text-xs text-on-surface">Pixel Aktif</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<div class="relative">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-5 bg-surface-container-highest rounded-full peer peer-checked:bg-tertiary transition-all"></div>
+<div class="absolute top-0.5 left-0.5 w-4 h-4 bg-white rounded-full peer-checked:translate-x-5 transition-all"></div>
+</div>
+<span class="font-label-caps text-xs text-on-surface">CAPI Aktif</span>
+</label>
+</div>
+<div class="grid grid-cols-1 gap-3">
+<div class="space-y-1">
+<label class="font-label-caps text-stone-grey text-[10px]">Meta Pixel ID</label>
+<input class="w-full bg-surface-container-high border-none rounded p-3 text-on-surface focus:ring-1 focus:ring-tertiary" type="text" value="847293048572193"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-caps text-stone-grey text-[10px]">Conversions API (CAPI) Token</label>
+<input class="w-full bg-surface-container-high border-none rounded p-3 text-on-surface focus:ring-1 focus:ring-tertiary" type="password" value="EAAGm3o7L2ZBcB..."/>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="space-y-1">
+<label class="font-label-caps text-stone-grey text-[10px]">GA4 Measurement ID</label>
+<input class="w-full bg-surface-container-high border-none rounded p-3 text-on-surface focus:ring-1 focus:ring-tertiary" type="text" value="G-L2B4X9Q3"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-caps text-stone-grey text-[10px]">GTM Container ID</label>
+<input class="w-full bg-surface-container-high border-none rounded p-3 text-on-surface focus:ring-1 focus:ring-tertiary" type="text" value="GTM-NW82LK"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label-caps text-stone-grey text-[10px]">Google Ads ID (AW-)</label>
+<input class="w-full bg-surface-container-high border-none rounded p-3 text-on-surface focus:ring-1 focus:ring-tertiary" type="text" value="AW-108273645"/>
+</div>
+</div>
+<button class="w-full py-3 bg-gold-dark text-on-surface font-bold font-label-caps rounded-lg hover:bg-tertiary transition-all">Kaydet</button>
+</div>
+</section>
+<!-- Custom Code Injection -->
+<section class="glass-panel rounded-xl p-8 gold-glow transition-all md:col-span-2">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline-md text-body-lg font-bold text-tertiary uppercase tracking-wider flex items-center gap-2">
+<span class="material-symbols-outlined">code</span> Özel Kod Enjeksiyonu
+                            </h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<label class="font-label-caps text-stone-grey">Header Snippet (&lt;head&gt;)</label>
+<span class="text-[10px] text-tertiary opacity-60">Sitenin en üst kısmında çalışır</span>
+</div>
+<textarea class="w-full bg-primary-container border border-outline-variant rounded p-3 text-tertiary font-mono text-xs focus:ring-1 focus:ring-tertiary" placeholder="&lt;!-- Örn: Google Site Verification Meta Etiketi --&gt;" rows="6"></textarea>
+</div>
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<label class="font-label-caps text-stone-grey">Body Snippet (&lt;body&gt;)</label>
+<span class="text-[10px] text-tertiary opacity-60">Sayfa yüklendikten sonra çalışır</span>
+</div>
+<textarea class="w-full bg-primary-container border border-outline-variant rounded p-3 text-tertiary font-mono text-xs focus:ring-1 focus:ring-tertiary" placeholder="&lt;!-- Örn: Canlı Destek Widget Kodu --&gt;" rows="6"></textarea>
+</div>
+</div>
+<div class="flex justify-end mt-6">
+<button class="px-12 py-3 bg-gold-dark text-on-surface font-bold font-label-caps rounded-lg hover:bg-tertiary transition-all">Tüm Değişiklikleri Kaydet</button>
+</div>
+</section>
+</div>
+<!-- Footer Component (Integrated) -->
+<footer class="w-full py-8 mt-12 border-t border-outline-variant flex justify-between items-center opacity-80">
+<p class="font-label-caps text-stone-grey text-[10px]">© 2024 Sekmen Zemin Tasarım - Endüstriyel Lüks Sistem Paneli</p>
+<div class="flex gap-6">
+<a class="font-label-caps text-stone-grey text-[10px] hover:text-gold-light transition-all" href="#">Kullanım Koşulları</a>
+<a class="font-label-caps text-stone-grey text-[10px] hover:text-gold-light transition-all" href="#">Gizlilik Politikası</a>
+<a class="font-label-caps text-stone-grey text-[10px] hover:text-gold-light transition-all" href="#">Destek</a>
+</div>
+</footer>
+</div>
+</main>
+</div>
+<!-- Floating Support Indicator -->
+<div class="fixed bottom-8 right-8 z-[100] group">
+<div class="absolute -top-12 right-0 bg-surface-container p-2 rounded shadow-lg text-xs font-medium text-tertiary border border-tertiary/20 opacity-0 group-hover:opacity-100 transition-all pointer-events-none whitespace-nowrap">
+            WhatsApp Destek Hattı Aktif
+        </div>
+<button class="w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center text-white shadow-xl relative transition-transform hover:scale-110">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 32px;">chat</span>
+<div class="absolute inset-0 rounded-full border-2 border-tertiary animate-ping opacity-75"></div>
+</button>
+</div>
+<script>
+        // Simple micro-interaction for save buttons
+        document.querySelectorAll('button').forEach(btn => {
+            if(btn.innerText.includes('Kaydet')) {
+                btn.addEventListener('click', function() {
+                    const originalText = this.innerText;
+                    this.innerText = 'Kaydediliyor...';
+                    this.classList.add('opacity-50');
+                    setTimeout(() => {
+                        this.innerText = 'Başarıyla Kaydedildi!';
+                        this.classList.remove('opacity-50', 'bg-gold-dark');
+                        this.classList.add('bg-green-600');
+                        setTimeout(() => {
+                            this.innerText = originalText;
+                            this.classList.remove('bg-green-600');
+                            this.classList.add('bg-gold-dark');
+                        }, 2000);
+                    }, 800);
+                });
+            }
+        });
+    </script>
+</body></html>

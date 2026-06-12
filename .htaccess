@@ -1,0 +1,18 @@
+# Sekmen Zemin Tasarım — KÖK .htaccess (Deploy Anayasası §3)
+# Paylaşımlı hosting (cPanel/Turhost): trafiği public/ klasörüne yönlendirir.
+# Kullanıcı URL'de "public" görmez; 405 ve redirect döngüleri engellenir.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # HTTP -> HTTPS güvenli yönlendirme
+    # Yerel geliştirme (.test / localhost) hariç tutulur; orada SSL olmayabilir.
+    RewriteCond %{HTTPS} off
+    RewriteCond %{HTTP_HOST} !\.test$ [NC]
+    RewriteCond %{HTTP_HOST} !^localhost [NC]
+    RewriteCond %{HTTP_HOST} !^127\.0\.0\.1 [NC]
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Public klasörü trafik akışı (405 ve yönlendirme döngülerini engeller)
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>

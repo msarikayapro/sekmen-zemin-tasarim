@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Giriş Yap | Sekmen Zemin Tasarım Yönetim Paneli</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-secondary": "#313030",
+                "error-container": "#93000a",
+                "tertiary-fixed": "#ffddb2",
+                "surface": "#141313",
+                "on-tertiary-fixed": "#291800",
+                "tertiary-fixed-dim": "#f4bd6f",
+                "surface-container-high": "#2b2a2a",
+                "surface-tint": "#c9c6c5",
+                "secondary": "#c8c6c5",
+                "on-secondary-container": "#b7b4b4",
+                "on-primary": "#313030",
+                "secondary-fixed-dim": "#c8c6c5",
+                "on-secondary-fixed-variant": "#474746",
+                "tertiary": "#f4bd6f",
+                "error": "#ffb4ab",
+                "primary-fixed": "#e5e2e1",
+                "on-primary-container": "#7b7979",
+                "inverse-primary": "#5f5e5e",
+                "surface-variant": "#353434",
+                "gold-light": "#D4A95C",
+                "outline-variant": "#444748",
+                "inverse-on-surface": "#313030",
+                "surface-bright": "#3a3939",
+                "gold-dark": "#8C6526",
+                "surface-container-lowest": "#0e0e0e",
+                "surface-container-highest": "#353434",
+                "primary-container": "#0a0a0a",
+                "surface-container-low": "#1c1b1b",
+                "secondary-container": "#474746",
+                "surface-container": "#201f1f",
+                "on-primary-fixed": "#1c1b1b",
+                "on-error-container": "#ffdad6",
+                "on-tertiary-container": "#9e712b",
+                "background": "#141313",
+                "on-error": "#690005",
+                "on-tertiary-fixed-variant": "#624000",
+                "on-primary-fixed-variant": "#474646",
+                "on-tertiary": "#452b00",
+                "outline": "#8e9192",
+                "stone-grey": "#8A8A8A",
+                "primary": "#c9c6c5",
+                "tertiary-container": "#120800",
+                "secondary-fixed": "#e5e2e1",
+                "on-surface": "#e5e2e1",
+                "on-secondary-fixed": "#1c1b1b",
+                "primary-fixed-dim": "#c9c6c5",
+                "inverse-surface": "#e5e2e1",
+                "surface-dim": "#141313",
+                "cream-white": "#F5F2EC",
+                "on-surface-variant": "#c4c7c7",
+                "on-background": "#e5e2e1"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "margin-mobile": "16px",
+                "gutter": "24px",
+                "unit": "8px",
+                "container-max": "1280px",
+                "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                "label-caps": ["Montserrat"],
+                "headline-lg": ["Montserrat"],
+                "headline-xl": ["Montserrat"],
+                "headline-md": ["Montserrat"],
+                "body-lg": ["Hanken Grotesk"],
+                "body-md": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0A;
+            color: #E5E2E1;
+            overflow: hidden;
+        }
+
+        /* Subtle 1px stroke perspective lines pattern */
+        .pavement-pattern {
+            background-image: linear-gradient(30deg, rgba(140, 101, 38, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(140, 101, 38, 0.05) 87.5%, rgba(140, 101, 38, 0.05)),
+                              linear-gradient(150deg, rgba(140, 101, 38, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(140, 101, 38, 0.05) 87.5%, rgba(140, 101, 38, 0.05)),
+                              linear-gradient(30deg, rgba(140, 101, 38, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(140, 101, 38, 0.05) 87.5%, rgba(140, 101, 38, 0.05)),
+                              linear-gradient(150deg, rgba(140, 101, 38, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(140, 101, 38, 0.05) 87.5%, rgba(140, 101, 38, 0.05)),
+                              linear-gradient(60deg, rgba(182, 134, 62, 0.02) 25%, transparent 25.5%, transparent 75%, rgba(182, 134, 62, 0.02) 75.5%, rgba(182, 134, 62, 0.02)),
+                              linear-gradient(60deg, rgba(182, 134, 62, 0.02) 25%, transparent 25.5%, transparent 75%, rgba(182, 134, 62, 0.02) 75.5%, rgba(182, 134, 62, 0.02));
+            background-size: 80px 140px;
+        }
+
+        .gold-glow {
+            box-shadow: 0 0 32px rgba(182, 134, 62, 0.08);
+        }
+
+        .btn-sweep {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-sweep::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn-sweep:hover::after {
+            left: 100%;
+        }
+
+        .input-focus-gold:focus {
+            border-color: #B6863E;
+            box-shadow: 0 0 0 1px #B6863E;
+        }
+
+        .glass-card {
+            background: rgba(22, 22, 22, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(182, 134, 62, 0.15);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen pavement-pattern">
+<!-- Atmospheric Background Element -->
+<div class="fixed inset-0 pointer-events-none overflow-hidden">
+<div class="absolute -top-1/4 -right-1/4 w-[600px] h-[600px] bg-gold-dark/5 blur-[120px] rounded-full"></div>
+<div class="absolute -bottom-1/4 -left-1/4 w-[600px] h-[600px] bg-gold-dark/5 blur-[120px] rounded-full"></div>
+</div>
+<main class="relative z-10 w-full max-w-[440px] px-margin-mobile md:px-0">
+<!-- Login Card -->
+<div class="glass-card gold-glow rounded-xl p-8 md:p-10 flex flex-col items-center">
+<!-- Brand Identity -->
+<div class="mb-10 text-center">
+<div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center rounded-full bg-primary-container border border-gold-dark/30">
+<span class="material-symbols-outlined text-tertiary text-4xl" data-icon="architecture" style="font-variation-settings: 'FILL' 0;">architecture</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-tertiary tracking-tight mb-2">Sekmen Zemin</h1>
+<p class="font-label-caps text-label-caps text-stone-grey uppercase">Yönetim Paneli</p>
+</div>
+<!-- Login Form -->
+<form action="#" class="w-full space-y-6" onsubmit="return false">
+<!-- Email Field -->
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-stone-grey ml-1" for="email">E-posta</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-stone-grey text-xl" data-icon="mail">mail</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg py-3.5 pl-12 pr-4 font-body-md text-body-md text-on-surface focus:outline-none input-focus-gold transition-all" id="email" placeholder="admin@sekmenzemin.com" required="" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-stone-grey ml-1" for="password">Şifre</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-stone-grey text-xl" data-icon="lock">lock</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg py-3.5 pl-12 pr-12 font-body-md text-body-md text-on-surface focus:outline-none input-focus-gold transition-all" id="password" placeholder="••••••••" required="" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-stone-grey hover:text-tertiary transition-colors" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<!-- Remember & Forgot -->
+<div class="flex items-center justify-between text-body-md">
+<label class="flex items-center gap-2 cursor-pointer group">
+<div class="relative w-5 h-5 flex items-center justify-center">
+<input class="peer hidden" id="remember" type="checkbox"/>
+<div class="w-full h-full border border-outline-variant rounded bg-surface-container-lowest peer-checked:bg-gold-dark peer-checked:border-gold-dark transition-all"></div>
+<span class="material-symbols-outlined text-coal absolute opacity-0 peer-checked:opacity-100 text-sm font-bold" data-icon="check">check</span>
+</div>
+<span class="font-body-md text-stone-grey group-hover:text-on-surface transition-colors select-none">Beni Hatırla</span>
+</label>
+<a class="font-body-md text-tertiary hover:text-gold-light transition-colors font-medium" href="#">Şifremi Unuttum</a>
+</div>
+<!-- Submit Button -->
+<button class="btn-sweep w-full bg-gold-dark hover:bg-gold-light text-primary-container font-headline-md text-body-md font-bold py-4 rounded-lg shadow-lg shadow-gold-dark/20 uppercase tracking-widest mt-4" type="submit">
+                    Giriş Yap
+                </button>
+</form>
+<!-- Footer Links -->
+<div class="mt-10 pt-6 border-t border-outline-variant/30 w-full text-center">
+<p class="font-label-caps text-label-caps text-stone-grey/60 mb-2">
+                    © 2024 Sekmen Zemin Tasarım
+                </p>
+<div class="flex justify-center gap-4">
+<a class="font-label-caps text-[10px] text-stone-grey hover:text-tertiary transition-colors" href="#">YARDIM</a>
+<span class="text-stone-grey/30">•</span>
+<a class="font-label-caps text-[10px] text-stone-grey hover:text-tertiary transition-colors" href="#">GİZLİLİK</a>
+</div>
+</div>
+</div>
+<!-- System Status Indicator (Subtle Decoration) -->
+<div class="mt-8 flex items-center justify-center gap-2 opacity-50">
+<div class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
+<span class="font-label-caps text-[10px] text-stone-grey uppercase tracking-tighter">Sistem Durumu: Güvenli</span>
+</div>
+</main>
+<!-- Custom Micro-interaction Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputs = document.querySelectorAll('input');
+            const submitBtn = document.querySelector('button[type="submit"]');
+
+            inputs.forEach(input => {
+                input.addEventListener('focus', () => {
+                    input.parentElement.parentElement.querySelector('label').classList.replace('text-stone-grey', 'text-tertiary');
+                });
+                input.addEventListener('blur', () => {
+                    input.parentElement.parentElement.querySelector('label').classList.replace('text-tertiary', 'text-stone-grey');
+                });
+            });
+
+            // Simulated login feedback
+            submitBtn.addEventListener('click', (e) => {
+                const btn = e.target;
+                const originalText = btn.innerText;
+                btn.innerText = 'Kontrol Ediliyor...';
+                btn.style.opacity = '0.8';
+                btn.disabled = true;
+
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.opacity = '1';
+                    btn.disabled = false;
+                }, 2000);
+            });
+        });
+    </script>
+</body></html>

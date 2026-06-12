@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sekmen Zemin Panel - Genel Ayarlar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#f4bd6f",
+                        "primary-fixed": "#e5e2e1",
+                        "secondary-container": "#474746",
+                        "primary": "#c9c6c5",
+                        "surface-variant": "#353434",
+                        "on-tertiary": "#452b00",
+                        "error": "#ffb4ab",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-container-high": "#2b2a2a",
+                        "gold-dark": "#8C6526",
+                        "on-tertiary-fixed": "#291800",
+                        "on-primary": "#313030",
+                        "surface-container-low": "#1c1b1b",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface": "#141313",
+                        "on-primary-fixed-variant": "#474646",
+                        "inverse-on-surface": "#313030",
+                        "tertiary-fixed": "#ffddb2",
+                        "surface-bright": "#3a3939",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#474746",
+                        "inverse-primary": "#5f5e5e",
+                        "gold-light": "#D4A95C",
+                        "outline-variant": "#444748",
+                        "on-primary-container": "#7b7979",
+                        "outline": "#8e9192",
+                        "inverse-surface": "#e5e2e1",
+                        "on-surface-variant": "#c4c7c7",
+                        "surface-tint": "#c9c6c5",
+                        "secondary": "#c8c6c5",
+                        "tertiary-fixed-dim": "#f4bd6f",
+                        "surface-dim": "#141313",
+                        "stone-grey": "#8A8A8A",
+                        "cream-white": "#F5F2EC",
+                        "on-secondary": "#313030",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary-container": "#b7b4b4",
+                        "on-tertiary-container": "#9e712b",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#624000",
+                        "primary-container": "#0a0a0a",
+                        "surface-container": "#201f1f",
+                        "on-primary-fixed": "#1c1b1b",
+                        "on-surface": "#e5e2e1",
+                        "tertiary-container": "#120800",
+                        "error-container": "#93000a",
+                        "background": "#141313",
+                        "surface-container-highest": "#353434",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "on-background": "#e5e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Montserrat"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Montserrat"],
+                        "headline-xl": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "body-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                        "headline-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0A;
+            background-image: 
+                linear-gradient(rgba(182, 134, 62, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(182, 134, 62, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            scroll-behavior: smooth;
+        }
+        
+        .glass-panel {
+            background: rgba(22, 22, 22, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(68, 71, 72, 0.3);
+        }
+
+        .gold-glow:focus-within {
+            box-shadow: 0 0 15px rgba(182, 134, 62, 0.2);
+            border-color: #D4A95C;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0A0A0A;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #B6863E;
+            border-radius: 10px;
+        }
+
+        .nav-item-active {
+            background-color: #474746;
+            color: #D4A95C;
+            border-right: 2px solid #D4A95C;
+        }
+        
+        input, textarea {
+            background: #1C1B1B !important;
+            border: 1px solid #444748 !important;
+            transition: all 0.3s ease;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none !important;
+            border-color: #B6863E !important;
+            box-shadow: 0 0 0 2px rgba(182, 134, 62, 0.1) !important;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface selection:bg-gold-light/30 overflow-hidden">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 flex justify-between items-center px-margin-desktop w-full h-16 bg-surface/80 backdrop-blur-md dark:bg-surface/80 border-b border-outline-variant/30 shadow-sm">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-semibold text-gold-light">Sekmen Zemin Panel</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center gap-4 text-on-surface-variant">
+<button class="material-symbols-outlined hover:text-gold-light transition-all p-2 rounded-full hover:bg-surface-variant/20">notifications</button>
+<button class="material-symbols-outlined hover:text-gold-light transition-all p-2 rounded-full hover:bg-surface-variant/20">settings</button>
+<button class="material-symbols-outlined hover:text-gold-light transition-all p-2 rounded-full hover:bg-surface-variant/20">account_circle</button>
+</div>
+</div>
+</header>
+<div class="flex h-[calc(100vh-64px)] overflow-hidden">
+<!-- SideNavBar -->
+<aside class="w-64 bg-surface-container-low dark:bg-surface-container-low border-r border-outline-variant/20 flex flex-col pt-8 pb-4 h-full shrink-0 shadow-lg shadow-black/40">
+<div class="px-6 mb-10">
+<h2 class="font-headline-md text-headline-md text-gold-light leading-tight">Sekmen Zemin</h2>
+<p class="text-stone-grey text-[10px] tracking-widest uppercase mt-1">Yönetim Paneli</p>
+</div>
+<nav class="flex-1 space-y-1 px-3 overflow-y-auto custom-scrollbar">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-stone-grey hover:bg-surface-variant/10 hover:text-gold-light transition-all group" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="font-label-caps text-label-caps">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-stone-grey hover:bg-surface-variant/10 hover:text-gold-light transition-all group" href="#">
+<span class="material-symbols-outlined text-[20px]">architecture</span>
+<span class="font-label-caps text-label-caps">Projeler</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-secondary-container text-gold-light border-r-2 border-gold-light transition-all group" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="font-label-caps text-label-caps">Genel Ayarlar</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-stone-grey hover:bg-surface-variant/10 hover:text-gold-light transition-all group" href="#">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+<span class="font-label-caps text-label-caps">Katalog</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-stone-grey hover:bg-surface-variant/10 hover:text-gold-light transition-all group" href="#">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+<span class="font-label-caps text-label-caps">Mesajlar</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-stone-grey hover:bg-surface-variant/10 hover:text-gold-light transition-all group" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span class="font-label-caps text-label-caps">Kullanıcılar</span>
+</a>
+</nav>
+<div class="px-6 py-6 border-t border-outline-variant/10">
+<button class="w-full bg-gold-dark text-on-surface py-3 rounded-lg font-label-caps text-label-caps hover:bg-gold-light transition-colors duration-300 shadow-lg shadow-gold-dark/20">
+                    Yeni Proje Ekle
+                </button>
+</div>
+<div class="px-3 space-y-1">
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-stone-grey hover:text-on-surface transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">help</span>
+<span class="font-label-caps text-label-caps">Destek</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-stone-grey hover:text-on-surface transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span class="font-label-caps text-label-caps">Çıkış</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto custom-scrollbar p-gutter md:p-12 relative">
+<div class="max-w-5xl mx-auto space-y-12 pb-32">
+<!-- Section 1: Marka Varlıkları -->
+<section class="space-y-6" id="branding">
+<div class="flex items-center gap-4">
+<span class="w-8 h-[2px] bg-gold-light"></span>
+<h3 class="font-headline-md text-headline-md text-cream-white uppercase tracking-wider">Marka Varlıkları</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="glass-panel p-6 rounded-xl space-y-4 col-span-1 md:col-span-1 flex flex-col items-center justify-center text-center group cursor-pointer hover:border-gold-light/50 transition-all">
+<div class="w-full aspect-video bg-surface-container-highest border-2 border-dashed border-outline rounded-lg flex flex-col items-center justify-center gap-2 group-hover:border-gold-light">
+<span class="material-symbols-outlined text-stone-grey group-hover:text-gold-light">upload_file</span>
+<p class="font-label-caps text-[10px] text-stone-grey">Logo (Koyu Mod)</p>
+</div>
+<p class="text-stone-grey text-xs">Açık renkli .svg veya .png önerilir.</p>
+</div>
+<div class="glass-panel p-6 rounded-xl space-y-4 col-span-1 md:col-span-1 flex flex-col items-center justify-center text-center group cursor-pointer hover:border-gold-light/50 transition-all">
+<div class="w-full aspect-video bg-white/90 border-2 border-dashed border-outline rounded-lg flex flex-col items-center justify-center gap-2 group-hover:border-gold-light">
+<span class="material-symbols-outlined text-stone-grey group-hover:text-gold-light">upload_file</span>
+<p class="font-label-caps text-[10px] text-black">Logo (Açık Mod)</p>
+</div>
+<p class="text-stone-grey text-xs">Koyu renkli .svg veya .png önerilir.</p>
+</div>
+<div class="glass-panel p-6 rounded-xl space-y-4 col-span-1 md:col-span-1 flex flex-col items-center justify-center text-center group cursor-pointer hover:border-gold-light/50 transition-all">
+<div class="w-16 h-16 bg-surface-container-highest border-2 border-dashed border-outline rounded-lg flex flex-col items-center justify-center gap-1 group-hover:border-gold-light">
+<span class="material-symbols-outlined text-[18px] text-stone-grey group-hover:text-gold-light">brand_awareness</span>
+</div>
+<p class="font-label-caps text-[10px] text-stone-grey uppercase">Favicon</p>
+<p class="text-stone-grey text-xs">32x32px .ico dosyası.</p>
+</div>
+<div class="col-span-full">
+<label class="font-label-caps text-label-caps text-stone-grey mb-2 block">SİTE BAŞLIĞI (TITLE TAG)</label>
+<input class="w-full px-4 py-3 rounded-lg text-on-surface" type="text" value="Sekmen Zemin Tasarım | Premium Paving &amp; Architectural Stones"/>
+</div>
+</div>
+</section>
+<!-- Section 2: İletişim Bilgileri -->
+<section class="space-y-6" id="contact">
+<div class="flex items-center gap-4">
+<span class="w-8 h-[2px] bg-gold-light"></span>
+<h3 class="font-headline-md text-headline-md text-cream-white uppercase tracking-wider">İletişim Bilgileri</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 glass-panel p-8 rounded-xl">
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-stone-grey block">TELEFON</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-stone-grey text-[18px]">call</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-lg" type="text" value="+90 5XX XXX XX XX"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-stone-grey block">WHATSAPP (ÖN MESAJLI)</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-stone-grey text-[18px]">chat</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-lg" type="text" value="Merhabalar, bir proje için fiyat teklifi almak istiyorum."/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-stone-grey block">E-POSTA</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-stone-grey text-[18px]">mail</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-lg" type="email" value="info@sekmenzemin.com"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-stone-grey block">ÇALIŞMA SAATLERİ</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-stone-grey text-[18px]">schedule</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-lg" type="text" value="Pzt - Cmt: 09:00 - 19:00"/>
+</div>
+</div>
+<div class="space-y-2 md:col-span-2">
+<label class="font-label-caps text-label-caps text-stone-grey block">ADRES</label>
+<textarea class="w-full px-4 py-3 rounded-lg" rows="2">Fevzi Çakmak Mah. Modesa Mobilyacılar Sitesi, Karatay, Konya</textarea>
+</div>
+<div class="space-y-2 md:col-span-2">
+<label class="font-label-caps text-label-caps text-stone-grey block">HARİTA EMBED KODU (IFRAME)</label>
+<textarea class="w-full px-4 py-3 rounded-lg font-mono text-[13px]" rows="3">&lt;iframe src="https://www.google.com/maps/embed?..." width="600" height="450"&gt;&lt;/iframe&gt;</textarea>
+</div>
+</div>
+</section>
+<!-- Section 3: Sosyal Medya -->
+<section class="space-y-6" id="social">
+<div class="flex items-center gap-4">
+<span class="w-8 h-[2px] bg-gold-light"></span>
+<h3 class="font-headline-md text-headline-md text-cream-white uppercase tracking-wider">Sosyal Medya</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="glass-panel p-4 rounded-lg flex items-center gap-4 border-l-4 border-gold-light">
+<span class="material-symbols-outlined text-gold-light">photo_camera</span>
+<div class="flex-1">
+<label class="text-[10px] font-label-caps text-stone-grey">INSTAGRAM</label>
+<input class="w-full bg-transparent border-none focus:ring-0 p-0 text-body-md h-auto mt-1" type="text" value="instagram.com/sekmenzemin"/>
+</div>
+</div>
+<div class="glass-panel p-4 rounded-lg flex items-center gap-4 border-l-4 border-outline-variant">
+<span class="material-symbols-outlined text-stone-grey">face_nod</span>
+<div class="flex-1">
+<label class="text-[10px] font-label-caps text-stone-grey">FACEBOOK</label>
+<input class="w-full bg-transparent border-none focus:ring-0 p-0 text-body-md h-auto mt-1" type="text" value="facebook.com/sekmenzemin"/>
+</div>
+</div>
+<div class="glass-panel p-4 rounded-lg flex items-center gap-4 border-l-4 border-outline-variant">
+<span class="material-symbols-outlined text-stone-grey">videocam</span>
+<div class="flex-1">
+<label class="text-[10px] font-label-caps text-stone-grey">YOUTUBE</label>
+<input class="w-full bg-transparent border-none focus:ring-0 p-0 text-body-md h-auto mt-1" type="text" value="youtube.com/sekmenzemin"/>
+</div>
+</div>
+<div class="glass-panel p-4 rounded-lg flex items-center gap-4 border-l-4 border-outline-variant">
+<span class="material-symbols-outlined text-stone-grey">work</span>
+<div class="flex-1">
+<label class="text-[10px] font-label-caps text-stone-grey">LINKEDIN</label>
+<input class="w-full bg-transparent border-none focus:ring-0 p-0 text-body-md h-auto mt-1" type="text" value="linkedin.com/company/sekmenzemin"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Tema ve Görünüm -->
+<section class="space-y-6" id="appearance">
+<div class="flex items-center gap-4">
+<span class="w-8 h-[2px] bg-gold-light"></span>
+<h3 class="font-headline-md text-headline-md text-cream-white uppercase tracking-wider">Tema ve Görünüm</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 glass-panel p-8 rounded-xl">
+<div class="space-y-4">
+<label class="font-label-caps text-label-caps text-stone-grey block">KURUMSAL VURGU TONU (GOLD)</label>
+<div class="flex items-center gap-4">
+<input class="w-16 h-16 rounded-lg cursor-pointer bg-transparent border-none" type="color" value="#B6863E"/>
+<div class="flex-1">
+<input class="w-full px-4 py-2 rounded-lg font-mono" type="text" value="#B6863E"/>
+<p class="text-[10px] text-stone-grey mt-1">Buna bağlı olarak butonlar ve ikonlar güncellenir.</p>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<label class="font-label-caps text-label-caps text-stone-grey block">VARSAYILAN GÖRÜNÜM MODU</label>
+<div class="flex p-1 bg-surface-container-highest rounded-lg w-fit">
+<button class="px-6 py-2 rounded-md bg-gold-dark text-on-surface font-label-caps text-label-caps transition-all">DARK</button>
+<button class="px-6 py-2 rounded-md text-stone-grey font-label-caps text-label-caps hover:text-on-surface transition-all">LIGHT</button>
+</div>
+<div class="w-full h-24 rounded-lg bg-gradient-to-r from-[#0A0A0A] to-[#F5F2EC] border border-outline-variant/30 flex items-center justify-center">
+<span class="font-label-caps text-[10px] tracking-widest text-on-surface bg-black/40 backdrop-blur-sm px-4 py-1 rounded-full">GÖRÜNÜM ÖNİZLEME</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Sticky Floating Footer CTA -->
+<div class="fixed bottom-8 right-margin-desktop z-[60]">
+<button class="bg-gradient-to-r from-gold-dark to-gold-light text-primary-container font-headline-md text-[18px] px-10 py-4 rounded-xl shadow-[0_10px_30px_rgba(182,134,62,0.4)] hover:shadow-[0_15px_40px_rgba(182,134,62,0.6)] hover:-translate-y-1 transition-all duration-300 flex items-center gap-3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">save</span>
+                    AYARLARI KAYDET
+                </button>
+</div>
+</main>
+</div>
+<!-- Background Decoration Textures -->
+<div class="fixed top-0 right-0 p-12 pointer-events-none opacity-5">
+<span class="font-headline-xl text-[180px] leading-none select-none">SEKMEN</span>
+</div>
+<!-- Footer -->
+<footer class="w-full py-6 px-margin-desktop flex justify-between items-center bg-surface-container-lowest border-t border-outline-variant/10 fixed bottom-0 z-[40]">
+<span class="font-body-md text-body-md text-stone-grey">© 2024 Sekmen Zemin Tasarım. Tüm Hakları Saklıdır.</span>
+<div class="flex gap-8">
+<a class="text-stone-grey hover:text-gold-light transition-colors duration-200" href="#">Gizlilik Politikası</a>
+<a class="text-stone-grey hover:text-gold-light transition-colors duration-200" href="#">Kullanım Koşulları</a>
+<a class="text-stone-grey hover:text-gold-light transition-colors duration-200" href="#">Teknik Destek</a>
+</div>
+</footer>
+<script>
+        // Micro-interactions for form feedback
+        document.querySelectorAll('input, textarea').forEach(el => {
+            el.addEventListener('focus', () => {
+                el.closest('.glass-panel')?.classList.add('border-gold-light/40');
+            });
+            el.addEventListener('blur', () => {
+                el.closest('.glass-panel')?.classList.remove('border-gold-light/40');
+            });
+        });
+
+        // "Save" button glow effect on click
+        const saveBtn = document.querySelector('button.bg-gradient-to-r');
+        saveBtn.addEventListener('click', () => {
+            saveBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> KAYDEDİLİYOR...';
+            setTimeout(() => {
+                saveBtn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> BAŞARIYLA KAYDEDİLDİ';
+                setTimeout(() => {
+                    saveBtn.innerHTML = '<span class="material-symbols-outlined" style="font-variation-settings: \'FILL\' 1;">save</span> AYARLARI KAYDET';
+                }, 2000);
+            }, 1200);
+        });
+    </script>
+</body></html>

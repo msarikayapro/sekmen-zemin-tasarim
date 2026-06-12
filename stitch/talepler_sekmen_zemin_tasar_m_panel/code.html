@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sekmen Zemin | Talep &amp; Teklif Takibi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(22, 22, 22, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .gold-glow:hover {
+            box-shadow: 0 0 15px rgba(182, 134, 62, 0.2);
+            border-color: #B6863E;
+        }
+        .sidebar-active {
+            color: #f4bd6f;
+            border-right: 3px solid #f4bd6f;
+            background: linear-gradient(90deg, rgba(244, 189, 111, 0.05) 0%, rgba(244, 189, 111, 0) 100%);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0A0A0A; }
+        ::-webkit-scrollbar-thumb { background: #353434; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #B6863E; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error": "#ffb4ab",
+                      "on-tertiary": "#452b00",
+                      "surface-container-highest": "#353434",
+                      "on-background": "#e5e2e1",
+                      "primary-container": "#0a0a0a",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-primary": "#313030",
+                      "surface-bright": "#3a3939",
+                      "on-secondary": "#313030",
+                      "on-error": "#690005",
+                      "outline-variant": "#444748",
+                      "on-tertiary-fixed": "#291800",
+                      "on-primary-fixed": "#1c1b1b",
+                      "surface-container-low": "#1c1b1b",
+                      "stone-grey": "#8A8A8A",
+                      "surface-container-high": "#2b2a2a",
+                      "on-primary-fixed-variant": "#474646",
+                      "on-secondary-fixed-variant": "#474746",
+                      "secondary-container": "#474746",
+                      "gold-light": "#D4A95C",
+                      "surface-dim": "#141313",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "on-primary-container": "#7b7979",
+                      "inverse-surface": "#e5e2e1",
+                      "surface-variant": "#353434",
+                      "surface-tint": "#c9c6c5",
+                      "on-secondary-container": "#b7b4b4",
+                      "tertiary-fixed-dim": "#f4bd6f",
+                      "surface-container": "#201f1f",
+                      "primary-fixed": "#e5e2e1",
+                      "on-secondary-fixed": "#1c1b1b",
+                      "tertiary": "#f4bd6f",
+                      "on-tertiary-fixed-variant": "#624000",
+                      "on-tertiary-container": "#9e712b",
+                      "tertiary-fixed": "#ffddb2",
+                      "inverse-on-surface": "#313030",
+                      "inverse-primary": "#5f5e5e",
+                      "gold-dark": "#8C6526",
+                      "secondary-fixed": "#e5e2e1",
+                      "tertiary-container": "#120800",
+                      "cream-white": "#F5F2EC",
+                      "outline": "#8e9192",
+                      "on-surface": "#e5e2e1",
+                      "on-surface-variant": "#c4c7c7",
+                      "on-error-container": "#ffdad6",
+                      "primary": "#c9c6c5",
+                      "background": "#141313",
+                      "primary-fixed-dim": "#c9c6c5",
+                      "surface": "#141313",
+                      "error-container": "#93000a",
+                      "secondary": "#c8c6c5"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-max": "1280px",
+                      "unit": "8px",
+                      "gutter": "24px",
+                      "margin-desktop": "64px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Montserrat"],
+                      "headline-xl": ["Montserrat"],
+                      "headline-md": ["Montserrat"],
+                      "label-caps": ["Montserrat"],
+                      "headline-lg-mobile": ["Montserrat"],
+                      "body-lg": ["Hanken Grotesk"],
+                      "body-md": ["Hanken Grotesk"]
+              },
+              "fontSize": {
+                      "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                      "headline-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex">
+<!-- Sidebar Navigation -->
+<aside class="w-64 border-r border-outline-variant/10 bg-surface-container-lowest flex flex-col fixed h-full z-40">
+<div class="px-8 py-10">
+<h1 class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface">SEKMEN ZEMİN</h1>
+<p class="text-[10px] font-label-caps tracking-[0.2em] text-tertiary mt-1 uppercase">Yönetim Paneli</p>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-stone-grey hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-caps text-label-caps">Ana Sayfa</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-stone-grey hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-label-caps text-label-caps">Ürünler</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg sidebar-active" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">list_alt</span>
+<span class="font-label-caps text-label-caps">Talepler</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-stone-grey hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined">article</span>
+<span class="font-label-caps text-label-caps">İçerik</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-stone-grey hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-caps text-label-caps">Profil</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-stone-grey hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-caps text-label-caps">Ayarlar</span>
+</a>
+</nav>
+<div class="p-6 border-t border-outline-variant/10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary border border-tertiary/20">
+<span class="material-symbols-outlined">admin_panel_settings</span>
+</div>
+<div>
+<p class="text-sm font-semibold">Admin Panel</p>
+<p class="text-xs text-stone-grey">v2.4.1</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 ml-64 p-8 lg:p-12">
+<!-- Header -->
+<header class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Talep &amp; Teklif Takibi</h2>
+<p class="text-stone-grey font-body-md mt-1">Potansiyel müşteri taleplerini ve teklif süreçlerini yönetin.</p>
+</div>
+<div class="flex flex-wrap items-center gap-4 w-full md:w-auto">
+<div class="relative flex-1 md:w-80">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-stone-grey text-xl">search</span>
+<input class="w-full bg-surface-container border border-outline-variant/20 rounded-lg pl-10 pr-4 py-3 text-sm focus:border-tertiary focus:ring-0 transition-all" placeholder="İsim veya telefon ile ara..." type="text"/>
+</div>
+<button class="bg-surface-container border border-outline-variant/20 px-4 py-3 rounded-lg flex items-center gap-2 hover:border-tertiary transition-colors">
+<span class="material-symbols-outlined text-stone-grey">filter_list</span>
+<span class="text-sm font-label-caps text-label-caps">Filtrele</span>
+</button>
+<button class="bg-tertiary text-on-tertiary font-label-caps text-label-caps px-6 py-3 rounded-lg hover:bg-gold-light transition-all flex items-center gap-2 active:scale-95 shadow-lg shadow-tertiary/10">
+<span class="material-symbols-outlined text-lg">add</span>
+<span>TALEP EKLE</span>
+</button>
+</div>
+</header>
+<!-- Analytics Cards -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+<div class="glass-panel p-6 rounded-xl border-l-4 border-l-stone-grey">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-stone-grey text-sm font-label-caps uppercase tracking-wider">Toplam Talep</p>
+<h3 class="text-3xl font-bold mt-2 font-headline-md">1,248</h3>
+</div>
+<span class="material-symbols-outlined text-stone-grey bg-stone-grey/5 p-2 rounded-lg">history</span>
+</div>
+</div>
+<div class="glass-panel p-6 rounded-xl border-l-4 border-l-tertiary relative overflow-hidden">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-tertiary text-sm font-label-caps uppercase tracking-wider">Yeni Talepler</p>
+<h3 class="text-3xl font-bold mt-2 font-headline-md">24</h3>
+</div>
+<span class="material-symbols-outlined text-tertiary bg-tertiary/5 p-2 rounded-lg" style="font-variation-settings: 'FILL' 1;">notification_important</span>
+</div>
+<div class="absolute -right-2 -bottom-2 opacity-10">
+<span class="material-symbols-outlined text-6xl">campaign</span>
+</div>
+</div>
+<div class="glass-panel p-6 rounded-xl border-l-4 border-l-outline">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-stone-grey text-sm font-label-caps uppercase tracking-wider">Bekleyenler</p>
+<h3 class="text-3xl font-bold mt-2 font-headline-md">86</h3>
+</div>
+<span class="material-symbols-outlined text-outline bg-outline/5 p-2 rounded-lg">pending_actions</span>
+</div>
+</div>
+<div class="glass-panel p-6 rounded-xl border-l-4 border-l-green-500/50">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-stone-grey text-sm font-label-caps uppercase tracking-wider">Tamamlananlar</p>
+<h3 class="text-3xl font-bold mt-2 font-headline-md">1,138</h3>
+</div>
+<span class="material-symbols-outlined text-green-500/50 bg-green-500/5 p-2 rounded-lg">task_alt</span>
+</div>
+</div>
+</section>
+<!-- Leads Table Section -->
+<section class="glass-panel rounded-xl overflow-hidden border border-outline-variant/10">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high/50 border-b border-outline-variant/10">
+<th class="px-6 py-4 font-label-caps text-label-caps text-stone-grey uppercase">Ad Soyad</th>
+<th class="px-6 py-4 font-label-caps text-label-caps text-stone-grey uppercase">İletişim</th>
+<th class="px-6 py-4 font-label-caps text-label-caps text-stone-grey uppercase">İlgi Alanı</th>
+<th class="px-6 py-4 font-label-caps text-label-caps text-stone-grey uppercase">Tarih</th>
+<th class="px-6 py-4 font-label-caps text-label-caps text-stone-grey uppercase text-center">Durum</th>
+<th class="px-6 py-4 font-label-caps text-label-caps text-stone-grey uppercase text-right">İşlemler</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<!-- Table Row 1 -->
+<tr class="hover:bg-white/5 transition-colors cursor-pointer group" onclick="openDetailDrawer()">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-gradient-to-br from-tertiary to-gold-dark flex items-center justify-center text-on-tertiary font-bold text-xs uppercase">
+                                        AK
+                                    </div>
+<span class="font-semibold text-on-surface">Ahmet Keskin</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<p class="text-sm font-medium text-on-surface-variant">+90 532 444 00 00</p>
+<p class="text-xs text-stone-grey">ahmet.k@email.com</p>
+</td>
+<td class="px-6 py-5">
+<span class="text-sm px-2 py-1 rounded bg-surface-container border border-outline-variant/20">Beton Parke</span>
+</td>
+<td class="px-6 py-5">
+<span class="text-sm text-stone-grey">12.05.2024</span>
+</td>
+<td class="px-6 py-5 text-center">
+<span class="text-[10px] font-bold px-3 py-1 rounded-full border border-tertiary text-tertiary uppercase tracking-wider">YENİ</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex justify-end gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-tertiary/10 text-stone-grey hover:text-tertiary transition-all">
+<span class="material-symbols-outlined text-xl">visibility</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-blue-500/10 text-stone-grey hover:text-blue-400 transition-all">
+<span class="material-symbols-outlined text-xl">edit</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-error/10 text-stone-grey hover:text-error transition-all">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Table Row 2 -->
+<tr class="hover:bg-white/5 transition-colors cursor-pointer" onclick="openDetailDrawer()">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container-high border border-outline-variant/30 flex items-center justify-center text-stone-grey font-bold text-xs uppercase">
+                                        MY
+                                    </div>
+<span class="font-semibold text-on-surface">Mehmet Yılmaz</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<p class="text-sm font-medium text-on-surface-variant">+90 541 222 11 33</p>
+<p class="text-xs text-stone-grey">m.yilmaz@insaat.com</p>
+</td>
+<td class="px-6 py-5">
+<span class="text-sm px-2 py-1 rounded bg-surface-container border border-outline-variant/20">Endüstriyel Zemin</span>
+</td>
+<td class="px-6 py-5">
+<span class="text-sm text-stone-grey">11.05.2024</span>
+</td>
+<td class="px-6 py-5 text-center">
+<span class="text-[10px] font-bold px-3 py-1 rounded-full bg-stone-grey/10 text-stone-grey border border-stone-grey/20 uppercase tracking-wider">OKUNDU</span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex justify-end gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-stone-grey hover:text-tertiary"><span class="material-symbols-outlined">visibility</span></button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-stone-grey hover:text-blue-400"><span class="material-symbols-outlined">edit</span></button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-stone-grey hover:text-error"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Table Row 3 -->
+<tr class="hover:bg-white/5 transition-colors cursor-pointer" onclick="openDetailDrawer()">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-tertiary/20 flex items-center justify-center text-tertiary font-bold text-xs uppercase border border-tertiary/10">
+                                        SO
+                                    </div>
+<span class="font-semibold text-on-surface">Selin Öztürk</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<p class="text-sm font-medium text-on-surface-variant">+90 555 123 45 67</p>
+<p class="text-xs text-stone-grey">selin@mimarlik.tr</p>
+</td>
+<td class="px-6 py-5">
+<span class="text-sm px-2 py-1 rounded bg-surface-container border border-outline-variant/20">Dekoratif Bordür</span>
+</td>
+<td class="px-6 py-5">
+<span class="text-sm text-stone-grey">10.05.2024</span>
+</td>
+<td class="px-6 py-5 text-center">
+<span class="text-[10px] font-bold px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 uppercase tracking-wider">ARANDI</span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex justify-end gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-stone-grey hover:text-tertiary"><span class="material-symbols-outlined">visibility</span></button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-stone-grey hover:text-blue-400"><span class="material-symbols-outlined">edit</span></button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-stone-grey hover:text-error"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Table Row 4 -->
+<tr class="hover:bg-white/5 transition-colors cursor-pointer" onclick="openDetailDrawer()">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-green-500/20 flex items-center justify-center text-green-500 font-bold text-xs uppercase border border-green-500/10">
+                                        BK
+                                    </div>
+<span class="font-semibold text-on-surface">Burak Kaya</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<p class="text-sm font-medium text-on-surface-variant">+90 533 111 22 33</p>
+<p class="text-xs text-stone-grey">b.kaya@gmail.com</p>
+</td>
+<td class="px-6 py-5">
+<span class="text-sm px-2 py-1 rounded bg-surface-container border border-outline-variant/20">Villa Peyzaj</span>
+</td>
+<td class="px-6 py-5">
+<span class="text-sm text-stone-grey">08.05.2024</span>
+</td>
+<td class="px-6 py-5 text-center">
+<span class="text-[10px] font-bold px-3 py-1 rounded-full bg-green-500/10 text-green-500 border border-green-500/20 uppercase tracking-wider">SONUÇLANDI</span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex justify-end gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-stone-grey hover:text-tertiary"><span class="material-symbols-outlined">visibility</span></button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-stone-grey hover:text-blue-400"><span class="material-symbols-outlined">edit</span></button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-stone-grey hover:text-error"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-6 py-4 bg-surface-container-high/30 flex justify-between items-center border-t border-outline-variant/10">
+<p class="text-sm text-stone-grey">Toplam 1,248 kayıttan 1-10 arası gösteriliyor.</p>
+<div class="flex gap-2">
+<button class="w-9 h-9 flex items-center justify-center rounded bg-surface-container hover:bg-tertiary/20 text-stone-grey transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-9 h-9 flex items-center justify-center rounded bg-tertiary text-on-tertiary font-bold text-sm">1</button>
+<button class="w-9 h-9 flex items-center justify-center rounded bg-surface-container hover:bg-tertiary/20 text-on-surface transition-colors">2</button>
+<button class="w-9 h-9 flex items-center justify-center rounded bg-surface-container hover:bg-tertiary/20 text-on-surface transition-colors">3</button>
+<button class="w-9 h-9 flex items-center justify-center rounded bg-surface-container hover:bg-tertiary/20 text-stone-grey transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Side Detail Drawer -->
+<div class="fixed inset-0 z-50 invisible pointer-events-none transition-all duration-300" id="detailDrawer">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300" id="drawerBackdrop" onclick="closeDetailDrawer()"></div>
+<!-- Panel -->
+<aside class="absolute right-0 top-0 h-full w-full max-w-md bg-surface-container-lowest border-l border-outline-variant/20 translate-x-full transition-transform duration-300 flex flex-col pointer-events-auto" id="drawerPanel">
+<div class="p-6 border-b border-outline-variant/10 flex justify-between items-center bg-surface-container-low">
+<h3 class="font-headline-md text-xl">Talep Detayları</h3>
+<button class="p-2 rounded-full hover:bg-surface-variant transition-colors" onclick="closeDetailDrawer()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex-1 overflow-y-auto p-6 space-y-8">
+<!-- Customer Profile -->
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-full bg-tertiary/20 flex items-center justify-center text-tertiary text-2xl font-bold border border-tertiary/20">AK</div>
+<div>
+<h4 class="text-xl font-bold">Ahmet Keskin</h4>
+<p class="text-stone-grey text-sm">Talep ID: #2481-B</p>
+</div>
+</div>
+<!-- Info Grid -->
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 rounded-lg bg-surface-container-low border border-outline-variant/10">
+<p class="text-[10px] font-label-caps text-stone-grey uppercase">Konum</p>
+<p class="font-medium mt-1">Konya / Selçuklu</p>
+</div>
+<div class="p-4 rounded-lg bg-surface-container-low border border-outline-variant/10">
+<p class="text-[10px] font-label-caps text-stone-grey uppercase">Alan Büyüklüğü</p>
+<p class="font-medium mt-1">450 m<sup>2</sup></p>
+</div>
+</div>
+<!-- Project Message -->
+<div class="space-y-3">
+<p class="text-[10px] font-label-caps text-stone-grey uppercase">Proje Açıklaması</p>
+<div class="p-4 rounded-lg bg-surface-container-low border border-outline-variant/10 italic text-sm text-on-surface-variant leading-relaxed">
+                        "Yeni villa projemizin bahçe ve araç yolu için dekoratif beton parke uygulaması istiyoruz. Toplam alan yaklaşık 450 metrekare. Antrasit ve gri tonlarında, modern bir tasarım arayışındayız. Fiyat teklifi ve uygulama süresi hakkında bilgi bekliyorum."
+                    </div>
+</div>
+<!-- Status Update -->
+<div class="space-y-3">
+<label class="text-[10px] font-label-caps text-stone-grey uppercase">Durumu Güncelle</label>
+<select class="w-full bg-surface-container border border-outline-variant/20 rounded-lg p-3 text-sm focus:border-tertiary ring-0 focus:ring-0 outline-none">
+<option value="yeni">Yeni Talep</option>
+<option value="okundu">Okundu</option>
+<option value="arandi">Arandı / Görüşüldü</option>
+<option value="sonuclandi">Tamamlandı</option>
+<option value="iptal">İptal Edildi</option>
+</select>
+</div>
+<!-- Internal Notes -->
+<div class="space-y-3">
+<label class="text-[10px] font-label-caps text-stone-grey uppercase">Dahili Notlar</label>
+<textarea class="w-full bg-surface-container border border-outline-variant/20 rounded-lg p-3 text-sm focus:border-tertiary focus:ring-0 outline-none" placeholder="Ekip için not bırakın..." rows="4"></textarea>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="p-6 border-t border-outline-variant/10 bg-surface-container-low space-y-3">
+<button class="w-full py-4 bg-green-600 hover:bg-green-500 text-white font-bold rounded-lg transition-all flex items-center justify-center gap-2 active:scale-[0.98]">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">chat</span>
+                    WHATSAPP İLE İLETİŞİME GEÇ
+                </button>
+<button class="w-full py-4 border border-tertiary text-tertiary hover:bg-tertiary/5 font-bold rounded-lg transition-all active:scale-[0.98]">
+                    GÜNCELLEMELERİ KAYDET
+                </button>
+</div>
+</aside>
+</div>
+<!-- Floating WhatsApp Background Pulse (Visual Element) -->
+<div class="fixed bottom-8 right-8 z-30 group">
+<div class="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-20 scale-150"></div>
+<div class="absolute inset-0 bg-tertiary rounded-full animate-ping opacity-10 scale-[2] delay-300"></div>
+<button class="relative bg-green-500 w-14 h-14 rounded-full shadow-xl flex items-center justify-center hover:scale-110 transition-transform">
+<svg class="w-8 h-8 text-white fill-current" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.483 8.413-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.308 1.654zm6.233-3.762c1.508.893 3.078 1.364 4.82 1.365 5.413 0 9.817-4.403 9.82-9.817.001-2.624-1.025-5.086-2.891-6.954-1.866-1.867-4.329-2.894-6.953-2.894-5.413 0-9.817 4.404-9.82 9.817-.001 1.738.459 3.426 1.329 4.934l-.942 3.441 3.457-.906zm10.375-7.601c-.092-.152-.338-.243-.706-.427-.368-.184-2.178-1.077-2.515-1.199-.338-.124-.583-.184-.829.184-.245.367-.95 1.199-1.164 1.444-.215.244-.43.275-.798.091-.368-.184-1.556-.573-2.962-1.828-1.094-.976-1.832-2.181-2.047-2.549-.214-.367-.023-.566.161-.749.165-.165.368-.428.552-.642.184-.214.245-.367.368-.612.122-.245.061-.459-.03-.642-.092-.184-.829-2.001-1.136-2.735-.298-.718-.601-.621-.828-.632-.214-.011-.46-.011-.706-.011-.245 0-.644.092-.981.459-.338.367-1.288 1.258-1.288 3.064 0 1.806 1.319 3.551 1.503 3.796.184.245 2.597 3.966 6.29 5.564.877.379 1.562.605 2.096.774.882.28 1.687.24 2.321.146.708-.105 2.178-.89 2.484-1.75.307-.86.307-1.597.215-1.75z"></path>
+</svg>
+</button>
+</div>
+<script>
+        function openDetailDrawer() {
+            const drawer = document.getElementById('detailDrawer');
+            const panel = document.getElementById('drawerPanel');
+            const backdrop = document.getElementById('drawerBackdrop');
+            
+            drawer.classList.remove('invisible');
+            drawer.classList.add('visible');
+            
+            setTimeout(() => {
+                panel.classList.remove('translate-x-full');
+                backdrop.classList.replace('opacity-0', 'opacity-100');
+            }, 10);
+        }
+
+        function closeDetailDrawer() {
+            const drawer = document.getElementById('detailDrawer');
+            const panel = document.getElementById('drawerPanel');
+            const backdrop = document.getElementById('drawerBackdrop');
+            
+            panel.classList.add('translate-x-full');
+            backdrop.classList.replace('opacity-100', 'opacity-0');
+            
+            setTimeout(() => {
+                drawer.classList.remove('visible');
+                drawer.classList.add('invisible');
+            }, 300);
+        }
+
+        // Search highlight simulation
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('input', (e) => {
+            const val = e.target.value.toLowerCase();
+            const rows = document.querySelectorAll('tbody tr');
+            rows.forEach(row => {
+                const text = row.innerText.toLowerCase();
+                row.style.display = text.includes(val) ? '' : 'none';
+            });
+        });
+    </script>
+</body></html>

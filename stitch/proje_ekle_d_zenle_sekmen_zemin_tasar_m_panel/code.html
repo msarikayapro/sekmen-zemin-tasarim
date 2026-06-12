@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Proje Ekle/Düzenle | Sekmen Zemin Tasarım</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Hanken+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#8e9192",
+                        "on-secondary-container": "#b7b4b4",
+                        "gold-dark": "#8C6526",
+                        "error": "#ffb4ab",
+                        "surface-container-high": "#2b2a2a",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "primary-container": "#0a0a0a",
+                        "on-tertiary": "#452b00",
+                        "outline-variant": "#444748",
+                        "surface-container-highest": "#353434",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#3a3939",
+                        "on-primary": "#313030",
+                        "tertiary-container": "#120800",
+                        "surface-container": "#201f1f",
+                        "on-background": "#e5e2e1",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "tertiary-fixed": "#ffddb2",
+                        "stone-grey": "#8A8A8A",
+                        "tertiary": "#f4bd6f",
+                        "on-tertiary-fixed-variant": "#624000",
+                        "surface-dim": "#141313",
+                        "on-primary-fixed": "#1c1b1b",
+                        "on-secondary-fixed-variant": "#474746",
+                        "error-container": "#93000a",
+                        "primary-fixed": "#e5e2e1",
+                        "gold-light": "#D4A95C",
+                        "background": "#141313",
+                        "primary": "#c9c6c5",
+                        "inverse-on-surface": "#313030",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface": "#141313",
+                        "on-tertiary-fixed": "#291800",
+                        "on-surface": "#e5e2e1",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-container-low": "#1c1b1b",
+                        "secondary-container": "#474746",
+                        "tertiary-fixed-dim": "#f4bd6f",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-error": "#690005",
+                        "on-tertiary-container": "#9e712b",
+                        "inverse-primary": "#5f5e5e",
+                        "on-primary-container": "#7b7979",
+                        "cream-white": "#F5F2EC",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-secondary": "#313030",
+                        "on-surface-variant": "#c4c7c7",
+                        "surface-variant": "#353434",
+                        "surface-tint": "#c9c6c5",
+                        "secondary": "#c8c6c5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Montserrat"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-md": ["Montserrat"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-caps": ["Montserrat"],
+                        "headline-xl": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                        "headline-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "0.05em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0A;
+            color: #E5E2E1;
+            font-family: 'Hanken Grotesk', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(22, 22, 22, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(142, 145, 146, 0.1);
+        }
+        .input-dark {
+            background: #1C1B1B;
+            border: 1px solid #444748;
+            color: #E5E2E1;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .input-dark:focus {
+            border-color: #B6863E;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(182, 134, 62, 0.2);
+        }
+        .gold-glow:hover {
+            box-shadow: 0 0 15px rgba(182, 134, 62, 0.3);
+            border-color: #D4A95C;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0A0A0A;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #444748;
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #B6863E;
+        }
+        /* Motif overlay */
+        .bg-pattern {
+            background-image: linear-gradient(rgba(182, 134, 62, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(182, 134, 62, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+<body class="bg-primary-container min-h-screen flex overflow-hidden">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col h-screen w-64 fixed left-0 top-0 bg-surface-container-high border-r border-surface-variant z-40 p-gutter">
+<div class="mb-10 flex items-center gap-3">
+<span class="material-symbols-outlined text-gold-light text-3xl">architecture</span>
+<div class="flex flex-col">
+<span class="font-headline-md text-gold-light font-bold text-[20px] leading-tight">Sekmen Panel</span>
+<span class="text-[10px] text-stone-grey uppercase tracking-widest">Zemin Tasarım Yönetimi</span>
+</div>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant/20 transition-all duration-200 rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:text-gold-light">dashboard</span>
+<span class="font-medium">Home</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant/20 transition-all duration-200 rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:text-gold-light">inventory_2</span>
+<span class="font-medium">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gold-light font-bold bg-surface-variant/30 rounded-lg group translate-x-1" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">leaderboard</span>
+<span class="font-medium">Projects</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant/20 transition-all duration-200 rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:text-gold-light">article</span>
+<span class="font-medium">Content</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant/20 transition-all duration-200 rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:text-gold-light">person</span>
+<span class="font-medium">Profile</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant/20 transition-all duration-200 rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:text-gold-light">settings</span>
+<span class="font-medium">Settings</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-surface-variant/30">
+<div class="flex items-center gap-3 px-2 mb-6">
+<div class="w-10 h-10 rounded-full bg-surface-variant border border-gold-dark overflow-hidden">
+<img alt="Sekmen Admin" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIwuKcBU_MQxYMRBZ82KeOhPunwo8ytiaqRO-A8uw9MGnaZygxnxdqbRjEOqXMBMu10DbxJ7qmiI4kv8g6fxAzL-XSITWWNPajyAzAnq-y6iAIoALY2RYDNshemQfpFIkx32jewv1wffMkRooUVQCaaP-8inzQxL4xaygfVgBgj9gCeKNYL8WFc-FVvzrLSiysyanA9zD_TmnTDr8NYBXUyE6LGezO3BNo_N5hiMvydwAgQm-x05BnajBHoKchjPZjOssALMv01fse"/>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Ahmet Sekmen</p>
+<p class="text-[10px] text-stone-grey uppercase">Yönetici</p>
+</div>
+</div>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-error transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-medium">Çıkış Yap</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-0 lg:ml-64 bg-primary-container min-h-screen flex flex-col relative bg-pattern overflow-y-auto custom-scrollbar pb-32">
+<!-- Header -->
+<header class="sticky top-0 z-30 w-full glass-panel border-b border-surface-variant/30 px-6 lg:px-10 py-6 flex justify-between items-center">
+<div>
+<nav class="flex items-center gap-2 text-stone-grey text-xs uppercase tracking-widest mb-1">
+<a class="hover:text-gold-light" href="#">PROJELER</a>
+<span class="material-symbols-outlined text-[12px]">chevron_right</span>
+<span class="text-on-surface">YENİ PROJE EKLE</span>
+</nav>
+<h1 class="font-headline-md text-on-surface font-bold tracking-tight uppercase">Yeni Proje Ekle</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex flex-col text-right">
+<span class="text-xs text-stone-grey uppercase">Sistem Durumu</span>
+<span class="text-xs text-green-500 font-bold flex items-center justify-end gap-1">
+<span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span> Çevrimiçi
+                    </span>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface-variant/50 flex items-center justify-center hover:bg-gold-light hover:text-primary-container transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<!-- Form Content -->
+<div class="max-w-container-max mx-auto w-full px-6 lg:px-10 py-10">
+<form class="space-y-10">
+<!-- Section 1: Temel Bilgiler -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<div class="lg:col-span-4">
+<h2 class="font-headline-md text-gold-light mb-2">Temel Bilgiler</h2>
+<p class="text-stone-grey text-sm">Projenin ana kimlik bilgilerini ve lokasyon detaylarını bu alandan düzenleyebilirsiniz.</p>
+</div>
+<div class="lg:col-span-8 glass-panel p-8 rounded-xl shadow-xl space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-caps text-stone-grey block">PROJE BAŞLIĞI</label>
+<input class="w-full h-12 px-4 rounded-lg input-dark font-body-md" placeholder="Örn: Meram Villa Bahçe Tasarımı" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-stone-grey block">URL (SLUG)</label>
+<div class="flex">
+<span class="h-12 flex items-center px-3 bg-surface-variant/50 border border-r-0 border-surface-variant rounded-l-lg text-stone-grey text-sm">sekmen.com/projeler/</span>
+<input class="flex-1 h-12 px-4 rounded-r-lg input-dark font-body-md" placeholder="meram-villa-projesi" type="text"/>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="space-y-2">
+<label class="font-label-caps text-stone-grey block">PROJE TİPİ</label>
+<select class="w-full h-12 px-4 rounded-lg input-dark font-body-md appearance-none">
+<option>Seçiniz</option>
+<option>Konut</option>
+<option>Kamu</option>
+<option>Ticari</option>
+<option>Peyzaj</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-stone-grey block">KONUM (ŞEHİR/İLÇE)</label>
+<input class="w-full h-12 px-4 rounded-lg input-dark font-body-md" placeholder="Konya / Meram" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-stone-grey block">TARİH</label>
+<input class="w-full h-12 px-4 rounded-lg input-dark font-body-md" type="month"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-surface-variant/30">
+<div class="space-y-2">
+<label class="font-label-caps text-stone-grey block">MÜŞTERİ ADI (OPSİYONEL)</label>
+<input class="w-full h-12 px-4 rounded-lg input-dark font-body-md" placeholder="Ali Yılmaz" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-stone-grey block">MÜŞTERİ YORUMU</label>
+<textarea class="w-full p-4 rounded-lg input-dark font-body-md resize-none" placeholder="Müşterinin projeye dair geri bildirimi..." rows="1"></textarea>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Görsel Galeri & Before/After -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<div class="lg:col-span-4">
+<h2 class="font-headline-md text-gold-light mb-2">Görsel Galeri</h2>
+<p class="text-stone-grey text-sm">Yüksek çözünürlüklü proje fotoğraflarını yükleyin. İlk görsel ana görsel (thumbnail) olarak kullanılacaktır.</p>
+</div>
+<div class="lg:col-span-8 space-y-6">
+<!-- Main Gallery Upload -->
+<div class="glass-panel p-8 rounded-xl shadow-xl">
+<label class="font-label-caps text-stone-grey block mb-4">PROJE FOTOĞRAFLARI</label>
+<div class="border-2 border-dashed border-surface-variant hover:border-gold-light transition-colors rounded-xl p-12 flex flex-col items-center justify-center group cursor-pointer">
+<span class="material-symbols-outlined text-5xl text-stone-grey group-hover:text-gold-light transition-colors mb-4">cloud_upload</span>
+<p class="text-on-surface font-medium mb-1">Görselleri buraya sürükleyin veya tıklayın</p>
+<p class="text-stone-grey text-xs">Maksimum 5MB, JPG veya PNG formatında</p>
+</div>
+<!-- Gallery Preview Mock -->
+<div class="grid grid-cols-4 gap-4 mt-8">
+<div class="aspect-video rounded-lg bg-surface-variant overflow-hidden relative group border border-gold-light">
+<img alt="Önizleme 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq3GNCpeSJwQS8mTRoLS1kWqDZTT5WCZjX-AEkRiOwXG6GxyXtJL2zhRr-cWdutQ1a8C_vV55Ft4TCfPAUrnMOLUkIV6aIy1Tq5KaJNRoS69U9i6-pEf4Bq-3RgC4epQOCOmtGZ9moTw8IqA_DyvCsRMo3ewZGW5D4OnfRqZg2lFmnQdHdM2jhc-Y75sizF7zm3X-0y-E0_eP8Z_fhbYHH3VNjmRtW7CSCgqsOmuDbx9w_Jme1tokE2Sn27ZPycfX66KJPvDmgg827"/>
+<div class="absolute inset-0 bg-primary-container/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+<button class="p-2 bg-error rounded-full" type="button"><span class="material-symbols-outlined text-white">delete</span></button>
+</div>
+<span class="absolute top-2 left-2 bg-gold-light text-primary-container text-[10px] font-bold px-2 py-0.5 rounded">ANA GÖRSEL</span>
+</div>
+<div class="aspect-video rounded-lg bg-surface-variant overflow-hidden relative group">
+<img alt="Önizleme 2" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW8VgkA72HbA-RY44rwkxAJqE4t6pU-Zis6Z1y70lbs_klFf538NB1_up9N84Ss1PP0odaPjvaQwWdOjKlzWQz0zkyrNVOVI7qTWzUqHIyokwL41t8h_SvbSmCtReutFperat25yJG0o-3khFWPcP-f2jA6Q_9S732_uJp5yLmrXLDjJhsy5b8ug6u9yotgBHGqa92cFtuKRn7lLE5rJP5Q91fUAp6-3TOPdACwMimiHlOZ6G05q-KGi75nb25jh5VDyCQ2hBK_hHM"/>
+<div class="absolute inset-0 bg-primary-container/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+<button class="p-2 bg-error rounded-full" type="button"><span class="material-symbols-outlined text-white">delete</span></button>
+</div>
+</div>
+<div class="aspect-video rounded-lg border-2 border-dashed border-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-stone-grey">add</span>
+</div>
+</div>
+</div>
+<!-- Before / After Slider Selection -->
+<div class="glass-panel p-8 rounded-xl shadow-xl">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-label-caps text-gold-light">INTERAKTIF ÖNCESI / SONRASI SLIDER</h3>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gold-light"></div>
+</label>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<p class="text-xs text-stone-grey uppercase font-bold text-center">ÖNCESİ (BEFORE)</p>
+<div class="aspect-[4/3] rounded-xl border-2 border-dashed border-surface-variant flex flex-col items-center justify-center bg-surface-container-low hover:border-gold-light transition-all cursor-pointer">
+<span class="material-symbols-outlined text-3xl mb-2 text-stone-grey">add_photo_alternate</span>
+<span class="text-xs text-stone-grey">Görsel Seç</span>
+</div>
+</div>
+<div class="space-y-4">
+<p class="text-xs text-stone-grey uppercase font-bold text-center">SONRASI (AFTER)</p>
+<div class="aspect-[4/3] rounded-xl border-2 border-dashed border-surface-variant flex flex-col items-center justify-center bg-surface-container-low hover:border-gold-light transition-all cursor-pointer">
+<span class="material-symbols-outlined text-3xl mb-2 text-stone-grey">add_photo_alternate</span>
+<span class="text-xs text-stone-grey">Görsel Seç</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Kullanılan Ürünler -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<div class="lg:col-span-4">
+<h2 class="font-headline-md text-gold-light mb-2">Kullanılan Ürünler</h2>
+<p class="text-stone-grey text-sm">Bu projede kullanılan zemin kaplama ürünlerini seçerek portfolyonuzu ürün kataloğunuzla ilişkilendirin.</p>
+</div>
+<div class="lg:col-span-8 glass-panel p-8 rounded-xl shadow-xl">
+<label class="font-label-caps text-stone-grey block mb-4">ÜRÜN KATALOĞUNDAN SEÇİN</label>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 max-h-64 overflow-y-auto pr-4 custom-scrollbar">
+<!-- Product Tag Checkboxes -->
+<label class="flex items-center gap-3 p-3 bg-surface-container-low border border-surface-variant rounded-lg cursor-pointer hover:bg-surface-variant/30 transition-all group">
+<input checked="" class="w-4 h-4 rounded border-outline-variant bg-surface-variant text-gold-light focus:ring-gold-light" type="checkbox"/>
+<span class="text-sm font-medium">Kilitli Parke</span>
+</label>
+<label class="flex items-center gap-3 p-3 bg-surface-container-low border border-surface-variant rounded-lg cursor-pointer hover:bg-surface-variant/30 transition-all group">
+<input checked="" class="w-4 h-4 rounded border-outline-variant bg-surface-variant text-gold-light focus:ring-gold-light" type="checkbox"/>
+<span class="text-sm font-medium">Begonit Taşı</span>
+</label>
+<label class="flex items-center gap-3 p-3 bg-surface-container-low border border-surface-variant rounded-lg cursor-pointer hover:bg-surface-variant/30 transition-all group">
+<input class="w-4 h-4 rounded border-outline-variant bg-surface-variant text-gold-light focus:ring-gold-light" type="checkbox"/>
+<span class="text-sm font-medium">Çim Taşı</span>
+</label>
+<label class="flex items-center gap-3 p-3 bg-surface-container-low border border-surface-variant rounded-lg cursor-pointer hover:bg-surface-variant/30 transition-all group">
+<input class="w-4 h-4 rounded border-outline-variant bg-surface-variant text-gold-light focus:ring-gold-light" type="checkbox"/>
+<span class="text-sm font-medium">Aşık Taşı</span>
+</label>
+<label class="flex items-center gap-3 p-3 bg-surface-container-low border border-surface-variant rounded-lg cursor-pointer hover:bg-surface-variant/30 transition-all group">
+<input class="w-4 h-4 rounded border-outline-variant bg-surface-variant text-gold-light focus:ring-gold-light" type="checkbox"/>
+<span class="text-sm font-medium">Dekoratif Taş</span>
+</label>
+<label class="flex items-center gap-3 p-3 bg-surface-container-low border border-surface-variant rounded-lg cursor-pointer hover:bg-surface-variant/30 transition-all group">
+<input class="w-4 h-4 rounded border-outline-variant bg-surface-variant text-gold-light focus:ring-gold-light" type="checkbox"/>
+<span class="text-sm font-medium">Wash Beton</span>
+</label>
+<label class="flex items-center gap-3 p-3 bg-surface-container-low border border-surface-variant rounded-lg cursor-pointer hover:bg-surface-variant/30 transition-all group">
+<input class="w-4 h-4 rounded border-outline-variant bg-surface-variant text-gold-light focus:ring-gold-light" type="checkbox"/>
+<span class="text-sm font-medium">Bordür Taşı</span>
+</label>
+<label class="flex items-center gap-3 p-3 bg-surface-container-low border border-surface-variant rounded-lg cursor-pointer hover:bg-surface-variant/30 transition-all group">
+<input class="w-4 h-4 rounded border-outline-variant bg-surface-variant text-gold-light focus:ring-gold-light" type="checkbox"/>
+<span class="text-sm font-medium">Yağmur Oluğu</span>
+</label>
+</div>
+</div>
+</section>
+<!-- Section 4: Açıklama & SEO -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<div class="lg:col-span-4">
+<h2 class="font-headline-md text-gold-light mb-2">Detaylar &amp; SEO</h2>
+<p class="text-stone-grey text-sm">Proje hikayesini anlatın ve arama motorlarında daha görünür olması için SEO ayarlarını yapılandırın.</p>
+</div>
+<div class="lg:col-span-8 space-y-6">
+<!-- Rich Text Editor Mockup -->
+<div class="glass-panel rounded-xl shadow-xl overflow-hidden">
+<div class="bg-surface-variant/50 p-3 border-b border-surface-variant flex gap-2">
+<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-variant" type="button"><span class="material-symbols-outlined text-sm">format_bold</span></button>
+<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-variant" type="button"><span class="material-symbols-outlined text-sm">format_italic</span></button>
+<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-variant border-r border-surface-variant pr-2" type="button"><span class="material-symbols-outlined text-sm">format_underlined</span></button>
+<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-variant" type="button"><span class="material-symbols-outlined text-sm">format_list_bulleted</span></button>
+<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-variant" type="button"><span class="material-symbols-outlined text-sm">link</span></button>
+</div>
+<textarea class="w-full p-6 bg-transparent border-none focus:ring-0 font-body-md" placeholder="Projenin hikayesi, kullanılan teknikler ve detaylar..." rows="10"></textarea>
+</div>
+<!-- SEO Settings -->
+<div class="glass-panel p-8 rounded-xl shadow-xl space-y-6">
+<h3 class="font-label-caps text-on-surface">ARAMA MOTORU OPTİMİZASYONU (SEO)</h3>
+<div class="space-y-4">
+<div class="space-y-2">
+<label class="text-xs text-stone-grey block">META BAŞLIK (TITLE)</label>
+<input class="w-full h-10 px-4 rounded-lg input-dark text-sm" placeholder="Meram Villa Zemin Tasarım Projesi | Sekmen Tasarım" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs text-stone-grey block">META AÇIKLAMA (DESCRIPTION)</label>
+<textarea class="w-full p-4 rounded-lg input-dark text-sm" placeholder="Konya Meram bölgesinde gerçekleştirdiğimiz lüks villa bahçe düzenleme ve kilitli parke uygulama projemizin detayları..." rows="2"></textarea>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-xs text-stone-grey block">PAYLAŞIM GÖRSELİ (OG IMAGE)</label>
+<div class="h-32 rounded-lg border border-surface-variant bg-surface-container-low flex items-center justify-center cursor-pointer hover:border-gold-light">
+<span class="material-symbols-outlined text-stone-grey mr-2">image</span>
+<span class="text-xs text-stone-grey">Görsel Yükle</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="p-4 bg-tertiary-container/20 rounded-lg border border-tertiary-fixed-dim/20">
+<p class="text-xs text-on-surface-variant leading-relaxed">
+<span class="text-gold-light font-bold">İpucu:</span> Odak anahtar kelimeleri başlık ve açıklama kısmında mutlaka kullanın.
+                                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</form>
+</div>
+<!-- Sticky Footer Actions -->
+<footer class="fixed bottom-0 left-0 lg:left-64 right-0 glass-panel border-t border-surface-variant/30 py-6 px-10 z-40 flex items-center justify-between">
+<div class="flex items-center gap-2 text-stone-grey">
+<span class="material-symbols-outlined text-sm">info</span>
+<span class="text-xs">Değişiklikler otomatik olarak kaydedilmiyor.</span>
+</div>
+<div class="flex gap-4">
+<button class="px-8 py-3 rounded-lg border border-outline hover:bg-surface-variant/20 font-bold uppercase tracking-widest text-xs transition-all" type="button">
+                    Vazgeç
+                </button>
+<button class="px-10 py-3 rounded-lg bg-gold-light text-primary-container font-bold uppercase tracking-widest text-xs gold-glow transition-all active:scale-95" type="submit">
+                    PROJEYİ KAYDET
+                </button>
+</div>
+</footer>
+</main>
+<!-- Mobile Navigation Shell (Suppressed based on "Task-Focused" rule, but providing minimal interaction if needed) -->
+<div class="lg:hidden fixed top-0 left-0 w-full glass-panel z-50 px-6 py-4 border-b border-surface-variant/30 flex justify-between items-center">
+<span class="material-symbols-outlined text-gold-light">menu</span>
+<span class="font-bold text-gold-light tracking-widest">SEKMEN ADMIN</span>
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden">
+<img alt="Admin" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo6ZBYjjAw3yI27aL0QgqcfqwRXvQ2op1VE2ysSqjjgtLisAyxlSMw6oORYPikQM4h2jCYxDFDqJ9J6gba0KRRV2Qa6T4HYqTEHU4Nz1V9YVvUOIXoEmnZLyrvy5-GLS9BVfRXFSL5CVTSpESEtVh9q2ukkbHpSzgttLnbKIGvs3x2cWeouI4RC8pe9M28FoZMC7TFhDmAHDxjq-Jj2Nh2wRAxjwyEQe-c7_HOcg0unfe4wxhs5lZ6oKHVsEMq_trUSQfV5vkuWB1B"/>
+</div>
+</div>
+<script>
+        // Simple micro-interaction for scroll effects or form state
+        document.querySelector('main').addEventListener('scroll', (e) => {
+            const header = document.querySelector('header');
+            if (e.target.scrollTop > 20) {
+                header.classList.add('shadow-xl');
+            } else {
+                header.classList.remove('shadow-xl');
+            }
+        });
+    </script>
+</body></html>

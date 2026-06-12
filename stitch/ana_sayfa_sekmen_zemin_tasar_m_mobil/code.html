@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ffb4ab",
+                    "on-tertiary": "#452b00",
+                    "surface-container-highest": "#353434",
+                    "on-background": "#e5e2e1",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-primary": "#313030",
+                    "primary-container": "#0a0a0a",
+                    "surface-bright": "#3a3939",
+                    "on-secondary": "#313030",
+                    "on-error": "#690005",
+                    "outline-variant": "#444748",
+                    "on-tertiary-fixed": "#291800",
+                    "on-primary-fixed": "#1c1b1b",
+                    "surface-container-low": "#1c1b1b",
+                    "stone-grey": "#8A8A8A",
+                    "surface-container-high": "#2b2a2a",
+                    "on-primary-fixed-variant": "#474646",
+                    "on-secondary-fixed-variant": "#474746",
+                    "secondary-container": "#474746",
+                    "surface-dim": "#141313",
+                    "gold-light": "#D4A95C",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "inverse-surface": "#e5e2e1",
+                    "on-primary-container": "#7b7979",
+                    "surface-variant": "#353434",
+                    "surface-tint": "#c9c6c5",
+                    "on-secondary-container": "#b7b4b4",
+                    "tertiary-fixed-dim": "#f4bd6f",
+                    "surface-container": "#201f1f",
+                    "primary-fixed": "#e5e2e1",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "tertiary": "#f4bd6f",
+                    "on-tertiary-fixed-variant": "#624000",
+                    "on-tertiary-container": "#9e712b",
+                    "tertiary-fixed": "#ffddb2",
+                    "inverse-on-surface": "#313030",
+                    "secondary-fixed": "#e5e2e1",
+                    "inverse-primary": "#5f5e5e",
+                    "gold-dark": "#8C6526",
+                    "tertiary-container": "#120800",
+                    "cream-white": "#F5F2EC",
+                    "outline": "#8e9192",
+                    "on-surface-variant": "#c4c7c7",
+                    "on-surface": "#e5e2e1",
+                    "on-error-container": "#ffdad6",
+                    "primary": "#c9c6c5",
+                    "background": "#141313",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "surface": "#141313",
+                    "error-container": "#93000a",
+                    "secondary": "#c8c6c5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "headline-xl": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "body-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass {
+            background: rgba(22, 22, 22, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .pavement-pattern {
+            background-image: radial-gradient(#B6863E 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            opacity: 0.05;
+        }
+        .gold-glow {
+            box-shadow: 0 0 15px rgba(182, 134, 62, 0.2);
+        }
+        .slider-handle::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #D4A95C;
+            transform: translateX(-50%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="bg-surface/85 backdrop-blur-md border-b border-surface-variant shadow-md docked full-width top-0 sticky z-50 flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-on-surface uppercase tracking-wider">
+            Sekmen
+        </div>
+<div class="flex items-center gap-4">
+<a class="text-gold-light" href="tel:+905000000000">
+<span class="material-symbols-outlined">call</span>
+</a>
+<button class="bg-gold-light text-on-primary px-4 py-2 rounded-lg font-label-caps text-label-caps uppercase active:scale-95 transition-transform">
+                Teklif Al
+            </button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative h-[751px] flex flex-col justify-end pb-20 px-margin-mobile overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover grayscale brightness-[0.4]" data-alt="A high-angle architectural shot of a luxury villa driveway featuring premium interlocking stone pavement in dark charcoal tones. The scene is captured at dusk with warm golden outdoor lighting reflecting off the polished textures of the stones. The atmosphere is industrial luxe, emphasizing craftsmanship and durability in a modern landscaping context. High-end anthracite surfaces dominate the composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASB7A1h2N_XaG6wYsiNvqWey8eTfT4NcqFDFquBwqlIFLxJTiM5vwdS3HElNb6WeI_5hK4zh6FtxVQQEUKK9AngP55wmqwfm-E2Q1j1ggbn8-WvUzrHTR73qIuvS3Jttt5eL7tJkc5JO8qI07FZGJHsGmQXe71EFAzQggOj_p8tzs0VAJxJhRNizNPxXnKjTs4-dtkldFyOiqerivDGoSJ1mzbW6g80XACEWWOzm4MWDeqaDQ98qTNvfBwkwNmvpqF7Gvkw6MSkdmx"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div>
+<div class="absolute inset-0 pavement-pattern"></div>
+</div>
+<div class="relative z-10 space-y-6">
+<div class="inline-block border-l-4 border-gold-light pl-4">
+<span class="font-label-caps text-label-caps text-gold-light block mb-2">MODERN ZEMİN MİMARİSİ</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-white leading-tight">
+                    Estetik ve Gücün <br/><span class="text-gold-light">Kusursuz Birleşimi</span>
+</h1>
+</div>
+<p class="text-on-surface-variant font-body-md max-w-md">
+                Sekmen Zemin Tasarım ile dış mekanlarınıza endüstriyel dayanıklılık ve lüks dokunuşlar katıyoruz.
+            </p>
+<div class="flex flex-col gap-4">
+<button class="bg-gold-light text-primary-container py-4 rounded-lg font-label-caps text-label-caps uppercase font-bold gold-glow">
+                    Teklif Al
+                </button>
+<button class="border border-gold-light text-gold-light py-4 rounded-lg font-label-caps text-label-caps uppercase font-bold">
+                    Ürünleri İncele
+                </button>
+</div>
+</div>
+</section>
+<!-- Trust Bar -->
+<section class="bg-surface-container-low py-12 px-margin-mobile border-y border-surface-variant/30">
+<div class="grid grid-cols-2 gap-8">
+<div class="text-center space-y-2">
+<div class="font-headline-md text-headline-md text-gold-light font-bold">2010</div>
+<div class="font-label-caps text-[10px] text-stone-grey tracking-widest">KURULUŞ YILI</div>
+</div>
+<div class="text-center space-y-2">
+<div class="font-headline-md text-headline-md text-gold-light font-bold">1M m²</div>
+<div class="font-label-caps text-[10px] text-stone-grey tracking-widest">TAMAMLANAN ALAN</div>
+</div>
+<div class="text-center space-y-2">
+<div class="font-headline-md text-headline-md text-gold-light font-bold">500+</div>
+<div class="font-label-caps text-[10px] text-stone-grey tracking-widest">REFERANS PROJE</div>
+</div>
+<div class="text-center space-y-2">
+<div class="font-headline-md text-headline-md text-gold-light font-bold">%100</div>
+<div class="font-label-caps text-[10px] text-stone-grey tracking-widest">MÜŞTERİ MEMNUNİYETİ</div>
+</div>
+</div>
+</section>
+<!-- Featured Products Bento Grid (Mobile Adaptation) -->
+<section class="py-20 px-margin-mobile">
+<div class="mb-12">
+<h2 class="font-headline-md text-headline-md text-white mb-2">Ürün Gruplarımız</h2>
+<div class="h-1 w-12 bg-gold-light"></div>
+</div>
+<div class="grid grid-cols-1 gap-6">
+<!-- Large Card -->
+<div class="group relative h-64 rounded-xl overflow-hidden shadow-xl">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Close-up shot of high-quality anthracite paving stones arranged in a minimalist linear pattern. The lighting is dramatic, highlighting the tactile stone texture and crystalline structure of the material. Dark-mode aesthetics with subtle gold glints in the reflection, representing premium quality industrial zemin design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu25pV8tBVGF2_Okt2tmG3-P4kjf8107zKsF8OOGMwG8Wx0EWKzpsNxPeV5GAunEAM23_Un4cq-5sYn_sBDOhQfclJ8qxYe3HDn5ra4JbJz6chXxoOl-OMjviY0SVXDjoDaee1boi8gqlEulpBa0WvTFf4O1le_yt58_WOBJcYzbSSSh23LPJvIdIas604nrG-PmOz0xIg-P6UuXW0LYnOfL5q6tcsmZvw0XdYbc8zgWG5Ri3Dz7-zizk8-WRJcmUlM-ORFW5D9Shb"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
+<h3 class="font-headline-md text-white">Antrasit Serisi</h3>
+<p class="text-stone-grey font-body-md">Modern ve Endüstriyel Dokunuş</p>
+</div>
+<div class="absolute top-4 right-4 bg-gold-light/20 backdrop-blur-md p-2 rounded-full">
+<span class="material-symbols-outlined text-gold-light">arrow_forward</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="group relative h-48 rounded-xl overflow-hidden shadow-xl">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A stack of premium architectural concrete tiles in soft cream and light grey tones. The lighting is soft and natural, emphasizing the clean edges and smooth finish of the tiles. Luxury landscaping materials suitable for high-end residential projects, reflecting a sophisticated minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp_vpUdTsRYZXYIuZ2M197ufZkqheSA1rkeHfn1IrqQ9rA8LJr6I8VDHKK3lop1Uc-pQGwCKkYhkzFWJF3b43zN4Yt65UgwPn5O38-sXf5fqlF71pZXgG7bw9IBPq5GfJNXvZC6w_jzmrZ7Xmf_uHz6Q7rpDVQ6xbVh_wbUyNvaabrVsgcKdX-zGlh8gsshB3TWhl-JDOocKMln1FJspzPn61LL2GqKBxwaIkskJcw43nV152SlFyowAQDDeDsbRSEVKievzQXkiPG"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
+<h4 class="font-label-caps text-white">Soft Line</h4>
+</div>
+</div>
+<div class="group relative h-48 rounded-xl overflow-hidden shadow-xl border-b-2 border-gold-light/0 hover:border-gold-light transition-all">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Macro detail of decorative pebble stones and textured pavement under directional lighting. The color palette consists of deep greys, ochre, and earthy tones with a premium matte finish. The image evokes a sense of craftsmanship and material honesty within a dark luxury design theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFfWxKOdOieaHds087lmfHWxDv2FlhixcvfwzDQgiGjVvRZX7Hk6XqQRB8Ts9AyHvzM3VsoEt0LzKf0aSRvTbF0QIYqUzYq-fq2o0IpuWs81uYEUgeL9D-_V6cuHQ5pC073ceIdHR-BSfGyqJw_czPJYFd8za3bylhU4aZ-84ruSzKogKLFlomQGCYEM3lKtPti50J-yoDatOj9O7iFrHj0TZqzcz1kJ7X0tpc4VnkgiPe3v0g1o_HxFBqTf44_5yP56P7Fcezk7wW"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
+<h4 class="font-label-caps text-white">Dekoratif Taşlar</h4>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Sekmen? Info Block -->
+<section class="bg-surface-container-high py-20 px-margin-mobile relative">
+<div class="absolute inset-0 pavement-pattern opacity-10"></div>
+<div class="relative z-10">
+<h2 class="font-headline-md text-headline-md text-white mb-8">Neden Sekmen?</h2>
+<div class="space-y-12">
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center border border-gold-light/30">
+<span class="material-symbols-outlined text-gold-light">precision_manufacturing</span>
+</div>
+<div>
+<h3 class="font-headline-md text-[20px] text-white mb-2">Hassas Mühendislik</h3>
+<p class="text-on-surface-variant font-body-md">Her taş, milimetrik hassasiyetle ve en yüksek dayanıklılık standartlarında üretilir.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center border border-gold-light/30">
+<span class="material-symbols-outlined text-gold-light">palette</span>
+</div>
+<div>
+<h3 class="font-headline-md text-[20px] text-white mb-2">Mimari Tasarım</h3>
+<p class="text-on-surface-variant font-body-md">Sadece bir zemin değil, mekanın ruhunu yansıtan mimari bir öğe tasarlıyoruz.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center border border-gold-light/30">
+<span class="material-symbols-outlined text-gold-light">shield_lock</span>
+</div>
+<div>
+<h3 class="font-headline-md text-[20px] text-white mb-2">Ömür Boyu Garanti</h3>
+<p class="text-on-surface-variant font-body-md">Uygulama ve malzeme kalitemize olan güvenimizi uzun vadeli garantilerle taçlandırıyoruz.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Before/After Slider Preview -->
+<section class="py-20 px-margin-mobile">
+<div class="text-center mb-10">
+<h2 class="font-headline-md text-headline-md text-white mb-2">Değişimi Görün</h2>
+<p class="text-stone-grey font-body-md">Eski zeminlerin Sekmen dokunuşuyla dönüşümü.</p>
+</div>
+<div class="relative aspect-video rounded-2xl overflow-hidden shadow-2xl border border-surface-variant group">
+<!-- After Image -->
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A professional 'After' shot of a residential renovation featuring dark, premium interlocking pavement in a modern villa driveway. The stones are perfectly aligned, clean, and accented by soft landscape lighting. The aesthetic is extremely high-end, clean, and industrially sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbEp2gCHCg-LZ_cfu1aL221Jp9FcRdsZdiIOxz3p3h-9GznFuG0rsMNnYBgkOg-bDwQ6Hjbp407pzkUWP9goKAMO3V4R4V0M8NDYop-beMMcCI2O5kC3s7lBseW-EBQML5eg2hA8srZFHv0XDC19mpe53pbGYd443yhLBMcLGEZ7l_beFX_12UDFVzJZj-4qI6PicmG5gsW0MNyDN7bMOtjZjLaL8Nbkc_qXIIRE0YhFPWCXlDxqk_FRNNxhUE_3qum5XK9iZaMr3F"/>
+<!-- Before Image (Clipped) -->
+<div class="absolute inset-0 w-1/2 overflow-hidden border-r-2 border-gold-light shadow-xl z-10" id="before-image">
+<img class="absolute inset-0 h-full object-cover grayscale w-[200%]" data-alt="A realistic 'Before' shot of a cracked, weathered concrete driveway with weeds growing through gaps. The scene is dull and neglected, providing a stark contrast to a professional renovation. The lighting is flat and unappealing, emphasizing the need for architectural zemin design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA05zYv_oujxpd8YkvY8_akUTvNXQ2xeazPysqJhwt-ezow9wU8B3ystUkl1cmQteG7nxAbRC1aX34i46LVwjbRFb4GyZ_ZO8o0kL-nCNJG9sXC-iZfKc1kK62vX77-P1eXhMI5S5jLE7TbP74OCNQdGpWzwBxVWkouklpGHZQCHqR6i1QKnLiBLtikheLRLiPAnUe7AYU1-zCO78TaxGfVQvT8N6W_eXrSBk0l2Il65ZXhsUe7EPvSfgis7lHY5bzLMtL21fmqoT-b"/>
+</div>
+<!-- Slider Handle -->
+<div class="absolute left-1/2 top-0 bottom-0 w-1 bg-gold-light z-20 cursor-ew-resize flex items-center justify-center" id="slider-handle">
+<div class="w-10 h-10 rounded-full bg-gold-light text-primary-container flex items-center justify-center shadow-lg -ml-0.5">
+<span class="material-symbols-outlined text-[20px]">unfold_more_double</span>
+</div>
+</div>
+<!-- Labels -->
+<div class="absolute bottom-4 left-4 z-30 bg-black/50 backdrop-blur px-3 py-1 rounded font-label-caps text-[10px] text-white">ÖNCE</div>
+<div class="absolute bottom-4 right-4 z-30 bg-gold-light/80 backdrop-blur px-3 py-1 rounded font-label-caps text-[10px] text-primary-container">SONRA</div>
+</div>
+</section>
+<!-- Featured Projects Gallery -->
+<section class="py-20 px-margin-mobile bg-surface-container-lowest">
+<div class="flex justify-between items-end mb-10">
+<div>
+<h2 class="font-headline-md text-headline-md text-white mb-2">Seçkin Projeler</h2>
+<div class="h-1 w-12 bg-gold-light"></div>
+</div>
+<a class="text-gold-light font-label-caps text-label-caps border-b border-gold-light/30 pb-1" href="#">TÜMÜ</a>
+</div>
+<div class="flex overflow-x-auto gap-6 pb-8 snap-x no-scrollbar">
+<div class="flex-none w-[85vw] snap-center">
+<div class="relative aspect-[4/5] rounded-xl overflow-hidden mb-4 shadow-lg group">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" data-alt="Architectural photography of a contemporary office building courtyard with a complex geometric paving design in varying shades of grey and charcoal. The lighting is crisp, morning sun, casting sharp shadows that emphasize the rhythm of the design. A masterpiece of industrial-luxe urban landscaping." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4XXavu_gmlnz1CbgRbfja0N7PNDGPC3Th7_gdRWujzhD8AZ1L_IvSdHaWSCXNiWebCp7AeMXiPlz70Q9Vct5CwqsZNENusy9j-11GV1MLhFP7ljb5e0rYoCF7hsL5fld3sM8z5jzLqoIQf4gh4pwZm-1QLSALBDui7h9oa2DS5CY73nC6dlef-0Nlp5yO52B-JDcf9vXFfJK_IUK5nw-ao7v6sR7EGDSsPtgOSuw_wyDputp8cLM-ntdN6vd0OXsOZqAzmKk7cle4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex flex-col justify-end p-6">
+<span class="text-gold-light font-label-caps text-[10px] mb-2">KONYA, 2023</span>
+<h3 class="text-white font-headline-md text-[22px]">Elite Business Center</h3>
+</div>
+</div>
+</div>
+<div class="flex-none w-[85vw] snap-center">
+<div class="relative aspect-[4/5] rounded-xl overflow-hidden mb-4 shadow-lg group">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" data-alt="Close-up of a luxury villa's poolside area featuring high-end non-slip natural stone textures in a warm sandy beige palette. The water reflects a sunset sky, creating a serene and premium atmosphere. The paving integrates perfectly with modern architectural lines and lush vegetation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDN8Sio6TcUZrP3uNw4QQXK_ibOyp5nRZ_uhemBrxW1WXhEoaE5B5CXpnlrFY9_JdPfZsuAy2T8Wqx7zC0I_CxNcnpIQaRKicU5sKE1izsuWRFXuWVB8qin3tIHvT_PGr7ybe_4sm3T-GegiRR8V48WdOeio3ukB6EJg5pypUakZ_8Y-sF11VuGUi_mobj0_W2Z55B2kRAczO60ArYZHDLla_fbIbTTCfSX1_a8nPziESnVRpcJOmP7HDi0loevJLfalxpMqIyifBEL"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex flex-col justify-end p-6">
+<span class="text-gold-light font-label-caps text-[10px] mb-2">ANTALYA, 2024</span>
+<h3 class="text-white font-headline-md text-[22px]">Azure Villas Courtyard</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-surface-variant/30 w-full px-margin-mobile py-16 grid grid-cols-1 gap-12">
+<div class="space-y-6">
+<div class="font-headline-md text-headline-md font-bold text-on-surface uppercase tracking-wider">Sekmen</div>
+<p class="text-stone-grey font-body-md">
+                Konya merkezli üretim tesisimizle Türkiye'nin dört bir yanına lüks zemin çözümleri sunuyoruz.
+            </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-surface-variant flex items-center justify-center text-on-surface-variant hover:text-gold-light hover:border-gold-light transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-surface-variant flex items-center justify-center text-on-surface-variant hover:text-gold-light hover:border-gold-light transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">camera</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="space-y-4">
+<h4 class="text-gold-light font-label-caps">HIZLI MENÜ</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-stone-grey hover:text-on-surface font-body-md" href="#">Kurumsal</a>
+<a class="text-stone-grey hover:text-on-surface font-body-md" href="#">Ürünler</a>
+<a class="text-stone-grey hover:text-on-surface font-body-md" href="#">Projeler</a>
+<a class="text-stone-grey hover:text-on-surface font-body-md" href="#">İletişim</a>
+</nav>
+</div>
+<div class="space-y-4">
+<h4 class="text-gold-light font-label-caps">HİZMETLER</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-stone-grey hover:text-on-surface font-body-md" href="#">Tasarım</a>
+<a class="text-stone-grey hover:text-on-surface font-body-md" href="#">Uygulama</a>
+<a class="text-stone-grey hover:text-on-surface font-body-md" href="#">Üretim</a>
+</nav>
+</div>
+</div>
+<div class="pt-8 border-t border-surface-variant/20 flex flex-col gap-4">
+<p class="text-stone-grey text-[12px] font-body-md">© 2024 Sekmen Zemin Tasarım. Tüm Hakları Saklıdır.</p>
+<div class="flex gap-4">
+<a class="text-stone-grey text-[12px] hover:underline decoration-gold-light" href="#">KVKK</a>
+<a class="text-stone-grey text-[12px] hover:underline decoration-gold-light" href="#">Çerez Politikasında</a>
+</div>
+</div>
+</footer>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="lg:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface/90 backdrop-blur-xl border-t border-surface-variant shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-gold-light bg-tertiary-container/20 rounded-xl px-3 py-1 scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-caps text-[10px] mt-1">Ana Sayfa</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-grey" href="#">
+<span class="material-symbols-outlined">category</span>
+<span class="font-label-caps text-[10px] mt-1">Ürünler</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-grey" href="#">
+<span class="material-symbols-outlined">edit_note</span>
+<span class="font-label-caps text-[10px] mt-1">Projeler</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-grey" href="#">
+<span class="material-symbols-outlined">contact_page</span>
+<span class="font-label-caps text-[10px] mt-1">İletişim</span>
+</a>
+</nav>
+<!-- Floating WhatsApp Button -->
+<a class="fixed bottom-24 right-6 z-[60] w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-2xl active:scale-90 transition-transform group" href="https://wa.me/905000000000">
+<div class="absolute inset-0 rounded-full animate-ping bg-gold-light opacity-20"></div>
+<svg class="w-8 h-8 text-white fill-current" viewbox="0 0 24 24">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+</svg>
+</a>
+<script>
+        // Simple Before/After Slider Interaction
+        const handle = document.getElementById('slider-handle');
+        const beforeImg = document.getElementById('before-image');
+        const container = handle.parentElement;
+
+        function updateSlider(xPos) {
+            const rect = container.getBoundingClientRect();
+            let percent = ((xPos - rect.left) / rect.width) * 100;
+            percent = Math.max(0, Math.min(100, percent));
+            handle.style.left = `${percent}%`;
+            beforeImg.style.width = `${percent}%`;
+        }
+
+        container.addEventListener('mousemove', (e) => updateSlider(e.clientX));
+        container.addEventListener('touchmove', (e) => {
+            if (e.touches[0]) updateSlider(e.touches[0].clientX);
+        });
+
+        // Micro-interactions for buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('touchstart', () => btn.classList.add('scale-95'));
+            btn.addEventListener('touchend', () => btn.classList.remove('scale-95'));
+        });
+    </script>
+</body></html>

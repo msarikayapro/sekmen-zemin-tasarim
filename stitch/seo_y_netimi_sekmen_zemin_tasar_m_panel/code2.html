@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sekmen Zemin Panel - SEO Yönetimi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#291800",
+                    "background": "#141313",
+                    "tertiary-fixed-dim": "#f4bd6f",
+                    "outline": "#8e9192",
+                    "secondary-container": "#474746",
+                    "primary-container": "#0a0a0a",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#474646",
+                    "inverse-primary": "#5f5e5e",
+                    "surface-container-highest": "#353434",
+                    "tertiary": "#f4bd6f",
+                    "surface-dim": "#141313",
+                    "surface-container-high": "#2b2a2a",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "error-container": "#93000a",
+                    "tertiary-container": "#120800",
+                    "inverse-surface": "#e5e2e1",
+                    "on-secondary-container": "#b7b4b4",
+                    "surface-tint": "#c9c6c5",
+                    "primary-fixed": "#e5e2e1",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "inverse-on-surface": "#313030",
+                    "surface-variant": "#353434",
+                    "on-surface": "#e5e2e1",
+                    "cream-white": "#F5F2EC",
+                    "primary": "#c9c6c5",
+                    "surface-container-low": "#1c1b1b",
+                    "surface-container": "#201f1f",
+                    "surface-bright": "#3a3939",
+                    "on-primary-fixed": "#1c1b1b",
+                    "on-secondary": "#313030",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed-variant": "#624000",
+                    "surface": "#141313",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "secondary": "#c8c6c5",
+                    "on-primary-container": "#7b7979",
+                    "secondary-fixed": "#e5e2e1",
+                    "gold-dark": "#8C6526",
+                    "outline-variant": "#444748",
+                    "gold-light": "#D4A95C",
+                    "stone-grey": "#8A8A8A",
+                    "on-secondary-fixed-variant": "#474746",
+                    "on-background": "#e5e2e1",
+                    "on-tertiary-container": "#9e712b",
+                    "on-primary": "#313030",
+                    "on-surface-variant": "#c4c7c7",
+                    "on-tertiary": "#452b00",
+                    "tertiary-fixed": "#ffddb2",
+                    "on-error": "#690005",
+                    "surface-container-lowest": "#0e0e0e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "unit": "8px",
+                    "margin-desktop": "64px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Montserrat"],
+                    "label-caps": ["Montserrat"],
+                    "headline-xl": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "body-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Montserrat"]
+            },
+            "fontSize": {
+                    "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                    "headline-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #0A0A0A; color: #e5e2e1; scroll-behavior: smooth; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { background: rgba(22, 22, 22, 0.85); backdrop-filter: blur(20px); border: 1px solid rgba(68, 71, 72, 0.3); }
+        .gold-glow:hover { box-shadow: 0 0 15px rgba(182, 134, 62, 0.2); border-color: #B6863E; }
+        .perspective-bg { background-image: radial-gradient(circle at 2px 2px, rgba(142, 145, 146, 0.05) 1px, transparent 0); background-size: 40px 40px; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0A0A0A; }
+        ::-webkit-scrollbar-thumb { background: #474746; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #B6863E; }
+        .active-tab { color: #D4A95C; border-bottom: 2px solid #D4A95C; }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden perspective-bg">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 flex justify-between items-center px-margin-desktop w-full h-20 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-semibold text-gold-light">Sekmen Zemin Panel</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group">
+<span class="absolute inset-y-0 left-3 flex items-center text-stone-grey group-focus-within:text-gold-light transition-colors">
+<span class="material-symbols-outlined">search</span>
+</span>
+<input class="bg-surface-container-low border border-outline-variant/30 rounded-lg pl-10 pr-4 py-2 text-sm focus:outline-none focus:border-gold-light focus:ring-1 focus:ring-gold-light transition-all w-64 lg:w-96" placeholder="Sayfa veya Proje ara..." type="text"/>
+</div>
+<button class="flex items-center gap-2 px-6 py-2.5 bg-transparent border border-gold-light text-gold-light font-label-caps text-label-caps rounded-lg hover:bg-gold-light hover:text-background transition-all duration-300" onclick="rebuildSitemap()">
+<span class="material-symbols-outlined text-[18px]">account_tree</span>
+                Sitemap Yeniden Oluştur
+            </button>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-gold-light cursor-pointer transition-colors">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-gold-light cursor-pointer transition-colors">settings</span>
+<span class="material-symbols-outlined text-gold-light cursor-pointer">account_circle</span>
+</div>
+</div>
+</header>
+<div class="flex">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-screen flex flex-col pt-24 pb-4 w-64 bg-surface-container-low border-r border-outline-variant/20 shadow-lg shadow-black/40 z-40 hidden md:flex">
+<nav class="flex-1 px-4 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-stone-grey hover:bg-surface-variant/10 hover:text-gold-light rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">dashboard</span>
+<span class="font-label-caps text-label-caps">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-grey hover:bg-surface-variant/10 hover:text-gold-light rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">architecture</span>
+<span class="font-label-caps text-label-caps">Projeler</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-secondary-container text-gold-light border-r-2 border-gold-light rounded-l-lg transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">language</span>
+<span class="font-label-caps text-label-caps">SEO Yönetimi</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-grey hover:bg-surface-variant/10 hover:text-gold-light rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">menu_book</span>
+<span class="font-label-caps text-label-caps">Katalog</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-grey hover:bg-surface-variant/10 hover:text-gold-light rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">mail</span>
+<span class="font-label-caps text-label-caps">Mesajlar</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-grey hover:bg-surface-variant/10 hover:text-gold-light rounded-lg transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">settings</span>
+<span class="font-label-caps text-label-caps">Genel Ayarlar</span>
+</a>
+</nav>
+<div class="px-4 mt-auto border-t border-outline-variant/10 pt-4">
+<a class="flex items-center gap-3 px-4 py-2 text-stone-grey hover:text-gold-light transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">help</span>
+<span class="font-label-caps text-label-caps">Destek</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-stone-grey hover:text-error transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span class="font-label-caps text-label-caps">Çıkış</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-64 p-8 min-h-screen">
+<div class="max-w-container-max mx-auto">
+<header class="mb-12">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-2">SEO Yönetimi</h1>
+<p class="text-stone-grey max-w-2xl">Arama motoru görünürlüğünüzü yönetin, şehir bazlı iniş sayfaları oluşturun ve eski bağlantılarınızı 301 yönlendirmeleri ile koruyun.</p>
+</header>
+<!-- Tabbed Interface -->
+<div class="flex gap-8 border-b border-outline-variant/20 mb-8">
+<button class="pb-4 px-2 font-label-caps text-label-caps active-tab transition-all" id="tab-page-seo" onclick="switchTab('page-seo')">Sayfa SEO (Page SEO)</button>
+<button class="pb-4 px-2 font-label-caps text-label-caps text-stone-grey hover:text-gold-light transition-all" id="tab-landing-301" onclick="switchTab('landing-301')">SEO Landing &amp; 301</button>
+</div>
+<!-- Content Sections -->
+<div class="block animate-in fade-in duration-500" id="content-page-seo">
+<div class="glass-panel rounded-xl overflow-hidden shadow-2xl">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high border-b border-outline-variant/30">
+<th class="px-6 py-4 font-label-caps text-[10px] text-stone-grey uppercase tracking-widest">Sayfa / Ürün</th>
+<th class="px-6 py-4 font-label-caps text-[10px] text-stone-grey uppercase tracking-widest">Meta Title</th>
+<th class="px-6 py-4 font-label-caps text-[10px] text-stone-grey uppercase tracking-widest">Slug</th>
+<th class="px-6 py-4 font-label-caps text-[10px] text-stone-grey uppercase tracking-widest">İndeks Durumu</th>
+<th class="px-6 py-4 font-label-caps text-[10px] text-stone-grey uppercase tracking-widest text-right">İşlemler</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr class="hover:bg-surface-variant/10 transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-primary-container border border-outline-variant/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-gold-light text-xl">home</span>
+</div>
+<div>
+<div class="text-on-surface font-semibold">Ana Sayfa</div>
+<div class="text-[11px] text-stone-grey">Statik Sayfa</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-stone-grey text-sm italic">"Sekmen Zemin - Profesyonel Çevre Düzenleme ve..."</td>
+<td class="px-6 py-5 text-gold-light font-mono text-xs">/</td>
+<td class="px-6 py-5">
+<span class="px-2 py-1 rounded bg-green-900/20 text-green-400 text-[10px] font-bold uppercase">Indexleniyor</span>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="text-stone-grey hover:text-gold-light transition-colors mr-3"><span class="material-symbols-outlined text-lg">edit_note</span></button>
+<button class="text-stone-grey hover:text-gold-light transition-colors"><span class="material-symbols-outlined text-lg">visibility</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-variant/10 transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-primary-container border border-outline-variant/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-gold-light text-xl">grid_view</span>
+</div>
+<div>
+<div class="text-on-surface font-semibold">Kilit Taşı Modelleri</div>
+<div class="text-[11px] text-stone-grey">Ürün Koleksiyonu</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-stone-grey text-sm italic">"Modern Kilit Taşı Modelleri &amp; Fiyatları 2024..."</td>
+<td class="px-6 py-5 text-gold-light font-mono text-xs">/kilit-tasi-modelleri</td>
+<td class="px-6 py-5">
+<span class="px-2 py-1 rounded bg-green-900/20 text-green-400 text-[10px] font-bold uppercase">Indexleniyor</span>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="text-stone-grey hover:text-gold-light transition-colors mr-3"><span class="material-symbols-outlined text-lg">edit_note</span></button>
+<button class="text-stone-grey hover:text-gold-light transition-colors"><span class="material-symbols-outlined text-lg">visibility</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-variant/10 transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded overflow-hidden border border-outline-variant/30">
+<img alt="Project" class="w-full h-full object-cover" data-alt="A professional close-up shot of high-quality architectural pavement stones arranged in a geometric pattern. The lighting is dramatic and moody, emphasizing the textures and charcoal tones of the stone. This premium industrial aesthetic features sharp lines and consistent color grading to match a luxury dark-mode web design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZQghDTX7sZp-4lueWzHJo_JjTxzTYLHcsAft9edDmL_c5i956i67ReNzaIep-9SvrGrNgDMs0IYaQeJPjFWCtBIrlYENMvZ2R_WII3AuvPeVsRFu7PssTxdhenB5UTOKm0Dje4QR76v_YNK-C06pmU_5p1VCe9soh_TmN3eimXffSjQyAR_TYb7Z_sNkS4iqWPKWBBt2JoR5eoSaMy2Y6xujucRO54fPyZw_Fc2a54S43cFyQvqZuW1OhXVTjoWaBuXqrCYK6j_W-"/>
+</div>
+<div>
+<div class="text-on-surface font-semibold">Villa Bahçe Düzenleme</div>
+<div class="text-[11px] text-stone-grey">Proje Sayfası</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-stone-grey text-sm italic">"Konya Villa Bahçe Peyzaj Uygulaması | Sekmen"</td>
+<td class="px-6 py-5 text-gold-light font-mono text-xs">/projeler/villa-bahce-duzenleme</td>
+<td class="px-6 py-5">
+<span class="px-2 py-1 rounded bg-yellow-900/20 text-yellow-400 text-[10px] font-bold uppercase">Beklemede</span>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="text-stone-grey hover:text-gold-light transition-colors mr-3"><span class="material-symbols-outlined text-lg">edit_note</span></button>
+<button class="text-stone-grey hover:text-gold-light transition-colors"><span class="material-symbols-outlined text-lg">visibility</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="hidden animate-in slide-in-from-right-4 duration-500" id="content-landing-301">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Landing Creator Form -->
+<div class="lg:col-span-2 space-y-6">
+<div class="glass-panel p-8 rounded-xl gold-glow transition-all">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline-md text-headline-md text-gold-light flex items-center gap-2">
+<span class="material-symbols-outlined">add_location_alt</span>
+                                        Şehir + Ürün Sayfası Oluştur
+                                    </h2>
+<span class="text-[10px] font-label-caps text-stone-grey bg-surface-container-high px-2 py-1 rounded">SEO LANDING ENGINE</span>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="md:col-span-2">
+<label class="block text-[11px] font-label-caps text-stone-grey mb-2 uppercase">H1 Başlığı</label>
+<input class="w-full bg-primary-container border border-outline-variant/30 rounded-lg p-3 text-on-surface focus:border-gold-light focus:ring-1 focus:ring-gold-light transition-all" placeholder="Örn: Konya Kilit Taşı Uygulamaları" type="text"/>
+</div>
+<div>
+<label class="block text-[11px] font-label-caps text-stone-grey mb-2 uppercase">Şehir Adı</label>
+<input class="w-full bg-primary-container border border-outline-variant/30 rounded-lg p-3 text-on-surface focus:border-gold-light transition-all" placeholder="Konya" type="text"/>
+</div>
+<div>
+<label class="block text-[11px] font-label-caps text-stone-grey mb-2 uppercase">Ürün Tipi</label>
+<select class="w-full bg-primary-container border border-outline-variant/30 rounded-lg p-3 text-on-surface focus:border-gold-light transition-all appearance-none">
+<option>Kilit Taşı</option>
+<option>Bordür Taşı</option>
+<option>Karo Taşı</option>
+<option>Parke Taşı</option>
+</select>
+</div>
+<div class="md:col-span-2">
+<label class="block text-[11px] font-label-caps text-stone-grey mb-2 uppercase">URL Slug</label>
+<div class="flex">
+<span class="bg-surface-container-high border border-r-0 border-outline-variant/30 rounded-l-lg px-3 flex items-center text-xs text-stone-grey">sekmenzemin.com/</span>
+<input class="flex-1 bg-primary-container border border-outline-variant/30 rounded-r-lg p-3 text-on-surface focus:border-gold-light transition-all" placeholder="konya-kilit-tasi" type="text"/>
+</div>
+</div>
+<div class="md:col-span-2">
+<label class="block text-[11px] font-label-caps text-stone-grey mb-2 uppercase">Uzun İçerik (Rich Text)</label>
+<div class="border border-outline-variant/30 rounded-lg overflow-hidden">
+<div class="bg-surface-container-high p-2 flex gap-2 border-b border-outline-variant/30">
+<button class="p-1 hover:text-gold-light" type="button"><span class="material-symbols-outlined text-[18px]">format_bold</span></button>
+<button class="p-1 hover:text-gold-light" type="button"><span class="material-symbols-outlined text-[18px]">format_italic</span></button>
+<button class="p-1 hover:text-gold-light" type="button"><span class="material-symbols-outlined text-[18px]">format_list_bulleted</span></button>
+<button class="p-1 hover:text-gold-light ml-auto" type="button"><span class="material-symbols-outlined text-[18px]">link</span></button>
+</div>
+<textarea class="w-full bg-primary-container border-none p-4 text-on-surface text-sm focus:ring-0" placeholder="Şehre özel proje detayları ve teknik bilgileri buraya girin..." rows="6"></textarea>
+</div>
+</div>
+<div class="md:col-span-2 pt-4">
+<button class="w-full bg-gold-light text-primary-container font-label-caps text-label-caps py-4 rounded-lg hover:bg-gold-dark transition-all duration-300 shadow-lg shadow-gold-light/10" type="submit">SAYFAYI YAYINLA VE OLUŞTUR</button>
+</div>
+</form>
+</div>
+</div>
+<!-- 301 Redirects Table -->
+<div class="lg:col-span-1">
+<div class="glass-panel p-6 rounded-xl h-full border-l-2 border-l-gold-light/50">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline-md text-headline-md text-gold-light flex items-center gap-2">
+<span class="material-symbols-outlined">shortcut</span>
+                                        301 Yönlendirme
+                                    </h3>
+<button class="text-gold-light hover:scale-110 transition-transform"><span class="material-symbols-outlined">add_circle</span></button>
+</div>
+<div class="space-y-4">
+<!-- Redirect Item -->
+<div class="p-4 bg-primary-container/50 border border-outline-variant/20 rounded-lg hover:border-gold-light/30 transition-all">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[9px] font-label-caps text-stone-grey px-2 py-0.5 bg-surface-container-high rounded uppercase tracking-tighter">sekmenyapi.com</span>
+<div class="flex items-center gap-3">
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-7 h-4 bg-outline-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-gold-light after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all"></div>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-[10px] text-stone-grey overflow-hidden text-ellipsis whitespace-nowrap">/eski-parke-modelleri.html</span>
+<span class="material-symbols-outlined text-[14px] text-gold-light rotate-90 ml-2">south_east</span>
+<span class="text-[10px] text-on-surface font-semibold overflow-hidden text-ellipsis whitespace-nowrap">/urunler/parke-tasi</span>
+</div>
+</div>
+<!-- Redirect Item -->
+<div class="p-4 bg-primary-container/50 border border-outline-variant/20 rounded-lg hover:border-gold-light/30 transition-all">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[9px] font-label-caps text-stone-grey px-2 py-0.5 bg-surface-container-high rounded uppercase tracking-tighter">sekmenzemin.com</span>
+<div class="flex items-center gap-3">
+<div class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-7 h-4 bg-outline-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-gold-light after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all"></div>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-[10px] text-stone-grey overflow-hidden text-ellipsis whitespace-nowrap">/kampanyalar-2023</span>
+<span class="material-symbols-outlined text-[14px] text-gold-light rotate-90 ml-2">south_east</span>
+<span class="text-[10px] text-on-surface font-semibold overflow-hidden text-ellipsis whitespace-nowrap">/</span>
+</div>
+</div>
+<button class="w-full py-3 border border-dashed border-outline-variant/50 rounded-lg text-[11px] font-label-caps text-stone-grey hover:border-gold-light hover:text-gold-light transition-all uppercase">Yönlendirme Ekle</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Section -->
+<footer class="mt-16 w-full py-6 flex justify-between items-center border-t border-outline-variant/10">
+<span class="font-label-caps text-label-caps text-gold-light">© 2024 Sekmen Zemin Tasarım. Tüm Hakları Saklıdır.</span>
+<div class="flex gap-6">
+<a class="text-body-md font-body-md text-stone-grey hover:text-gold-light transition-colors" href="#">Gizlilik Politikası</a>
+<a class="text-body-md font-body-md text-stone-grey hover:text-gold-light transition-colors" href="#">Kullanım Koşulları</a>
+<a class="text-body-md font-body-md text-gold-light underline transition-colors" href="#">Teknik Destek</a>
+</div>
+</footer>
+</div>
+</main>
+</div>
+<!-- Floating Toast Notification (Hidden by default) -->
+<div class="fixed bottom-10 left-1/2 -translate-x-1/2 glass-panel px-6 py-3 rounded-full border-gold-light shadow-2xl shadow-gold-light/20 flex items-center gap-3 transform translate-y-20 transition-all duration-500 z-[100] pointer-events-none" id="toast">
+<span class="material-symbols-outlined text-gold-light">check_circle</span>
+<span class="font-label-caps text-label-caps text-on-surface tracking-normal" id="toast-message">Sitemap başarıyla güncellendi!</span>
+</div>
+<script>
+        function switchTab(tabId) {
+            const pageSeoContent = document.getElementById('content-page-seo');
+            const landing301Content = document.getElementById('content-landing-301');
+            const pageSeoTabBtn = document.getElementById('tab-page-seo');
+            const landing301TabBtn = document.getElementById('tab-landing-301');
+
+            if (tabId === 'page-seo') {
+                pageSeoContent.classList.remove('hidden');
+                landing301Content.classList.add('hidden');
+                pageSeoTabBtn.classList.add('active-tab');
+                pageSeoTabBtn.classList.remove('text-stone-grey');
+                landing301TabBtn.classList.remove('active-tab');
+                landing301TabBtn.classList.add('text-stone-grey');
+            } else {
+                pageSeoContent.classList.add('hidden');
+                landing301Content.classList.remove('hidden');
+                landing301TabBtn.classList.add('active-tab');
+                landing301TabBtn.classList.remove('text-stone-grey');
+                pageSeoTabBtn.classList.remove('active-tab');
+                pageSeoTabBtn.classList.add('text-stone-grey');
+            }
+        }
+
+        function rebuildSitemap() {
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-y-20');
+            toast.classList.add('translate-y-0');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-20');
+                toast.classList.remove('translate-y-0');
+            }, 3000);
+        }
+
+        // Simple parallax effect for the perspective background
+        document.addEventListener('mousemove', (e) => {
+            const body = document.body;
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            body.style.backgroundPosition = `${x * 10}px ${y * 10}px`;
+        });
+    </script>
+</body></html>

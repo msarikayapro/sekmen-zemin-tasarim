@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sekmen Zemin Panel - Yorum Yönetimi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Hanken+Grotesk:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "inverse-surface": "#e5e2e1",
+                "surface-container-highest": "#353434",
+                "on-secondary-container": "#b7b4b4",
+                "on-primary": "#313030",
+                "primary-fixed-dim": "#c9c6c5",
+                "tertiary-fixed": "#ffddb2",
+                "primary-container": "#0a0a0a",
+                "on-tertiary-container": "#9e712b",
+                "background": "#141313",
+                "secondary-fixed-dim": "#c8c6c5",
+                "secondary": "#c8c6c5",
+                "on-tertiary-fixed-variant": "#624000",
+                "on-surface": "#e5e2e1",
+                "on-secondary-fixed": "#1c1b1b",
+                "tertiary": "#f4bd6f",
+                "on-error": "#690005",
+                "on-primary-fixed-variant": "#474646",
+                "surface": "#141313",
+                "secondary-container": "#474746",
+                "primary": "#c9c6c5",
+                "on-primary-container": "#7b7979",
+                "surface-tint": "#c9c6c5",
+                "surface-variant": "#353434",
+                "error-container": "#93000a",
+                "surface-container-lowest": "#0e0e0e",
+                "surface-bright": "#3a3939",
+                "surface-container": "#201f1f",
+                "on-primary-fixed": "#1c1b1b",
+                "error": "#ffb4ab",
+                "on-secondary": "#313030",
+                "on-background": "#e5e2e1",
+                "tertiary-container": "#120800",
+                "tertiary-fixed-dim": "#f4bd6f",
+                "cream-white": "#F5F2EC",
+                "outline-variant": "#444748",
+                "primary-fixed": "#e5e2e1",
+                "on-secondary-fixed-variant": "#474746",
+                "gold-dark": "#8C6526",
+                "on-tertiary": "#452b00",
+                "inverse-on-surface": "#313030",
+                "gold-light": "#D4A95C",
+                "surface-dim": "#141313",
+                "surface-container-low": "#1c1b1b",
+                "on-error-container": "#ffdad6",
+                "inverse-primary": "#5f5e5e",
+                "outline": "#8e9192",
+                "on-surface-variant": "#c4c7c7",
+                "stone-grey": "#8A8A8A",
+                "surface-container-high": "#2b2a2a",
+                "secondary-fixed": "#e5e2e1",
+                "on-tertiary-fixed": "#291800",
+                "gold": "#B6863E"
+            },
+            "fontFamily": {
+                "label-caps": ["Montserrat"],
+                "headline-lg": ["Montserrat"],
+                "body-lg": ["Hanken Grotesk"],
+                "headline-md": ["Montserrat"],
+                "headline-xl": ["Montserrat"],
+                "body-md": ["Hanken Grotesk"]
+            },
+            "spacing": {
+                "margin-mobile": "16px",
+                "gutter": "24px",
+                "margin-desktop": "64px",
+                "container-max": "1280px",
+                "unit": "8px"
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .gold-glow:hover {
+            box-shadow: 0 0 15px rgba(182, 134, 62, 0.2);
+            border-color: #B6863E;
+        }
+        .pavement-pattern {
+            background-image: linear-gradient(30deg, #161616 12%, transparent 12.5%, transparent 87%, #161616 87.5%, #161616),
+            linear-gradient(150deg, #161616 12%, transparent 12.5%, transparent 87%, #161616 87.5%, #161616),
+            linear-gradient(30deg, #161616 12%, transparent 12.5%, transparent 87%, #161616 87.5%, #161616),
+            linear-gradient(150deg, #161616 12%, transparent 12.5%, transparent 87%, #161616 87.5%, #161616),
+            linear-gradient(60deg, #1c1c1c 25%, transparent 25.5%, transparent 75%, #1c1c1c 75%, #1c1c1c),
+            linear-gradient(60deg, #1c1c1c 25%, transparent 25.5%, transparent 75%, #1c1c1c 75%, #1c1c1c);
+            background-size: 80px 140px;
+            background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+            opacity: 0.05;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- Background Pattern Overlay -->
+<div class="fixed inset-0 pavement-pattern pointer-events-none"></div>
+<!-- Side Navigation Bar -->
+<aside class="fixed left-0 top-0 h-screen flex flex-col pt-8 pb-4 bg-surface-container-low dark:bg-surface-container-low border-r border-outline-variant/20 shadow-lg shadow-black/40 w-64 z-50">
+<div class="px-6 mb-10">
+<h1 class="font-headline-md text-headline-md text-gold-light">Sekmen Zemin</h1>
+<p class="text-[10px] font-label-caps tracking-widest text-stone-grey uppercase">Yönetim Paneli</p>
+</div>
+<nav class="flex-1 space-y-1 px-3">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-stone-grey hover:bg-surface-variant/10 hover:text-gold-light group" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-caps text-label-caps">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-stone-grey hover:bg-surface-variant/10 hover:text-gold-light group" href="#">
+<span class="material-symbols-outlined">architecture</span>
+<span class="font-label-caps text-label-caps">Projeler</span>
+</a>
+<!-- Active State for Settings/Reviews -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all bg-secondary-container text-gold-light border-r-2 border-gold-light group" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-caps text-label-caps">Genel Ayarlar</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-stone-grey hover:bg-surface-variant/10 hover:text-gold-light group" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-caps text-label-caps">Katalog</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-stone-grey hover:bg-surface-variant/10 hover:text-gold-light group" href="#">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-label-caps text-label-caps">Mesajlar</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-stone-grey hover:bg-surface-variant/10 hover:text-gold-light group" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-caps text-label-caps">Kullanıcılar</span>
+</a>
+</nav>
+<div class="mt-auto px-3 border-t border-outline-variant/10 pt-4">
+<a class="flex items-center gap-3 px-4 py-3 text-stone-grey hover:text-gold-light transition-colors" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-caps text-label-caps">Destek</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-grey hover:text-gold-light transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-caps text-label-caps">Çıkış</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen flex flex-col">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-40 flex justify-between items-center px-8 py-4 w-full bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+<div class="flex items-center gap-4">
+<h2 class="font-headline-md text-headline-md font-semibold text-gold-light">Yorum Yönetimi</h2>
+<div class="flex gap-2 ml-4">
+<span class="bg-surface-container-high px-3 py-1 rounded-full text-[12px] font-bold text-on-surface-variant">Toplam: 42</span>
+<span class="bg-gold/20 border border-gold/30 px-3 py-1 rounded-full text-[12px] font-bold text-gold-light">Bekleyen: 5</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-stone-grey">search</span>
+<input class="bg-surface-container-lowest border border-outline-variant/30 rounded-full py-2 pl-10 pr-4 text-body-md focus:ring-1 focus:ring-gold outline-none w-64 transition-all" placeholder="Yorumlarda ara..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-variant/20 transition-all text-on-surface-variant">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-variant/20 transition-all text-on-surface-variant">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Content Grid -->
+<div class="p-8 grid grid-cols-12 gap-8 max-w-container-max mx-auto w-full flex-1">
+<!-- Review List Section (Left/Center) -->
+<section class="col-span-12 lg:col-span-8 space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-on-surface">Mevcut Yorumlar</h3>
+<div class="flex gap-2">
+<select class="bg-surface-container border border-outline-variant/30 rounded-lg text-sm text-on-surface-variant px-3 py-1.5 focus:border-gold outline-none">
+<option>En Yeni</option>
+<option>En Eski</option>
+<option>En Yüksek Puan</option>
+</select>
+</div>
+</div>
+<!-- Review Card 1 -->
+<article class="bg-surface-container-low border border-outline-variant/20 rounded-xl p-6 transition-all gold-glow relative group">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-variant">
+<img alt="Müşteri" class="w-full h-full object-cover" data-alt="A professional headshot of a middle-aged man with short hair and a warm smile, set against a blurred architect studio background. The lighting is soft and natural, emphasizing a premium and trustworthy persona, matching the charcoal and gold sophisticated theme of the brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8l32mCEiMF1BDXvrNLpy03_jp3Knp7kShclDg8fkQhcyjU6vQqyBtkc4IrA-9Ok_c6Cv07tN717wGvMd3bMN9GY3CkVlmz7zuriYr8gqTl5WsENO2qjmlHvOZWUObulJHFSpPHpUNQ3olNfgqDxiKYuAWKgB84cYgBq-kQLmLo8qls9qvVnbIY0Kn9545R3anB7vYWqk1pptXl7Fp9_v0P6HfDeY-DQZabVGzyBmxTQwEgUHR2BzviryfTyenEQWM1LJv_zUFEDz4"/>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Ahmet Yılmaz</h4>
+<div class="flex text-gold">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-stone-grey hover:text-gold transition-colors" title="Öne Çıkar">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grade</span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant/30 mx-1"></div>
+<button class="p-2 text-stone-grey hover:text-gold transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 text-stone-grey hover:text-error transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<p class="text-on-surface-variant text-body-md mb-6 leading-relaxed italic">
+                        "Villa bahçemiz için yaptırdığımız taş döşeme işinden çok memnun kaldık. Sekmen Zemin ekibi hem tasarım aşamasında hem de uygulamada çok titiz davrandı. Konya'da bu kalitede bir işçilik bulmak gerçekten zor."
+                    </p>
+<div class="flex items-center justify-between border-t border-outline-variant/10 pt-4">
+<span class="text-[11px] font-label-caps text-stone-grey">12 EKİM 2023</span>
+<div class="flex items-center gap-4">
+<label class="flex items-center cursor-pointer gap-2">
+<span class="text-xs font-label-caps text-on-surface-variant">YAYINDA</span>
+<div class="relative">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-5 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-gold"></div>
+</div>
+</label>
+</div>
+</div>
+</article>
+<!-- Review Card 2 -->
+<article class="bg-surface-container-low border border-outline-variant/20 rounded-xl p-6 transition-all gold-glow relative group">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-variant">
+<img alt="Müşteri" class="w-full h-full object-cover" data-alt="A portrait of a confident businesswoman in architectural design attire, standing against a modern anthracite wall with soft indoor gallery lighting. The aesthetic is clean, professional, and fits perfectly with a high-end luxury construction brand identity using dark tones and sharp focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg88cvshAuxnnwuU4ErnV4Akr0J_XwxMG0wOAjOHKL7YxLrJMqEK5PjUIr3Y6CQTSbjmLTHIVILr44zTxy8u0U1lAnLBKTjJl9A65s1rmOT0E1TkAhhzLJyDTq_famJB-XyJ3UoJrPDxTDKfEFZjk6IZW133iJ0cO5FAtz00fro0swWcpCX-fSh62PKxP2EcYQC2D3qvKNDqVo0VeL_2hK-d5FqcnD6fq0BNSAsdJRe79ivwg2KKsyxTaQf2wk6zVCjaxTu_AGcFAe"/>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Selda Özdemir</h4>
+<div class="flex text-gold">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0;">star</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-stone-grey hover:text-gold transition-colors" title="Öne Çıkar">
+<span class="material-symbols-outlined">grade</span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant/30 mx-1"></div>
+<button class="p-2 text-stone-grey hover:text-gold transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 text-stone-grey hover:text-error transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<p class="text-on-surface-variant text-body-md mb-6 leading-relaxed italic">
+                        "Restoranımızın dış alanında kullandıkları desenli taşlar müşterilerimizden çok övgü alıyor. Malzeme kalitesi ve duruşu tam istediğimiz gibi."
+                    </p>
+<div class="flex items-center justify-between border-t border-outline-variant/10 pt-4">
+<span class="text-[11px] font-label-caps text-stone-grey">05 EKİM 2023</span>
+<div class="flex items-center gap-4">
+<label class="flex items-center cursor-pointer gap-2">
+<span class="text-xs font-label-caps text-on-surface-variant">GİZLİ</span>
+<div class="relative">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-5 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-gold"></div>
+</div>
+</label>
+</div>
+</div>
+</article>
+<!-- Review Card 3 (Pending) -->
+<article class="bg-surface-container-low/40 border border-gold/10 border-dashed rounded-xl p-6 transition-all relative">
+<div class="absolute -top-3 left-6 bg-gold-dark text-white px-3 py-1 rounded text-[10px] font-bold tracking-widest uppercase">Beklemede</div>
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-stone-grey">person</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Mehmet Arslan</h4>
+<div class="flex text-gold">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="bg-gold px-4 py-1.5 rounded-lg text-coal font-bold text-xs hover:bg-gold-light transition-all shadow-sm">ONAYLA</button>
+</div>
+</div>
+<p class="text-stone-grey text-body-md mb-6 italic">"Hızlı hizmet ve dürüst esnaflık. Teşekkürler."</p>
+<div class="flex items-center justify-between border-t border-outline-variant/10 pt-4">
+<span class="text-[11px] font-label-caps text-stone-grey">DÜN, 14:30</span>
+<button class="text-error text-[10px] font-bold tracking-widest uppercase hover:underline">Reddet</button>
+</div>
+</article>
+</section>
+<!-- New Review Form Section (Right) -->
+<aside class="col-span-12 lg:col-span-4">
+<div class="bg-surface-container-high rounded-2xl p-8 border border-outline-variant/20 sticky top-28 shadow-2xl">
+<h3 class="font-headline-md text-gold-light mb-6">Yeni Yorum Ekle</h3>
+<form class="space-y-6">
+<div>
+<label class="block text-xs font-label-caps text-stone-grey mb-2 uppercase tracking-wider">Müşteri Adı Soyadı</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:border-gold outline-none transition-all placeholder:text-stone-grey/50" placeholder="Örn: Mehmet Can" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-label-caps text-stone-grey mb-2 uppercase tracking-wider">Yorum Metni</label>
+<textarea class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:border-gold outline-none transition-all placeholder:text-stone-grey/50 resize-none" placeholder="Müşteri görüşlerini buraya yazın..." rows="4"></textarea>
+</div>
+<div>
+<label class="block text-xs font-label-caps text-stone-grey mb-2 uppercase tracking-wider">Puanlama</label>
+<div class="flex gap-2 text-gold-light" id="star-selector">
+<span class="material-symbols-outlined cursor-pointer text-3xl hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined cursor-pointer text-3xl hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined cursor-pointer text-3xl hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined cursor-pointer text-3xl hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined cursor-pointer text-3xl hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 0;">star</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-xs font-label-caps text-stone-grey mb-2 uppercase tracking-wider">Sıralama</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:border-gold outline-none" type="number" value="1"/>
+</div>
+<div>
+<label class="block text-xs font-label-caps text-stone-grey mb-2 uppercase tracking-wider">Fotoğraf</label>
+<button class="w-full h-full border border-dashed border-outline-variant/40 rounded-lg flex items-center justify-center text-stone-grey hover:bg-surface-variant/10 transition-all" type="button">
+<span class="material-symbols-outlined">add_a_photo</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl border border-outline-variant/20">
+<span class="text-xs font-label-caps text-on-surface-variant">Öne Çıkar</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gold"></div>
+</label>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl border border-outline-variant/20">
+<span class="text-xs font-label-caps text-on-surface-variant">Hemen Yayınla</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gold"></div>
+</label>
+</div>
+<button class="w-full bg-gold text-surface-container-lowest font-headline-md py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-gold-light hover:shadow-[0_0_20px_rgba(182,134,62,0.4)] transition-all transform active:scale-[0.98]" type="button">
+                            Yorumu Kaydet
+                        </button>
+</form>
+</div>
+</aside>
+</div>
+<!-- Footer -->
+<footer class="w-full py-6 px-margin-desktop flex justify-between items-center border-t border-outline-variant/10 bg-surface-container-lowest mt-12">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-gold-light">SEKMEN ZEMİN PANEL</span>
+<p class="font-body-md text-body-md text-stone-grey mt-1">© 2024 Sekmen Zemin Tasarım. Tüm Hakları Saklıdır.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-stone-grey hover:text-gold-light transition-colors font-body-md" href="#">Gizlilik Politikası</a>
+<a class="text-stone-grey hover:text-gold-light transition-colors font-body-md" href="#">Kullanım Koşulları</a>
+<a class="text-stone-grey hover:text-gold-light transition-colors font-body-md" href="#">Teknik Destek</a>
+</div>
+</footer>
+</main>
+<!-- Floating UI Helper (Visual consistency) -->
+<div class="fixed bottom-8 right-8 z-50">
+<button class="w-14 h-14 bg-gold rounded-full flex items-center justify-center text-coal shadow-2xl hover:scale-110 transition-transform relative group">
+<span class="material-symbols-outlined text-3xl">question_mark</span>
+<div class="absolute -top-12 right-0 bg-surface-container-high text-on-surface px-4 py-2 rounded-lg text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-gold/20">Yardım Merkezi</div>
+<div class="absolute inset-0 bg-gold rounded-full animate-ping opacity-20"></div>
+</button>
+</div>
+<script>
+        // Micro-interactions for Star Rating
+        const starIcons = document.querySelectorAll('#star-selector span');
+        starIcons.forEach((star, index) => {
+            star.addEventListener('click', () => {
+                starIcons.forEach((s, i) => {
+                    if (i <= index) {
+                        s.style.fontVariationSettings = "'FILL' 1";
+                    } else {
+                        s.style.fontVariationSettings = "'FILL' 0";
+                    }
+                });
+            });
+        });
+    </script>
+</body></html>

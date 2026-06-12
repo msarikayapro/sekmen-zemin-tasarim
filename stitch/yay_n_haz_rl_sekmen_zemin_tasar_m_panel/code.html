@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sekmen Zemin | Yayın Hazırlığı</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Hanken+Grotesk:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=Montserrat:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #0A0A0A;
+            color: #e5e2e1;
+            font-family: 'Hanken Grotesk', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .gold-glow:hover {
+            box-shadow: 0 0 20px rgba(182, 134, 62, 0.2);
+            border-color: #B6863E;
+        }
+
+        .glass-panel {
+            background: rgba(22, 22, 22, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(68, 71, 72, 0.5);
+        }
+
+        .pavement-pattern {
+            background-image: linear-gradient(30deg, #161616 12%, transparent 12.5%, transparent 87%, #161616 87.5%, #161616),
+            linear-gradient(150deg, #161616 12%, transparent 12.5%, transparent 87%, #161616 87.5%, #161616),
+            linear-gradient(30deg, #161616 12%, transparent 12.5%, transparent 87%, #161616 87.5%, #161616),
+            linear-gradient(150deg, #161616 12%, transparent 12.5%, transparent 87%, #161616 87.5%, #161616),
+            linear-gradient(60deg, #1c1b1b 25%, transparent 25.5%, transparent 75%, #1c1b1b 75%, #1c1b1b),
+            linear-gradient(60deg, #1c1b1b 25%, transparent 25.5%, transparent 75%, #1c1b1b 75%, #1c1b1b);
+            background-size: 80px 140px;
+            background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+            opacity: 0.05;
+        }
+
+        .gold-gradient-btn {
+            background: linear-gradient(135deg, #B6863E 0%, #8C6526 100%);
+            transition: all 0.3s ease;
+        }
+
+        .gold-gradient-btn:hover {
+            background: linear-gradient(135deg, #D4A95C 0%, #B6863E 100%);
+            transform: translateY(-2px);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#f4bd6f",
+                        "outline-variant": "#444748",
+                        "error": "#ffb4ab",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary-fixed": "#1c1b1b",
+                        "surface-bright": "#3a3939",
+                        "stone-grey": "#8A8A8A",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "inverse-on-surface": "#313030",
+                        "primary-fixed": "#e5e2e1",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-secondary-fixed-variant": "#474746",
+                        "tertiary-fixed": "#ffddb2",
+                        "tertiary-container": "#120800",
+                        "on-secondary": "#313030",
+                        "inverse-primary": "#5f5e5e",
+                        "surface-container-highest": "#353434",
+                        "secondary-container": "#474746",
+                        "on-surface-variant": "#c4c7c7",
+                        "surface-tint": "#c9c6c5",
+                        "on-primary-container": "#7b7979",
+                        "primary-container": "#0a0a0a",
+                        "on-surface": "#e5e2e1",
+                        "surface-container-high": "#2b2a2a",
+                        "outline": "#8e9192",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-error": "#690005",
+                        "surface-variant": "#353434",
+                        "on-tertiary-fixed-variant": "#624000",
+                        "on-primary": "#313030",
+                        "on-error-container": "#ffdad6",
+                        "tertiary": "#f4bd6f",
+                        "surface": "#141313",
+                        "secondary": "#c8c6c5",
+                        "primary": "#c9c6c5",
+                        "on-tertiary-container": "#9e712b",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "cream-white": "#F5F2EC",
+                        "surface-dim": "#141313",
+                        "inverse-surface": "#e5e2e1",
+                        "background": "#141313",
+                        "on-tertiary-fixed": "#291800",
+                        "gold-light": "#D4A95C",
+                        "surface-container": "#201f1f",
+                        "on-secondary-container": "#b7b4b4",
+                        "surface-container-low": "#1c1b1b",
+                        "gold-dark": "#8C6526",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary": "#452b00",
+                        "error-container": "#93000a",
+                        "secondary-fixed": "#e5e2e1"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Hanken Grotesk"],
+                        "label-caps": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "headline-xl": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                        "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "headline-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "0.05em", "fontWeight": "700"}]
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="dark flex h-screen overflow-hidden">
+<!-- SIDE NAVIGATION -->
+<aside class="docked left-0 h-screen w-64 bg-surface-container-low border-r border-outline-variant flex flex-col h-full py-8 shadow-md z-50">
+<div class="px-6 mb-10">
+<h1 class="font-headline-md text-headline-md font-bold text-tertiary">Sekmen Zemin</h1>
+<p class="font-body-md text-body-md text-stone-grey">Yönetim Paneli</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center px-6 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-3">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center px-6 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-3">architecture</span>
+<span class="font-body-md text-body-md">Projeler</span>
+</a>
+<a class="flex items-center px-6 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-3">construction</span>
+<span class="font-body-md text-body-md">Hizmetler</span>
+</a>
+<a class="flex items-center px-6 py-3 text-tertiary font-bold border-r-2 border-tertiary bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-3">settings</span>
+<span class="font-body-md text-body-md">Sistem Ayarları</span>
+</a>
+<a class="flex items-center px-6 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-3">mail</span>
+<span class="font-body-md text-body-md">Mesajlar</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full py-3 bg-surface-container-highest text-tertiary font-bold rounded-lg border border-tertiary/20 hover:bg-tertiary/10 transition-all">
+                Yeni Proje Ekle
+            </button>
+<a class="flex items-center mt-6 px-2 text-on-surface-variant hover:text-error transition-colors" href="#">
+<span class="material-symbols-outlined mr-3">logout</span>
+<span class="font-body-md text-body-md">Çıkış</span>
+</a>
+</div>
+</aside>
+<!-- MAIN CONTENT -->
+<main class="flex-1 flex flex-col relative overflow-y-auto">
+<div class="absolute inset-0 pavement-pattern pointer-events-none"></div>
+<!-- TOP APP BAR -->
+<header class="sticky top-0 z-40 flex justify-between items-center px-margin-desktop h-20 bg-surface/85 backdrop-blur-md border-b border-outline-variant shadow-sm">
+<h2 class="font-headline-md text-headline-md text-tertiary">Sistem Ayarları</h2>
+<div class="flex items-center gap-6">
+<div class="relative hidden lg:block">
+<input class="bg-surface-container border-none rounded-full px-5 py-2 text-body-md w-64 focus:ring-1 focus:ring-tertiary" placeholder="Panelde ara..." type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-2.5 text-stone-grey">search</span>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer hover:text-tertiary transition-colors">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-tertiary transition-colors">account_circle</span>
+</div>
+</div>
+</header>
+<!-- CONTENT CANVAS -->
+<div class="px-margin-desktop py-12 max-w-container-max mx-auto w-full relative z-10">
+<!-- HEADER SECTION -->
+<div class="mb-12">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2">Yayın Hazırlığı</h3>
+<p class="font-body-lg text-body-lg text-stone-grey">Sitenizi yayına almadan önce yapılması gereken son kontroller.</p>
+</div>
+<!-- PROGRESS SUMMARY -->
+<div class="glass-panel rounded-xl p-8 mb-12 flex flex-col md:flex-row items-center gap-8 border-l-4 border-l-tertiary">
+<div class="relative w-32 h-32 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90">
+<circle class="text-surface-container-highest" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-tertiary" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-dasharray="364.4" stroke-dashoffset="54.6" stroke-width="8"></circle>
+</svg>
+<span class="absolute font-headline-md text-headline-md text-on-surface">85%</span>
+</div>
+<div class="flex-1 text-center md:text-left">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2">Siteniz Neredeyse Hazır!</h4>
+<p class="font-body-md text-body-md text-stone-grey mb-4">Toplam 16 kontrolün 14'ü başarıyla tamamlandı. Kalan 2 teknik adım sitenizin performansı için kritiktir.</p>
+<div class="flex flex-wrap gap-3">
+<span class="px-3 py-1 bg-tertiary/10 text-tertiary border border-tertiary/20 rounded-full text-label-caps">14 TAMAMLANDI</span>
+<span class="px-3 py-1 bg-error/10 text-error border border-error/20 rounded-full text-label-caps">2 BEKLİYOR</span>
+</div>
+</div>
+</div>
+<!-- CHECKLIST CATEGORIES -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+<!-- SEO & Meta Verileri -->
+<section class="glass-panel rounded-xl p-6 hover:shadow-lg transition-shadow">
+<div class="flex items-center gap-3 mb-6 border-b border-outline-variant pb-4">
+<span class="material-symbols-outlined text-tertiary">search</span>
+<h5 class="font-headline-md text-headline-md text-on-surface" style="font-size: 20px;">SEO & Meta Verileri</h5>
+</div>
+<ul class="space-y-4">
+<li class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg border border-transparent hover:border-outline-variant transition-all">
+<div class="flex items-center gap-4">
+<input checked="" class="rounded border-outline-variant bg-transparent text-tertiary focus:ring-0 w-5 h-5" type="checkbox"/>
+<span class="font-body-md text-body-md">Sitemap (Site Haritası) Oluşturuldu</span>
+</div>
+<span class="text-label-caps text-tertiary font-bold">TAMAMLANDI</span>
+</li>
+<li class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg border border-transparent hover:border-outline-variant transition-all">
+<div class="flex items-center gap-4">
+<input checked="" class="rounded border-outline-variant bg-transparent text-tertiary focus:ring-0 w-5 h-5" type="checkbox"/>
+<span class="font-body-md text-body-md">Meta Tag (Başlık & Açıklama)</span>
+</div>
+<span class="text-label-caps text-tertiary font-bold">TAMAMLANDI</span>
+</li>
+<li class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg border border-transparent hover:border-outline-variant transition-all">
+<div class="flex items-center gap-4">
+<input class="rounded border-outline-variant bg-transparent text-tertiary focus:ring-0 w-5 h-5" type="checkbox"/>
+<span class="font-body-md text-body-md">301 Yönlendirmeleri</span>
+</div>
+<span class="text-label-caps text-stone-grey">BEKLİYOR</span>
+</li>
+<li class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg border border-transparent hover:border-outline-variant transition-all">
+<div class="flex items-center gap-4">
+<input checked="" class="rounded border-outline-variant bg-transparent text-tertiary focus:ring-0 w-5 h-5" type="checkbox"/>
+<span class="font-body-md text-body-md">Canonical URL Yapılandırması</span>
+</div>
+<span class="text-label-caps text-tertiary font-bold">TAMAMLANDI</span>
+</li>
+</ul>
+</section>
+<!-- Teknik & Performans -->
+<section class="glass-panel rounded-xl p-6 hover:shadow-lg transition-shadow">
+<div class="flex items-center gap-3 mb-6 border-b border-outline-variant pb-4">
+<span class="material-symbols-outlined text-tertiary">speed</span>
+<h5 class="font-headline-md text-headline-md text-on-surface" style="font-size: 20px;">Teknik & Performans</h5>
+</div>
+<ul class="space-y-4">
+<li class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg border border-transparent hover:border-outline-variant transition-all">
+<div class="flex items-center gap-4">
+<input checked="" class="rounded border-outline-variant bg-transparent text-tertiary focus:ring-0 w-5 h-5" type="checkbox"/>
+<span class="font-body-md text-body-md">Görsel Optimizasyonu (WebP)</span>
+</div>
+<span class="text-label-caps text-tertiary font-bold">TAMAMLANDI</span>
+</li>
+<li class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg border border-transparent hover:border-outline-variant transition-all">
+<div class="flex items-center gap-4">
+<input checked="" class="rounded border-outline-variant bg-transparent text-tertiary focus:ring-0 w-5 h-5" type="checkbox"/>
+<span class="font-body-md text-body-md">Cache (Önbellek) Konfigürasyonu</span>
+</div>
+<span class="text-label-caps text-tertiary font-bold">TAMAMLANDI</span>
+</li>
+<li class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg border border-transparent hover:border-outline-variant transition-all">
+<div class="flex items-center gap-4">
+<input checked="" class="rounded border-outline-variant bg-transparent text-tertiary focus:ring-0 w-5 h-5" type="checkbox"/>
+<span class="font-body-md text-body-md">SSL Sertifikası Durumu</span>
+</div>
+<span class="text-label-caps text-tertiary font-bold">AKTİF</span>
+</li>
+<li class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg border border-transparent hover:border-outline-variant transition-all">
+<div class="flex items-center gap-4">
+<input class="rounded border-outline-variant bg-transparent text-tertiary focus:ring-0 w-5 h-5" type="checkbox"/>
+<span class="font-body-md text-body-md">404 Sayfa Tasarımı & Kontrolü</span>
+</div>
+<span class="text-label-caps text-stone-grey">BEKLİYOR</span>
+</li>
+</ul>
+</section>
+<!-- İçerik & Formlar -->
+<section class="glass-panel rounded-xl p-6 hover:shadow-lg transition-shadow">
+<div class="flex items-center gap-3 mb-6 border-b border-outline-variant pb-4">
+<span class="material-symbols-outlined text-tertiary">article</span>
+<h5 class="font-headline-md text-headline-md text-on-surface" style="font-size: 20px;">İçerik & Formlar</h5>
+</div>
+<ul class="space-y-4">
+<li class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg border border-transparent hover:border-outline-variant transition-all">
+<div class="flex items-center gap-4">
+<input checked="" class="rounded border-outline-variant bg-transparent text-tertiary focus:ring-0 w-5 h-5" type="checkbox"/>
+<span class="font-body-md text-body-md">İletişim Formları Test Edildi</span>
+</div>
+<span class="text-label-caps text-tertiary font-bold">TAMAMLANDI</span>
+</li>
+<li class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg border border-transparent hover:border-outline-variant transition-all">
+<div class="flex items-center gap-4">
+<input checked="" class="rounded border-outline-variant bg-transparent text-tertiary focus:ring-0 w-5 h-5" type="checkbox"/>
+<span class="font-body-md text-body-md">WhatsApp Link Kontrolü</span>
+</div>
+<span class="text-label-caps text-tertiary font-bold">TAMAMLANDI</span>
+</li>
+<li class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg border border-transparent hover:border-outline-variant transition-all">
+<div class="flex items-center gap-4">
+<input checked="" class="rounded border-outline-variant bg-transparent text-tertiary focus:ring-0 w-5 h-5" type="checkbox"/>
+<span class="font-body-md text-body-md">Ürün Teknik Detay Yazıları</span>
+</div>
+<span class="text-label-caps text-tertiary font-bold">TAMAMLANDI</span>
+</li>
+<li class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg border border-transparent hover:border-outline-variant transition-all">
+<div class="flex items-center gap-4">
+<input checked="" class="rounded border-outline-variant bg-transparent text-tertiary focus:ring-0 w-5 h-5" type="checkbox"/>
+<span class="font-body-md text-body-md">KVKK & Çerez Metinleri</span>
+</div>
+<span class="text-label-caps text-tertiary font-bold">TAMAMLANDI</span>
+</li>
+</ul>
+</section>
+<!-- Pazarlama & Takip -->
+<section class="glass-panel rounded-xl p-6 hover:shadow-lg transition-shadow">
+<div class="flex items-center gap-3 mb-6 border-b border-outline-variant pb-4">
+<span class="material-symbols-outlined text-tertiary">query_stats</span>
+<h5 class="font-headline-md text-headline-md text-on-surface" style="font-size: 20px;">Pazarlama & Takip</h5>
+</div>
+<ul class="space-y-4">
+<li class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg border border-transparent hover:border-outline-variant transition-all">
+<div class="flex items-center gap-4">
+<input checked="" class="rounded border-outline-variant bg-transparent text-tertiary focus:ring-0 w-5 h-5" type="checkbox"/>
+<span class="font-body-md text-body-md">Meta Pixel Kurulumu</span>
+</div>
+<span class="text-label-caps text-tertiary font-bold">TAMAMLANDI</span>
+</li>
+<li class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg border border-transparent hover:border-outline-variant transition-all">
+<div class="flex items-center gap-4">
+<input checked="" class="rounded border-outline-variant bg-transparent text-tertiary focus:ring-0 w-5 h-5" type="checkbox"/>
+<span class="font-body-md text-body-md">GA4 Google Analytics</span>
+</div>
+<span class="text-label-caps text-tertiary font-bold">TAMAMLANDI</span>
+</li>
+<li class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg border border-transparent hover:border-outline-variant transition-all">
+<div class="flex items-center gap-4">
+<input checked="" class="rounded border-outline-variant bg-transparent text-tertiary focus:ring-0 w-5 h-5" type="checkbox"/>
+<span class="font-body-md text-body-md">Google Tag Manager (GTM)</span>
+</div>
+<span class="text-label-caps text-tertiary font-bold">TAMAMLANDI</span>
+</li>
+<li class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg border border-transparent hover:border-outline-variant transition-all">
+<div class="flex items-center gap-4">
+<input checked="" class="rounded border-outline-variant bg-transparent text-tertiary focus:ring-0 w-5 h-5" type="checkbox"/>
+<span class="font-body-md text-body-md">Search Console Doğrulaması</span>
+</div>
+<span class="text-label-caps text-tertiary font-bold">TAMAMLANDI</span>
+</li>
+</ul>
+</section>
+</div>
+<!-- ACTION BUTTONS -->
+<div class="flex flex-col sm:flex-row gap-6 items-center justify-center pt-8 border-t border-outline-variant">
+<button class="gold-gradient-btn px-12 py-5 rounded-lg text-primary-container font-headline-md font-bold uppercase tracking-wider flex items-center gap-4 shadow-xl">
+<span class="material-symbols-outlined">rocket_launch</span>
+                    SİTEYİ YAYINA AL
+                </button>
+<button class="px-8 py-5 rounded-lg border border-outline text-on-surface font-label-caps hover:bg-surface-container-high transition-all flex items-center gap-3">
+<span class="material-symbols-outlined">download</span>
+                    Sistem Raporu İndir
+                </button>
+</div>
+<!-- ADVISORY CARD -->
+<div class="mt-12 p-6 rounded-lg bg-surface-container-low border border-outline-variant flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary" style="font-size: 32px;">info</span>
+<div>
+<p class="font-body-md text-body-md text-on-surface mb-1">Profesyonel İpucu</p>
+<p class="font-body-md text-body-md text-stone-grey">Yayına almadan önce 'Search Console' üzerinden mülk doğrulamasını yaptığınızdan emin olun. Bu, Konya ve çevre illerdeki SEO performansınızın ilk günden itibaren takip edilmesini sağlar.</p>
+</div>
+</div>
+</div>
+<!-- FOOTER -->
+<footer class="w-full py-6 mt-auto flex justify-between items-center px-margin-desktop bg-surface-container-lowest border-t border-outline-variant">
+<p class="font-label-caps text-label-caps text-stone-grey">© 2024 Sekmen Zemin Tasarım - Endüstriyel Lüks Sistem Paneli</p>
+<div class="flex gap-6">
+<a class="font-label-caps text-label-caps text-stone-grey hover:text-gold-light transition-colors" href="#">Kullanım Koşulları</a>
+<a class="font-label-caps text-label-caps text-stone-grey hover:text-gold-light transition-colors" href="#">Gizlilik Politikası</a>
+<a class="font-label-caps text-label-caps text-stone-grey hover:text-gold-light transition-colors" href="#">Destek</a>
+</div>
+</footer>
+</main>
+<script>
+        // Micro-interactions for checkboxes
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const parent = this.closest('li');
+                const badge = parent.querySelector('.text-label-caps');
+                if (this.checked) {
+                    badge.textContent = 'TAMAMLANDI';
+                    badge.classList.remove('text-stone-grey');
+                    badge.classList.add('text-tertiary', 'font-bold');
+                    parent.style.borderColor = 'rgba(182, 134, 62, 0.3)';
+                } else {
+                    badge.textContent = 'BEKLİYOR';
+                    badge.classList.remove('text-tertiary', 'font-bold');
+                    badge.classList.add('text-stone-grey');
+                    parent.style.borderColor = 'transparent';
+                }
+            });
+        });
+    </script>
+</body></html>

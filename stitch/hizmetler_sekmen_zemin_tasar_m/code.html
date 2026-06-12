@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hizmetlerimiz | Sekmen Zemin Tasarım</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#444748",
+                    "inverse-on-surface": "#313030",
+                    "surface-variant": "#353434",
+                    "gold-light": "#D4A95C",
+                    "inverse-primary": "#5f5e5e",
+                    "primary-fixed": "#e5e2e1",
+                    "on-primary-container": "#7b7979",
+                    "on-secondary-fixed-variant": "#474746",
+                    "tertiary": "#f4bd6f",
+                    "error": "#ffb4ab",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "on-primary": "#313030",
+                    "on-secondary-container": "#b7b4b4",
+                    "surface-tint": "#c9c6c5",
+                    "secondary": "#c8c6c5",
+                    "surface-container-high": "#2b2a2a",
+                    "tertiary-fixed": "#ffddb2",
+                    "surface": "#141313",
+                    "on-tertiary-fixed": "#291800",
+                    "tertiary-fixed-dim": "#f4bd6f",
+                    "on-secondary": "#313030",
+                    "error-container": "#93000a",
+                    "cream-white": "#F5F2EC",
+                    "on-surface-variant": "#c4c7c7",
+                    "on-background": "#e5e2e1",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-dim": "#141313",
+                    "tertiary-container": "#120800",
+                    "secondary-fixed": "#e5e2e1",
+                    "on-surface": "#e5e2e1",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "primary": "#c9c6c5",
+                    "outline": "#8e9192",
+                    "stone-grey": "#8A8A8A",
+                    "on-tertiary-fixed-variant": "#624000",
+                    "on-primary-fixed-variant": "#474646",
+                    "on-tertiary": "#452b00",
+                    "on-tertiary-container": "#9e712b",
+                    "background": "#141313",
+                    "on-error": "#690005",
+                    "surface-container-low": "#1c1b1b",
+                    "secondary-container": "#474746",
+                    "surface-container": "#201f1f",
+                    "on-primary-fixed": "#1c1b1b",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-highest": "#353434",
+                    "primary-container": "#0a0a0a",
+                    "surface-bright": "#3a3939",
+                    "gold-dark": "#8C6526",
+                    "surface-container-lowest": "#0e0e0e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "margin-desktop": "64px",
+                    "unit": "8px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-xl": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "body-md": ["Hanken Grotesk"],
+                    "headline-lg": ["Montserrat"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "label-caps": ["Montserrat"]
+            },
+            "fontSize": {
+                    "headline-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #141313;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+        .perspective-lines {
+            background-image: repeating-linear-gradient(45deg, rgba(212, 169, 92, 0.03) 0px, rgba(212, 169, 92, 0.03) 1px, transparent 1px, transparent 20px);
+        }
+        .glass-header {
+            background: rgba(20, 19, 19, 0.85);
+            backdrop-filter: blur(12px);
+        }
+        .service-card-image {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .service-card:hover .service-card-image {
+            transform: scale(1.05);
+        }
+        .gold-glow:hover {
+            box-shadow: 0 0 20px rgba(182, 134, 62, 0.2);
+        }
+    </style>
+</head>
+<body class="font-body-md selection:bg-gold-light selection:text-surface">
+<!-- TopNavBar -->
+<header class="docked full-width top-0 sticky z-50 glass-header border-b border-surface-variant shadow-md">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-on-surface uppercase tracking-wider">
+                Sekmen Zemin Tasarım
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-gold-light transition-colors duration-300 font-label-caps text-label-caps" href="#">Ana Sayfa</a>
+<a class="text-on-surface-variant hover:text-gold-light transition-colors duration-300 font-label-caps text-label-caps" href="#">Kurumsal</a>
+<a class="text-gold-light font-bold border-b-2 border-gold-light pb-1 font-label-caps text-label-caps" href="#">Hizmetler</a>
+<a class="text-on-surface-variant hover:text-gold-light transition-colors duration-300 font-label-caps text-label-caps" href="#">Projeler</a>
+<a class="text-on-surface-variant hover:text-gold-light transition-colors duration-300 font-label-caps text-label-caps" href="#">İletişim</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="hidden lg:block text-gold-light font-bold font-label-caps text-label-caps">+90 (500) 000 00 00</span>
+<button class="bg-gold-light text-surface px-6 py-2 rounded-lg font-label-caps text-label-caps font-bold hover:bg-gold-dark transition-all duration-300 Active:scale-95">
+                    Teklif Al
+                </button>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[614px] flex items-center justify-center pt-24 pb-16 px-margin-mobile overflow-hidden perspective-lines">
+
+<div class="max-w-container-max mx-auto text-center relative z-10">
+<div class="inline-block mb-6 px-4 py-1 border border-gold-light/30 bg-gold-light/10 rounded-full">
+<span class="font-label-caps text-label-caps text-gold-light tracking-widest">USTALIK VE MÜHENDİSLİK</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl md:text-headline-xl text-on-surface mb-6 max-w-4xl mx-auto">Hizmetlerimiz</h1>
+<p class="font-body-lg text-body-lg text-stone-grey max-w-2xl mx-auto">Zemin tasarımında profesyonel çözümlerle, modern mimariyi dayanıklı mühendislik yaklaşımlarıyla birleştiriyoruz.</p>
+</div>
+</section>
+<!-- Service Blocks (Zig-Zag) -->
+<section class="py-24 space-y-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Service 1: Parke Taşı -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center group service-card">
+<div class="relative overflow-hidden rounded-xl h-[400px] md:h-[500px]">
+<img alt="Parke Taşı Uygulama" class="w-full h-full object-cover service-card-image" data-alt="A high-end luxury villa driveway featuring intricate interlocking stone pavers in a dark anthracite charcoal tone. The paving is laid out in a precise, professional geometric pattern, wet-look finish reflecting soft morning sunlight. The surrounding architecture is modern with glass and concrete elements, creating a premium industrial luxe aesthetic. Cinematic lighting with deep shadows and golden hour highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXi1VZZOaH-pbf59FqQrVueP7cj2H_a3alCFekOmmRbtkrJEgHoJU-dBytgjzanh8y2OgzP8prI4W3sf2ukamu8v-K1SY5Glvru6WbVWrbM6ddogGZmFyz_cTNa4yhmd8bdpkRuJvd-tohbOiYJ34HvKxS4_zd3Z4Xy6n3ehjcvWqNxu55ivxQz3A3NPe2tNr3U2A2hleI5ia2R7DpKMoRWKvrbthgqYDghKfx9LhtrdWdF3AfCk_AOXwfUFiGJwMHRwrbhSuwFukC"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-40"></div>
+</div>
+<div class="space-y-6">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Parke Taşı Uygulama &amp; Döşeme</h2>
+<p class="font-body-lg text-body-lg text-stone-grey">Profesyonel ekibimizle anahtar teslim döşeme hizmeti sunuyoruz. Modern desenler ve yüksek dayanımlı taş seçimleriyle, yaşam alanlarınıza değer katan estetik zeminler oluşturuyoruz.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-gold-light">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span class="font-label-caps text-label-caps">ANAHTAR TESLİM UYGULAMA</span>
+</li>
+<li class="flex items-center gap-3 text-gold-light">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span class="font-label-caps text-label-caps">YÜKSEK TAŞIMA KAPASİTESİ</span>
+</li>
+</ul>
+<a class="inline-flex items-center gap-2 font-label-caps text-label-caps text-gold-light hover:text-gold-dark transition-colors group" href="#">
+                        TEKLİF AL 
+                        <span class="material-symbols-outlined transition-transform group-hover:translate-x-2">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Service 2: Bordür & Kaldırım (Reversed) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center group service-card">
+<div class="order-2 md:order-1 space-y-6">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Bordür &amp; Kaldırım</h2>
+<p class="font-body-lg text-body-lg text-stone-grey">Şehir estetiğine uygun çevre düzenleme projelerinde, dayanıklılığı ön planda tutan bordür ve kaldırım çözümleri üretiyoruz. Yaya yollarından geniş bulvarlara kadar geniş bir uygulama alanına sahibiz.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-gold-light">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span class="font-label-caps text-label-caps">ŞEHİR ESTETİĞİNE UYGUN</span>
+</li>
+<li class="flex items-center gap-3 text-gold-light">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span class="font-label-caps text-label-caps">MODERN ÇEVRE DÜZENLEME</span>
+</li>
+</ul>
+<a class="inline-flex items-center gap-2 font-label-caps text-label-caps text-gold-light hover:text-gold-dark transition-colors group" href="#">
+                        TEKLİF AL 
+                        <span class="material-symbols-outlined transition-transform group-hover:translate-x-2">arrow_forward</span>
+</a>
+</div>
+<div class="order-1 md:order-2 relative overflow-hidden rounded-xl h-[400px] md:h-[500px]">
+<img alt="Bordür Uygulama" class="w-full h-full object-cover service-card-image" data-alt="A sleek city sidewalk featuring clean-cut granite curbstones and modern grey paving stones. The perspective view shows a perfectly aligned urban walkway stretching into a blurred city background. The style is minimalist and industrial, with sharp lines and high contrast between the dark stones and the light-colored grout. Atmosphere is professional and clean." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDN1ueBfVABN4vdNPXYgGj6V947nrgL7alhlJVag1RrGacGQ7OE5cvi_7WGlDm84jWQXhlLjAnLgyozPeb19qEyGaGTcXbKYmlSh38iMWs4YGx3pKowTGtLPN_loj_fT2o_bljZhyA5NqOW_szGDiCME4bQ4Bd90I3S_MlMn2cwKn1hwTskXyEBdNfirWFegC4bkku8lbrF5-UGrXOhO3OgsxawWNsIeXR_syJsfNv4_xhfzoLdgiogiL8DXZEwqM_7k-ruyWmYz5hH"/>
+</div>
+</div>
+<!-- Service 3: Altyapı İşleri -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center group service-card">
+<div class="relative overflow-hidden rounded-xl h-[400px] md:h-[500px]">
+<img alt="Altyapı İşleri" class="w-full h-full object-cover service-card-image" data-alt="A construction site showing professional infrastructure work with excavation machinery and precise drainage pipes being installed. The ground is layered with various grades of crushed stone and gravel, showing a cross-section of solid foundation engineering. Dark, moody atmosphere with focused work lighting, emphasizing technical expertise and durability. Professional industrial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs3t4-vg9EeuAqrYBqU7jkTLE7tbso8mGYDrHjEReVnF_hVTvFJFlMlcOzKbQRgLNZcX57b_WOqHXhNQsfbOi-nXVnUcUFLf7e3_XfORChnfVj5DZPy00baV-dM9cnx4uDSoArWWU-cgijBotQig5Ce322jRuAtvMM2eGJF2vVfuShfd3cDBKPjaEsQcWuUg9nwWk1YFOH-HcsCJ-8dB0i0Rv1hQ55-40QX5b1L-7kLBszj5ChHGzCE0D9t0bXos9QSSmxiZ3BjW5d"/>
+</div>
+<div class="space-y-6">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Altyapı İşleri</h2>
+<p class="font-body-lg text-body-lg text-stone-grey">Kazı, dolgu ve drenaj çözümlerimizle, üst yapı projelerinizin temelini sağlam atıyoruz. Doğru mühendislik hesaplarıyla su baskını ve çökme risklerini minimize ediyoruz.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-gold-light">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span class="font-label-caps text-label-caps">KAZI &amp; DOLGU ÇÖZÜMLERİ</span>
+</li>
+<li class="flex items-center gap-3 text-gold-light">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span class="font-label-caps text-label-caps">DRENAJ SİSTEMLERİ</span>
+</li>
+</ul>
+<a class="inline-flex items-center gap-2 font-label-caps text-label-caps text-gold-light hover:text-gold-dark transition-colors group" href="#">
+                        TEKLİF AL 
+                        <span class="material-symbols-outlined transition-transform group-hover:translate-x-2">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Service 4: Peyzaj (Reversed) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center group service-card">
+<div class="order-2 md:order-1 space-y-6">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Peyzaj &amp; Çevre Düzenleme</h2>
+<p class="font-body-lg text-body-lg text-stone-grey">Bahçe ve park tasarımlarımızla doğayı mimariyle buluşturuyoruz. Sert zemin uygulamalarını yeşil alanlarla uyumlu bir şekilde planlayarak yaşam kalitesini artırıyoruz.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-gold-light">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span class="font-label-caps text-label-caps">ÖZGÜN BAHÇE TASARIMLARI</span>
+</li>
+<li class="flex items-center gap-3 text-gold-light">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span class="font-label-caps text-label-caps">PARK &amp; REKREASYON ALANLARI</span>
+</li>
+</ul>
+<a class="inline-flex items-center gap-2 font-label-caps text-label-caps text-gold-light hover:text-gold-dark transition-colors group" href="#">
+                        TEKLİF AL 
+                        <span class="material-symbols-outlined transition-transform group-hover:translate-x-2">arrow_forward</span>
+</a>
+</div>
+<div class="order-1 md:order-2 relative overflow-hidden rounded-xl h-[400px] md:h-[500px]">
+<img alt="Peyzaj Tasarımı" class="w-full h-full object-cover service-card-image" data-alt="A modern architectural landscape design for a premium residential complex. Integrated stone paths weave through lush, perfectly manicured green lawn and architectural shrubs. The scene is illuminated by subtle warm ground lighting, highlighting the texture of the stones and the softness of the plants against a dark evening sky. Luxury, serene atmosphere with a high-end designer feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfcBF_D4uKuz9oOy-BRafaSws262SGuTgW8S2IE-VSoqYrN07rVqoNgMr6K8ibmHolLFHCmOrL05MMsEOV9LfQ6FhzJYCxg9eXDPIaIwsJq68hF9qp9Vsi-iT59f3EE5rkNYPrJyHjEwIqphhDpYNxwVbB8T4cXEBwO-NCRAuUx-Hp7-frinBGsY7a06eGFqtwNogXo1iu3heB5IcXmOqpdwT0vln0PdR2TKOjlCNrJy0TptJI4TuknGg0SnNQIoptekfMzo0a4_xy"/>
+</div>
+</div>
+<!-- Service 5: Danışmanlık -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center group service-card">
+<div class="relative overflow-hidden rounded-xl h-[400px] md:h-[500px] bg-surface-container flex items-center justify-center p-12">
+<div class="text-center space-y-4">
+<span class="material-symbols-outlined text-8xl text-gold-light/40">architecture</span>
+<p class="font-label-caps text-label-caps text-gold-light">TEKNİK DESTEK &amp; PLANLAMA</p>
+</div>
+</div>
+<div class="space-y-6">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Danışmanlık</h2>
+<p class="font-body-lg text-body-lg text-stone-grey">Proje planlama ve teknik destek süreçlerinde tecrübemizi paylaşıyoruz. Doğru malzeme seçimi ve uygulama yöntemleri konusunda uzman görüşü sunuyoruz.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-gold-light">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span class="font-label-caps text-label-caps">MALZEME ANALİZİ</span>
+</li>
+<li class="flex items-center gap-3 text-gold-light">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span class="font-label-caps text-label-caps">MİMARİ PROJE DESTEĞİ</span>
+</li>
+</ul>
+<a class="inline-flex items-center gap-2 font-label-caps text-label-caps text-gold-light hover:text-gold-dark transition-colors group" href="#">
+                        BİLGİ AL 
+                        <span class="material-symbols-outlined transition-transform group-hover:translate-x-2">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- CTA Band -->
+<section class="bg-gold-light py-16">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-center md:text-left">
+<h3 class="font-headline-md text-headline-md text-surface mb-2">Projeniz İçin Ücretsiz Keşif İsteyin</h3>
+<p class="font-body-lg text-body-lg text-surface/80">Konya ve çevresinde profesyonel zemin çözümleri için yanınızdayız.</p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-surface text-3xl">call</span>
+<span class="font-headline-md text-headline-md text-surface">+90 (500) 000 00 00</span>
+</div>
+<button class="bg-surface text-gold-light px-8 py-4 rounded-xl font-headline-md text-[18px] font-bold hover:bg-surface-variant transition-all gold-glow">
+                        HEMEN ARA
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-lowest border-t border-surface-variant/30 relative">
+<div class="w-full px-margin-mobile md:px-margin-desktop py-16 grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto">
+<div class="space-y-6">
+<div class="font-headline-md text-headline-md font-bold text-on-surface uppercase tracking-wider">
+                    Sekmen
+                </div>
+<p class="text-stone-grey font-body-md text-body-md">
+                    Zemin tasarımında 20 yılı aşkın tecrübe ile dayanıklı ve estetik çözümler üretiyoruz.
+                </p>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-caps text-label-caps text-gold-light font-bold">KURUMSAL</h4>
+<ul class="space-y-4">
+<li><a class="text-stone-grey hover:text-on-surface transition-colors font-body-md" href="#">Hakkımızda</a></li>
+<li><a class="text-stone-grey hover:text-on-surface transition-colors font-body-md" href="#">Ekibimiz</a></li>
+<li><a class="text-stone-grey hover:text-on-surface transition-colors font-body-md" href="#">Kalite Politikamız</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-caps text-label-caps text-gold-light font-bold">HIZLI BAĞLANTILAR</h4>
+<ul class="space-y-4">
+<li><a class="text-stone-grey hover:text-on-surface transition-colors font-body-md" href="#">Hizmetler</a></li>
+<li><a class="text-stone-grey hover:text-on-surface transition-colors font-body-md" href="#">Projeler</a></li>
+<li><a class="text-stone-grey hover:text-on-surface transition-colors font-body-md" href="#">KVKK</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-caps text-label-caps text-gold-light font-bold">İLETİŞİM</h4>
+<p class="text-stone-grey font-body-md">Konya Organize Sanayi Bölgesi, No: 42</p>
+<p class="text-stone-grey font-body-md">info@sekmenzemin.com</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-surface-variant flex items-center justify-center text-stone-grey hover:border-gold-light hover:text-gold-light transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-surface-variant flex items-center justify-center text-stone-grey hover:border-gold-light hover:text-gold-light transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+</a>
+</div>
+</div>
+</div>
+<div class="border-t border-surface-variant/20 py-8 px-margin-mobile text-center">
+<p class="text-stone-grey font-label-caps text-[10px] tracking-widest uppercase">
+                © 2024 Sekmen Zemin Tasarım. Tüm Hakları Saklıdır.
+            </p>
+</div>
+</footer>
+<!-- Mobile Bottom Navigation -->
+<nav class="lg:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe pt-2 bg-surface/90 backdrop-blur-xl border-t border-surface-variant shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-stone-grey" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-caps text-[10px]">ANA SAYFA</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gold-light bg-tertiary-container/20 rounded-xl px-3 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span class="font-label-caps text-[10px]">HİZMETLER</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-grey" href="#">
+<span class="material-symbols-outlined" data-icon="contact_page">contact_page</span>
+<span class="font-label-caps text-[10px]">PROJELER</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-grey" href="#">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+<span class="font-label-caps text-[10px]">TEKLİF</span>
+</a>
+</nav>
+<!-- Floating WhatsApp -->
+<a class="fixed bottom-24 right-6 md:bottom-12 md:right-12 z-50 bg-[#25D366] p-4 rounded-full shadow-2xl transition-transform hover:scale-110 active:scale-95 group" href="https://wa.me/905000000000">
+<div class="absolute inset-0 bg-gold-light rounded-full animate-ping opacity-20 pointer-events-none"></div>
+<svg class="w-8 h-8 text-white" fill="currentColor" viewbox="0 0 24 24">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+</svg>
+</a>
+<script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projeler &amp; Referanslar | Sekmen Zemin Tasarım</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "tertiary": "#f4bd6f",
+                    "on-secondary-fixed-variant": "#474746",
+                    "error": "#ffb4ab",
+                    "primary-fixed": "#e5e2e1",
+                    "on-primary-container": "#7b7979",
+                    "inverse-primary": "#5f5e5e",
+                    "surface-variant": "#353434",
+                    "gold-light": "#D4A95C",
+                    "outline-variant": "#444748",
+                    "inverse-on-surface": "#313030",
+                    "on-secondary": "#313030",
+                    "error-container": "#93000a",
+                    "tertiary-fixed-dim": "#f4bd6f",
+                    "tertiary-fixed": "#ffddb2",
+                    "surface": "#141313",
+                    "on-tertiary-fixed": "#291800",
+                    "surface-container-high": "#2b2a2a",
+                    "surface-tint": "#c9c6c5",
+                    "secondary": "#c8c6c5",
+                    "on-secondary-container": "#b7b4b4",
+                    "on-primary": "#313030",
+                    "background": "#141313",
+                    "on-tertiary-container": "#9e712b",
+                    "on-error": "#690005",
+                    "on-primary-fixed-variant": "#474646",
+                    "on-tertiary-fixed-variant": "#624000",
+                    "on-tertiary": "#452b00",
+                    "stone-grey": "#8A8A8A",
+                    "outline": "#8e9192",
+                    "primary": "#c9c6c5",
+                    "secondary-fixed": "#e5e2e1",
+                    "on-surface": "#e5e2e1",
+                    "tertiary-container": "#120800",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-dim": "#141313",
+                    "cream-white": "#F5F2EC",
+                    "on-background": "#e5e2e1",
+                    "on-surface-variant": "#c4c7c7",
+                    "surface-bright": "#3a3939",
+                    "surface-container-lowest": "#0e0e0e",
+                    "gold-dark": "#8C6526",
+                    "surface-container-highest": "#353434",
+                    "primary-container": "#0a0a0a",
+                    "surface-container": "#201f1f",
+                    "surface-container-low": "#1c1b1b",
+                    "secondary-container": "#474746",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-fixed": "#1c1b1b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "margin-desktop": "64px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "label-caps": ["Montserrat"],
+                    "headline-xl": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "body-md": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                    "headline-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0A;
+            color: #F5F2EC;
+            overflow-x: hidden;
+        }
+        
+        .pavement-texture {
+            background-image: linear-gradient(30deg, #161616 12%, transparent 12.5%, transparent 87%, #161616 87.5%, #161616),
+            linear-gradient(150deg, #161616 12%, transparent 12.5%, transparent 87%, #161616 87.5%, #161616),
+            linear-gradient(30deg, #161616 12%, transparent 12.5%, transparent 87%, #161616 87.5%, #161616),
+            linear-gradient(150deg, #161616 12%, transparent 12.5%, transparent 87%, #161616 87.5%, #161616),
+            linear-gradient(60deg, #1c1c1c 25%, transparent 25.5%, transparent 75%, #1c1c1c 75%, #1c1c1c),
+            linear-gradient(60deg, #1c1c1c 25%, transparent 25.5%, transparent 75%, #1c1c1c 75%, #1c1c1c);
+            background-size: 80px 140px;
+            background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+            opacity: 0.05;
+        }
+
+        .gold-glow:hover {
+            box-shadow: 0 0 20px rgba(182, 134, 62, 0.2);
+            border-color: #B6863E;
+        }
+
+        .comparison-slider {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+        }
+        
+        .comparison-slider img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slider-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #B6863E;
+            cursor: ew-resize;
+            z-index: 10;
+        }
+
+        .slider-handle::after {
+            content: "UNFOLD_MORE";
+            font-family: 'Material Symbols Outlined';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(90deg);
+            width: 40px;
+            height: 40px;
+            background: #B6863E;
+            color: #0A0A0A;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            box-shadow: 0 0 15px rgba(182, 134, 62, 0.5);
+        }
+
+        .before-label, .after-label {
+            position: absolute;
+            bottom: 20px;
+            padding: 8px 16px;
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(10px);
+            font-family: 'Montserrat';
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 12px;
+            z-index: 5;
+        }
+    </style>
+</head>
+<body class="font-body-md selection:bg-gold-light selection:text-surface">
+<!-- Header / TopNavBar -->
+<header class="bg-surface/85 backdrop-blur-md shadow-md docked full-width top-0 sticky z-50 border-b border-surface-variant">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-on-surface uppercase tracking-wider">
+                Sekmen Zemin Tasarım
+            </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-gold-light transition-colors duration-300 font-label-caps text-label-caps" href="#">Ana Sayfa</a>
+<a class="text-on-surface-variant hover:text-gold-light transition-colors duration-300 font-label-caps text-label-caps" href="#">Kurumsal</a>
+<a class="text-on-surface-variant hover:text-gold-light transition-colors duration-300 font-label-caps text-label-caps" href="#">Ürünler</a>
+<a class="text-on-surface-variant hover:text-gold-light transition-colors duration-300 font-label-caps text-label-caps" href="#">Hizmetler</a>
+<a class="text-gold-light font-bold border-b-2 border-gold-light pb-1 font-label-caps text-label-caps" href="#">Projeler</a>
+<a class="text-on-surface-variant hover:text-gold-light transition-colors duration-300 font-label-caps text-label-caps" href="#">İletişim</a>
+</nav>
+<div class="flex items-center gap-6">
+<span class="hidden lg:block text-stone-grey font-label-caps text-label-caps">+90 (500) 000 00 00</span>
+<button class="bg-gold-light text-primary-container px-6 py-2.5 rounded-lg font-label-caps text-label-caps font-bold hover:bg-gold-dark transition-all Active:scale-95 duration-150">
+                    Teklif Al
+                </button>
+</div>
+</div>
+</header>
+<main class="relative">
+<div class="pavement-texture absolute inset-0 pointer-events-none"></div>
+<!-- Hero Title Section -->
+<section class="relative pt-24 pb-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+<h1 class="font-headline-xl text-headline-xl mb-6 text-on-surface">Projelerimiz ve <span class="text-gold-light">Referanslarımız</span></h1>
+<p class="max-w-2xl mx-auto font-body-lg text-body-lg text-stone-grey">
+                Konya'nın mimari estetiğini modern mühendislik çözümleriyle birleştiriyoruz. Kalite, dayanıklılık ve estetiğin buluştuğu zemin uygulamalarımızı inceleyin.
+            </p>
+</section>
+<!-- Tabs & Filter Chips Section -->
+<section class="sticky top-[80px] z-40 bg-background/95 backdrop-blur-md py-6 px-margin-mobile md:px-margin-desktop border-y border-surface-variant/30">
+<div class="max-w-container-max mx-auto flex flex-col items-center gap-8">
+<!-- Main Tabs -->
+<div class="flex bg-surface-container-low p-1.5 rounded-xl border border-surface-variant">
+<button class="px-8 py-3 rounded-lg font-headline-md text-body-md font-bold transition-all bg-surface-variant text-gold-light shadow-lg">
+                        Tamamlanan Projeler
+                    </button>
+<button class="px-8 py-3 rounded-lg font-headline-md text-body-md font-bold transition-all text-stone-grey hover:text-on-surface">
+                        Kurumsal / Kamu Referansları
+                    </button>
+</div>
+<!-- Filter Chips -->
+<div class="flex flex-wrap justify-center gap-3">
+<button class="px-5 py-1.5 rounded-full border border-gold-light bg-gold-light/10 text-gold-light font-label-caps text-[10px] uppercase font-bold">Tümü</button>
+<button class="px-5 py-1.5 rounded-full border border-surface-variant text-stone-grey hover:border-gold-light hover:text-gold-light transition-all font-label-caps text-[10px] uppercase">Konut</button>
+<button class="px-5 py-1.5 rounded-full border border-surface-variant text-stone-grey hover:border-gold-light hover:text-gold-light transition-all font-label-caps text-[10px] uppercase">Kamu</button>
+<button class="px-5 py-1.5 rounded-full border border-surface-variant text-stone-grey hover:border-gold-light hover:text-gold-light transition-all font-label-caps text-[10px] uppercase">Ticari</button>
+<button class="px-5 py-1.5 rounded-full border border-surface-variant text-stone-grey hover:border-gold-light hover:text-gold-light transition-all font-label-caps text-[10px] uppercase">Peyzaj</button>
+</div>
+</div>
+</section>
+<!-- Projects Grid -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Project Card 1 -->
+<div class="group relative bg-surface-container overflow-hidden rounded-xl border border-surface-variant/30 gold-glow transition-all duration-500">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="Villa Bahçesi Zemin Uygulaması" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A high-end luxury villa garden featuring exquisite dark grey geometric paving stones with precision alignment. The lighting is warm golden hour sunlight reflecting off the textured stone surfaces. Professional landscaping with minimalist green plants surrounds the walkway. The overall mood is sophisticated, architectural, and premium, maintaining a dark coal and gold aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9Up7RW8ux2N1695M1DlrU1a-eq42EGY-sCFsxjtQXrpL7pxqacOdpGgeAKSYAsFpvXxtElwLDyy-Md7mY0G0bj-fKKV1QKJEz7BA6cuIxdWXo0CwNbhYh6RnACdix0sJTYSSFiBQLtXgJdw0JBXZK6nRpyRqaCHgBIVTWGkGNR8smshG1m3FX-2J2fHrDDeXmuLxTAvfoF7Gv4uNmyxk9Zu4HR6mpR-ETB1yYH3Jq6CU1XfGWEcerTcv_BN_hR0bv_mDvuL0TZ4sQ"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+<div class="flex items-center gap-2 mb-2">
+<span class="bg-gold-light/20 text-gold-light px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest">Konut</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 text-on-surface">Villa Bahçesi Zemin Uygulaması</h3>
+<p class="text-stone-grey font-body-md text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">location_on</span> Meram, Konya / 2023
+                        </p>
+</div>
+<div class="absolute bottom-0 left-0 h-1 w-0 bg-gold-light transition-all duration-700 group-hover:w-full"></div>
+</div>
+<!-- Project Card 2 -->
+<div class="group relative bg-surface-container overflow-hidden rounded-xl border border-surface-variant/30 gold-glow transition-all duration-500">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="Modern Meydan Düzenlemesi" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A large public square or plaza featuring intricate interlocking stone patterns in shades of anthracite and light grey. The perspective is wide-angle, showing the vastness and precision of the industrial paving work. Tall modern corporate buildings are in the background under a moody twilight sky. The scene is illuminated by subtle ground-recessed LED lighting that highlights the stone textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpEGMWo8e8t8pg2ELRAn_KRvCGR-iDNPWCdhwFi3GseLli_D3FXVJaGo1ZpduBmNx7Nxhk8jdXzO7i5c1ck8vcVz-otW92fODmFQMHC0qlNYvVdD2BYPfAcuw-Ta0fLC4haamUC0XSuut0csfPW-JCFTIOfrAvayF3qdIS7N5DevV_f5KlgBkW7n43GJ025E0g559UPfrKEGT5lB9MBXaMLRYEmB0i-rS-cxTvVZGgB8Wc8pJD8RTD0dDb00cQjrTGwlglVTKDJVQz"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+<div class="flex items-center gap-2 mb-2">
+<span class="bg-gold-light/20 text-gold-light px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest">Kamu</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 text-on-surface">Modern Meydan Düzenlemesi</h3>
+<p class="text-stone-grey font-body-md text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">location_on</span> Selçuklu, Konya / 2024
+                        </p>
+</div>
+<div class="absolute bottom-0 left-0 h-1 w-0 bg-gold-light transition-all duration-700 group-hover:w-full"></div>
+</div>
+<!-- Project Card 3 -->
+<div class="group relative bg-surface-container overflow-hidden rounded-xl border border-surface-variant/30 gold-glow transition-all duration-500">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="Ticari Ofis Giriş Tasarımı" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="An elegant entrance of a corporate office building showcasing premium polished granite and stone flooring. The design features sharp lines and a mix of textures that reflect high-end architectural engineering. Reflection of the glass facade can be seen on the clean, dark stone floor. The lighting is bright and professional, emphasizing the luxurious and sturdy industrial finish." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNx5D18-7Hn4RYHujtkzgIRvg7z5zHYfuvnVh1qTswzMwQ91rrUR0TQVywESKkLQ01IXywLxLDhzElB7e1ltxqr_EpAkmRYryAUmAsjMV1zNrJJr5Jpum50OqUeFw2e85i1v4GcEaKQB16MhwIc-3szhPlWiabeFCHog0cJuNAopyKUHuS5Xl3esLk9qEZJczCrdNbV7vss8bkB579SKXkV7428dO0DSzu5qvZSe5XHicsxlR2VoG5bKE8z4vrY3Eo_i42bT-3WNHc"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+<div class="flex items-center gap-2 mb-2">
+<span class="bg-gold-light/20 text-gold-light px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest">Ticari</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 text-on-surface">Ticari Ofis Giriş Tasarımı</h3>
+<p class="text-stone-grey font-body-md text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">location_on</span> Karatay, Konya / 2023
+                        </p>
+</div>
+<div class="absolute bottom-0 left-0 h-1 w-0 bg-gold-light transition-all duration-700 group-hover:w-full"></div>
+</div>
+</div>
+<div class="mt-16 text-center">
+<button class="group inline-flex items-center gap-3 text-gold-light font-bold font-label-caps text-label-caps tracking-widest hover:gap-5 transition-all">
+                    Daha Fazla Proje Yükle
+                    <span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</section>
+<!-- Before/After Section -->
+<section class="py-24 bg-surface-container-lowest relative overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="mb-16 text-center">
+<h2 class="font-headline-lg text-headline-lg mb-4">Değişimi <span class="text-gold-light">Görün</span></h2>
+<p class="text-stone-grey max-w-xl mx-auto">Sıradan alanları modern mimari eserlerine dönüştürüyoruz. Sürükleyerek aradaki farkı keşfedin.</p>
+</div>
+<div class="comparison-slider rounded-2xl shadow-2xl border border-surface-variant group" id="slider">
+<!-- Before Image -->
+<img alt="Öncesi" class="grayscale brightness-75" data-alt="A muddy, unorganized, and messy construction site with uneven dirt ground and puddles. The area is unfinished and looks derelict with construction debris and overgrown weeds. The lighting is flat and overcast, emphasizing the raw and unappealing state before the professional paving intervention." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADHq9iHJv1-Zcv9SeSYcruGoP-nnjtjE6iNcfDkwuJ4ZaxNZ1i3y-fRz6VokfVyNJg4oI5HZ9yaeROFwWlwtNQGkJgMEpXlBwMDyw-GR_h54wgXPTF-BzVVlv-YTdWG138VtrBnpxMnqTb-ja7i84j8hqaqNApAufn4qakXTbt43dVBL3qpVaQS5Z_vTeSlAkorQsFGFGU1L6L20gmink_RRlzERzvE894lygmsq6__9fAvLzVPW54neLjPdFdOi_FL6j_gzEPP_o4"/>
+<!-- After Image -->
+<div class="absolute inset-0 w-full h-full overflow-hidden" id="after-wrapper">
+<img alt="Sonrası" class="absolute top-0 left-0 w-full h-full object-cover" data-alt="The exact same location as the muddy construction site, but now transformed into a stunning, high-end paved patio with elegant grey stone pavers. The layout is perfectly symmetrical, featuring clean lines and a modern minimalist aesthetic. Lush green lawn borders the paving, and warm outdoor lighting creates a premium, inviting atmosphere. The contrast is night and day, showcasing masterful craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOZokFCI1zfcvG-j7dbtgK7HGkez_t2Mj1SZDPWJ2IMJXQWGuYI93YOz6VC1IVEnkcaaIRCaIikRGYh2Xf4r7rgA3k5KD0Fxa4TvQDW_Z_2Qf0QvMv8LJIVo2CyOpeKtUy9DtXXxxofXcOEAG0Lxmw8z7ENCFxcmtFLBPx0S4ZfGfRrBgDHY044wQOZCwcrkpN01n1fzi-TF1qVCuBJPex84erTbeMhYav_MO_5HXOZjOtl5jIKeutwxKJVFyQqQKFyl50V2LWsOPR" style="max-width: none;"/>
+</div>
+<!-- Slider Handle -->
+<div class="slider-handle" id="handle"></div>
+<!-- Labels -->
+<div class="before-label left-8">Öncesi</div>
+<div class="after-label right-8 border-r-2 border-gold-light pr-4">Sonrası</div>
+</div>
+</div>
+</section>
+<!-- CTA Band -->
+<section class="py-20 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto bg-gradient-to-r from-gold-dark to-gold-light rounded-3xl p-12 md:p-20 relative overflow-hidden shadow-2xl">
+<div class="absolute -right-20 -bottom-20 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="max-w-2xl text-center md:text-left">
+<h2 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-primary-container leading-tight mb-6">Projeniz İçin Ücretsiz Keşif İsteyin</h2>
+<p class="text-primary-container/80 font-body-lg text-lg">Hemen şimdi randevu oluşturun, uzman ekibimiz yerinde inceleme yaparak size özel tasarım ve fiyat teklifi sunsun.</p>
+</div>
+<div class="flex flex-col gap-4 shrink-0">
+<button class="bg-primary-container text-gold-light px-10 py-5 rounded-xl font-headline-md text-body-md font-bold hover:scale-105 transition-all shadow-xl">
+                            Ücretsiz Keşif Formu
+                        </button>
+<a class="flex items-center justify-center gap-3 text-primary-container font-bold text-xl hover:underline" href="tel:+905000000000">
+<span class="material-symbols-outlined">call</span>
+                            +90 (500) 000 00 00
+                        </a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-surface-variant/30 w-full relative">
+<div class="w-full px-margin-mobile md:px-margin-desktop py-16 grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto">
+<div class="space-y-6">
+<div class="font-headline-md text-headline-md font-bold text-on-surface uppercase tracking-wider">Sekmen Zemin</div>
+<p class="text-stone-grey font-body-md">Sektördeki 20 yıllık tecrübemizle Konya ve çevresinde en kaliteli zemin çözümlerini sunuyoruz.</p>
+</div>
+<div class="space-y-6">
+<h4 class="font-headline-md text-lg text-gold-light">Hızlı Linkler</h4>
+<ul class="space-y-3">
+<li><a class="text-stone-grey hover:text-gold-light transition-colors font-body-md" href="#">Kurumsal</a></li>
+<li><a class="text-stone-grey hover:text-gold-light transition-colors font-body-md" href="#">Hizmetler</a></li>
+<li><a class="text-stone-grey hover:text-gold-light transition-colors font-body-md" href="#">Projeler</a></li>
+<li><a class="text-stone-grey hover:text-gold-light transition-colors font-body-md" href="#">İletişim</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-headline-md text-lg text-gold-light">Hizmetlerimiz</h4>
+<ul class="space-y-3">
+<li><a class="text-stone-grey hover:text-gold-light transition-colors font-body-md" href="#">Parke Taşı Uygulama</a></li>
+<li><a class="text-stone-grey hover:text-gold-light transition-colors font-body-md" href="#">Andezit Kaplama</a></li>
+<li><a class="text-stone-grey hover:text-gold-light transition-colors font-body-md" href="#">Baskı Beton</a></li>
+<li><a class="text-stone-grey hover:text-gold-light transition-colors font-body-md" href="#">Peyzaj Tasarımı</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-headline-md text-lg text-gold-light">İletişim</h4>
+<p class="text-stone-grey font-body-md flex items-start gap-2">
+<span class="material-symbols-outlined text-gold-light">location_on</span>
+                    Organize Sanayi Bölgesi, 42000, Selçuklu/Konya
+                </p>
+<p class="text-stone-grey font-body-md flex items-center gap-2">
+<span class="material-symbols-outlined text-gold-light">mail</span>
+                    info@sekmenzemin.com
+                </p>
+</div>
+</div>
+<div class="border-t border-surface-variant/10 py-8 px-margin-mobile md:px-margin-desktop text-center">
+<p class="text-stone-grey font-body-md text-sm">© 2024 Sekmen Zemin Tasarım. Tüm Hakları Saklıdır. <span class="mx-2">|</span> <a class="hover:text-gold-light transition-colors" href="#">KVKK</a> <span class="mx-2">|</span> <a class="hover:text-gold-light transition-colors" href="#">Çerez Politikası</a></p>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="lg:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe pt-2 bg-surface/90 backdrop-blur-xl border-t border-surface-variant shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-stone-grey" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-caps text-[10px]">Anasayfa</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-grey" href="#">
+<span class="material-symbols-outlined">category</span>
+<span class="font-label-caps text-[10px]">Ürünler</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gold-light bg-tertiary-container/20 rounded-xl px-3 py-1" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">architecture</span>
+<span class="font-label-caps text-[10px]">Projeler</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-grey" href="#">
+<span class="material-symbols-outlined">contact_page</span>
+<span class="font-label-caps text-[10px]">Teklif</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-grey" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-label-caps text-[10px]">Profil</span>
+</a>
+</nav>
+<script>
+        const slider = document.getElementById('slider');
+        const handle = document.getElementById('handle');
+        const afterWrapper = document.getElementById('after-wrapper');
+        
+        let isResizing = false;
+
+        function updateSlider(x) {
+            const rect = slider.getBoundingClientRect();
+            let position = ((x - rect.left) / rect.width) * 100;
+            
+            if (position < 0) position = 0;
+            if (position > 100) position = 100;
+            
+            handle.style.left = position + '%';
+            afterWrapper.style.width = position + '%';
+        }
+
+        slider.addEventListener('mousedown', (e) => {
+            isResizing = true;
+            updateSlider(e.clientX);
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isResizing) return;
+            updateSlider(e.clientX);
+        });
+
+        window.addEventListener('mouseup', () => {
+            isResizing = false;
+        });
+
+        // Touch events
+        slider.addEventListener('touchstart', (e) => {
+            isResizing = true;
+            updateSlider(e.touches[0].clientX);
+        });
+
+        window.addEventListener('touchmove', (e) => {
+            if (!isResizing) return;
+            updateSlider(e.touches[0].clientX);
+        });
+
+        window.addEventListener('touchend', () => {
+            isResizing = false;
+        });
+
+        // Initial Position
+        handle.style.left = '50%';
+        afterWrapper.style.width = '50%';
+    </script>
+</body></html>

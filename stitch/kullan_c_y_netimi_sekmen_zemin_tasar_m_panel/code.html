@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sekmen Zemin Tasarım | Kullanıcı Yönetimi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-primary-container": "#7b7979",
+                    "surface-container-low": "#1c1b1b",
+                    "on-tertiary": "#452b00",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "on-error": "#690005",
+                    "tertiary-fixed-dim": "#f4bd6f",
+                    "surface": "#141313",
+                    "secondary-fixed": "#e5e2e1",
+                    "primary": "#c9c6c5",
+                    "surface-tint": "#c9c6c5",
+                    "secondary-container": "#474746",
+                    "on-secondary-container": "#b7b4b4",
+                    "surface-variant": "#353434",
+                    "tertiary-fixed": "#ffddb2",
+                    "on-primary-fixed-variant": "#474646",
+                    "on-surface-variant": "#c4c7c7",
+                    "surface-container-high": "#2b2a2a",
+                    "surface-container-highest": "#353434",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "inverse-on-surface": "#313030",
+                    "on-error-container": "#ffdad6",
+                    "stone-grey": "#8A8A8A",
+                    "gold-dark": "#8C6526",
+                    "tertiary-container": "#120800",
+                    "background": "#141313",
+                    "on-tertiary-container": "#9e712b",
+                    "surface-bright": "#3a3939",
+                    "error-container": "#93000a",
+                    "inverse-primary": "#5f5e5e",
+                    "on-background": "#e5e2e1",
+                    "surface-container": "#201f1f",
+                    "tertiary": "#f4bd6f",
+                    "primary-fixed": "#e5e2e1",
+                    "surface-dim": "#141313",
+                    "primary-container": "#0a0a0a",
+                    "cream-white": "#F5F2EC",
+                    "secondary": "#c8c6c5",
+                    "gold-light": "#D4A95C",
+                    "outline-variant": "#444748",
+                    "on-surface": "#e5e2e1",
+                    "outline": "#8e9192",
+                    "inverse-surface": "#e5e2e1",
+                    "on-primary": "#313030",
+                    "surface-container-lowest": "#0e0e0e",
+                    "error": "#ffb4ab",
+                    "on-secondary": "#313030",
+                    "on-secondary-fixed-variant": "#474746",
+                    "on-tertiary-fixed": "#291800",
+                    "on-primary-fixed": "#1c1b1b",
+                    "on-tertiary-fixed-variant": "#624000"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "unit": "8px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "body-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "label-caps": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "headline-xl": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "headline-lg": ["Montserrat"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "0.03em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0A;
+            color: #E5E2E1;
+            overflow-x: hidden;
+        }
+        .perspective-lines {
+            background-image: 
+                linear-gradient(45deg, rgba(140, 101, 38, 0.05) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(140, 101, 38, 0.05) 25%, transparent 25%);
+            background-size: 60px 60px;
+        }
+        .gold-glow:hover {
+            box-shadow: 0 0 20px rgba(182, 134, 62, 0.2);
+            border-color: rgba(182, 134, 62, 0.5);
+        }
+        .glass-panel {
+            background: rgba(22, 22, 22, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A0A0A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #444748;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #B6863E;
+        }
+    </style>
+</head>
+<body class="font-body-md">
+<div class="flex min-h-screen perspective-lines">
+<!-- SideNavBar Component -->
+<aside class="fixed left-0 h-screen w-64 bg-surface-container-low border-r border-outline-variant shadow-md flex flex-col py-8 z-50">
+<div class="px-6 mb-10">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 bg-gold-dark rounded-lg flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">architecture</span>
+</div>
+<div>
+<h1 class="font-headline-md text-[20px] font-bold text-tertiary leading-tight">Sekmen Zemin</h1>
+<p class="text-[10px] uppercase tracking-widest text-stone-grey font-label-caps">Yönetim Paneli</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<!-- Dashboard -->
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md">Dashboard</span>
+</a>
+<!-- Projeler -->
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">architecture</span>
+<span class="font-body-md">Projeler</span>
+</a>
+<!-- Hizmetler -->
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">construction</span>
+<span class="font-body-md">Hizmetler</span>
+</a>
+<!-- Sistem Ayarları (ACTIVE) -->
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-tertiary font-bold border-r-2 border-tertiary bg-surface-container-high transition-colors duration-200 shadow-[0_0_15px_rgba(140,101,38,0.1)]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-body-md">Sistem Ayarları</span>
+</a>
+<!-- Mesajlar -->
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-body-md">Mesajlar</span>
+</a>
+</nav>
+<div class="px-4 mt-auto">
+<button class="w-full py-3 px-4 mb-4 bg-surface-container-highest border border-outline-variant rounded-xl flex items-center justify-center gap-2 text-tertiary font-bold hover:bg-tertiary-container transition-all">
+<span class="material-symbols-outlined text-sm">add</span>
+<span class="font-label-caps text-[11px]">Yeni Proje Ekle</span>
+</button>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-error hover:bg-error-container/20 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-body-md">Çıkış</span>
+</a>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 ml-64 flex flex-col">
+<!-- TopAppBar Component -->
+<header class="sticky top-0 z-40 flex justify-between items-center px-margin-desktop h-20 bg-surface/85 backdrop-blur-md border-b border-outline-variant shadow-sm">
+<h2 class="font-headline-md text-headline-md text-tertiary font-bold">Sistem Ayarları</h2>
+<div class="flex items-center gap-6">
+<div class="relative flex items-center bg-surface-container px-4 py-2 rounded-full border border-outline-variant focus-within:border-tertiary transition-all">
+<span class="material-symbols-outlined text-stone-grey text-[20px]">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm text-on-surface placeholder:text-stone-grey w-64" placeholder="Kullanıcı ara..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:text-tertiary transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-highest border border-outline-variant cursor-pointer overflow-hidden hover:border-tertiary transition-all">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="A professional close-up portrait of a high-end architectural consultant with sophisticated features, set against a blurred dark industrial interior with warm ambient lighting. The style is cinematic and luxury-oriented, utilizing shallow depth of field to emphasize the subject's authoritative yet creative expression, matching the premium charcoal and gold brand aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfJMwmZuS0uuYrIiB_xftB1i2GIHSEE7zImblMXqqrLGnArlcUizJjD7u9K59uDnZ0CeQMfGdlx_KJkpEfWt_0VXsWjwp0WUuAyErvYa6UUzymKWWL6dUftKJj8KlZ0x73PCdDPVF1uu2fQwDClAyLZeFzjluMNheGH0Exq1_kvMAOZ1W71c681kE5x7ZiB-QanUyCcDU-9Ic7H7Ox66EtQfjjsetELBrSwSWfNwXoFYDRS2i4wc9rcZhf-ycYSSWZ4XEQBVT9c8-u"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<div class="p-10 flex gap-gutter">
+<!-- Section 1: User List -->
+<div class="flex-[2] flex flex-col gap-6">
+<div class="flex items-center justify-between mb-2">
+<div>
+<h3 class="font-headline-md text-[24px] text-white">Ekip Üyeleri</h3>
+<p class="font-body-md text-stone-grey text-sm">Sistem üzerinde yetki sahibi toplam 12 kullanıcı bulunmaktadır.</p>
+</div>
+</div>
+<div class="glass-panel border border-outline-variant rounded-2xl overflow-hidden shadow-2xl">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container border-b border-outline-variant">
+<th class="px-6 py-4 font-label-caps text-stone-grey text-[10px]">KULLANICI</th>
+<th class="px-6 py-4 font-label-caps text-stone-grey text-[10px]">E-POSTA</th>
+<th class="px-6 py-4 font-label-caps text-stone-grey text-[10px]">ROL</th>
+<th class="px-6 py-4 font-label-caps text-stone-grey text-[10px] text-right">İŞLEMLER</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/30">
+<!-- User Row 1 -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-gold-dark/20 border border-gold-dark/40 flex items-center justify-center text-tertiary font-bold">AK</div>
+<span class="font-body-md font-semibold text-on-surface">Ahmet Kaya</span>
+</div>
+</td>
+<td class="px-6 py-5 font-body-md text-stone-grey">ahmet@sekmenzemin.com</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-tertiary/10 text-tertiary text-[11px] font-bold rounded-full border border-tertiary/20 font-label-caps uppercase tracking-tighter">Admin</span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-surface-container-highest rounded-lg text-stone-grey hover:text-tertiary transition-all">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-2 hover:bg-error-container/20 rounded-lg text-stone-grey hover:text-error transition-all">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- User Row 2 -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-stone-grey/20 border border-stone-grey/40 flex items-center justify-center text-stone-grey font-bold">EY</div>
+<span class="font-body-md font-semibold text-on-surface">Elif Yılmaz</span>
+</div>
+</td>
+<td class="px-6 py-5 font-body-md text-stone-grey">elif@sekmenzemin.com</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-surface-container-highest text-stone-grey text-[11px] font-bold rounded-full border border-outline-variant font-label-caps uppercase tracking-tighter">Editor</span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-surface-container-highest rounded-lg text-stone-grey hover:text-tertiary transition-all">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-2 hover:bg-error-container/20 rounded-lg text-stone-grey hover:text-error transition-all">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- User Row 3 -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-stone-grey/20 border border-stone-grey/40 flex items-center justify-center text-stone-grey font-bold">BS</div>
+<span class="font-body-md font-semibold text-on-surface">Burak Sezgin</span>
+</div>
+</td>
+<td class="px-6 py-5 font-body-md text-stone-grey">burak@sekmenzemin.com</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-surface-container-highest text-stone-grey text-[11px] font-bold rounded-full border border-outline-variant font-label-caps uppercase tracking-tighter">Editor</span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-surface-container-highest rounded-lg text-stone-grey hover:text-tertiary transition-all">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-2 hover:bg-error-container/20 rounded-lg text-stone-grey hover:text-error transition-all">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- User Row 4 -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-gold-dark/20 border border-gold-dark/40 flex items-center justify-center text-tertiary font-bold">ST</div>
+<span class="font-body-md font-semibold text-on-surface">Serkan Terzi</span>
+</div>
+</td>
+<td class="px-6 py-5 font-body-md text-stone-grey">serkan@sekmenzemin.com</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-tertiary/10 text-tertiary text-[11px] font-bold rounded-full border border-tertiary/20 font-label-caps uppercase tracking-tighter">Admin</span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-surface-container-highest rounded-lg text-stone-grey hover:text-tertiary transition-all">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-2 hover:bg-error-container/20 rounded-lg text-stone-grey hover:text-error transition-all">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Section 2: New User Form Side Panel -->
+<div class="flex-1">
+<div class="glass-panel border border-outline-variant rounded-2xl p-8 sticky top-28 shadow-2xl gold-glow transition-all duration-300">
+<h3 class="font-headline-md text-[24px] text-white mb-6">Yeni Kullanıcı Ekle</h3>
+<form class="space-y-6">
+<!-- Name Field -->
+<div class="space-y-2">
+<label class="font-label-caps text-[10px] text-stone-grey uppercase tracking-widest">Tam İsim</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-xl px-4 py-3 focus:border-tertiary focus:ring-1 focus:ring-tertiary text-on-surface transition-all" placeholder="Ad Soyad" type="text"/>
+</div>
+<!-- Email Field -->
+<div class="space-y-2">
+<label class="font-label-caps text-[10px] text-stone-grey uppercase tracking-widest">E-posta Adresi</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-xl px-4 py-3 focus:border-tertiary focus:ring-1 focus:ring-tertiary text-on-surface transition-all" placeholder="ornek@sekmenzemin.com" type="email"/>
+</div>
+<!-- Password Field -->
+<div class="space-y-2">
+<label class="font-label-caps text-[10px] text-stone-grey uppercase tracking-widest">Şifre</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-xl px-4 py-3 focus:border-tertiary focus:ring-1 focus:ring-tertiary text-on-surface transition-all" placeholder="••••••••" type="password"/>
+</div>
+<!-- Role Selection -->
+<div class="space-y-4 pt-4">
+<label class="font-label-caps text-[10px] text-stone-grey uppercase tracking-widest">Rol Ataması</label>
+<div class="grid grid-cols-1 gap-3">
+<!-- Editor Role -->
+<label class="relative flex items-start gap-4 p-4 rounded-xl border border-outline-variant bg-surface-container-low cursor-pointer hover:bg-surface-container-high transition-all">
+<input class="mt-1 h-4 w-4 border-outline-variant text-tertiary focus:ring-tertiary bg-surface-container" name="role" type="radio"/>
+<div>
+<p class="font-body-md font-bold text-on-surface leading-none mb-1">Editor</p>
+<p class="text-xs text-stone-grey">Sadece içerik yönetimi yapabilir (Ürünler, projeler ve yorumlar).</p>
+</div>
+</label>
+<!-- Admin Role -->
+<label class="relative flex items-start gap-4 p-4 rounded-xl border border-tertiary/30 bg-tertiary/5 cursor-pointer hover:bg-tertiary/10 transition-all">
+<input checked="" class="mt-1 h-4 w-4 border-outline-variant text-tertiary focus:ring-tertiary bg-surface-container" name="role" type="radio"/>
+<div>
+<p class="font-body-md font-bold text-tertiary leading-none mb-1">Admin</p>
+<p class="text-xs text-stone-grey">Tam yetki: Kullanıcılar, sistem ayarları ve finansal takip.</p>
+</div>
+</label>
+</div>
+</div>
+<!-- CTA Button -->
+<button class="w-full mt-4 py-4 rounded-xl bg-gradient-to-r from-gold-dark to-gold-light text-black font-label-caps text-[13px] font-bold uppercase tracking-widest shadow-[0_10px_20px_rgba(140,101,38,0.3)] hover:shadow-[0_15px_30px_rgba(140,101,38,0.4)] hover:-translate-y-0.5 active:translate-y-0 transition-all" type="submit">
+                                Kullanıcıyı Kaydet
+                            </button>
+</form>
+</div>
+</div>
+</div>
+<!-- Footer Component -->
+<footer class="w-full py-4 mt-auto border-t border-outline-variant bg-surface-container-lowest flex justify-between items-center px-margin-desktop">
+<span class="font-label-caps text-label-caps text-stone-grey">© 2024 Sekmen Zemin Tasarım - Endüstriyel Lüks Sistem Paneli</span>
+<div class="flex gap-8">
+<a class="font-label-caps text-label-caps text-stone-grey hover:text-gold-light transition-all" href="#">Kullanım Koşulları</a>
+<a class="font-label-caps text-label-caps text-stone-grey hover:text-gold-light transition-all" href="#">Gizlilik Politikası</a>
+<a class="font-label-caps text-label-caps text-stone-grey hover:text-gold-light transition-all" href="#">Destek</a>
+</div>
+</footer>
+</main>
+</div>
+<!-- Micro-interaction Scripts -->
+<script>
+        // Placeholder for future interactivity
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.classList.add('scale-[1.01]');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.classList.remove('scale-[1.01]');
+            });
+        });
+
+        // Simulating loading state for the primary CTA
+        const btn = document.querySelector('button[type="submit"]');
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">refresh</span> Kaydediliyor...';
+            btn.classList.add('opacity-80');
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.classList.remove('opacity-80');
+            }, 1500);
+        });
+    </script>
+</body></html>

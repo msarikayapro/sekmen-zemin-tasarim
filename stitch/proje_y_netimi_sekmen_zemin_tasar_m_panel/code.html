@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sekmen Zemin Panel | Proje Yönetimi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#8e9192",
+                        "inverse-surface": "#e5e2e1",
+                        "on-surface-variant": "#c4c7c7",
+                        "surface-tint": "#c9c6c5",
+                        "secondary": "#c8c6c5",
+                        "tertiary-fixed-dim": "#f4bd6f",
+                        "surface-dim": "#141313",
+                        "stone-grey": "#8A8A8A",
+                        "cream-white": "#F5F2EC",
+                        "surface-bright": "#3a3939",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#474746",
+                        "inverse-primary": "#5f5e5e",
+                        "gold-light": "#D4A95C",
+                        "outline-variant": "#444748",
+                        "on-primary-container": "#7b7979",
+                        "on-tertiary-fixed-variant": "#624000",
+                        "primary-container": "#0a0a0a",
+                        "surface-container": "#201f1f",
+                        "on-primary-fixed": "#1c1b1b",
+                        "on-surface": "#e5e2e1",
+                        "tertiary-container": "#120800",
+                        "error-container": "#93000a",
+                        "background": "#141313",
+                        "surface-container-highest": "#353434",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "on-background": "#e5e2e1",
+                        "on-secondary": "#313030",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary-container": "#b7b4b4",
+                        "on-tertiary-container": "#9e712b",
+                        "on-error": "#690005",
+                        "on-tertiary": "#452b00",
+                        "error": "#ffb4ab",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "tertiary": "#f4bd6f",
+                        "primary-fixed": "#e5e2e1",
+                        "secondary-container": "#474746",
+                        "primary": "#c9c6c5",
+                        "surface-variant": "#353434",
+                        "surface-container-low": "#1c1b1b",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface": "#141313",
+                        "on-primary-fixed-variant": "#474646",
+                        "inverse-on-surface": "#313030",
+                        "tertiary-fixed": "#ffddb2",
+                        "surface-container-high": "#2b2a2a",
+                        "gold-dark": "#8C6526",
+                        "on-tertiary-fixed": "#291800",
+                        "on-primary": "#313030"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Montserrat"],
+                        "headline-xl": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-caps": ["Montserrat"],
+                        "body-md": ["Hanken Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0A;
+            color: #e5e2e1;
+            font-family: 'Hanken Grotesk', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(22, 22, 22, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .pavement-pattern {
+            background-image: radial-gradient(#B6863E 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            opacity: 0.03;
+        }
+        .gold-glow:hover {
+            box-shadow: 0 0 20px rgba(182, 134, 62, 0.15);
+            border-color: #B6863E;
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #141313; }
+        ::-webkit-scrollbar-thumb { background: #444748; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #B6863E; }
+    </script>
+</head>
+<body class="overflow-hidden">
+
+    <!-- Background Decoration -->
+    <div class="fixed inset-0 pavement-pattern pointer-events-none"></div>
+
+    <!-- Side Navigation Shell -->
+    <aside class="fixed left-0 top-0 h-screen flex flex-col pt-8 pb-4 bg-surface-container-low border-r border-outline-variant/20 shadow-lg shadow-black/40 w-64 z-50">
+        <div class="px-6 mb-10">
+            <h1 class="font-headline-md text-headline-md text-gold-light leading-tight">Sekmen Zemin</h1>
+            <p class="text-stone-grey font-label-caps text-[10px] tracking-widest mt-1 uppercase">Yönetim Paneli</p>
+        </div>
+
+        <nav class="flex-1 space-y-1 px-2">
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-stone-grey hover:bg-surface-variant/10 hover:text-gold-light transition-all duration-300">
+                <span class="material-symbols-outlined">dashboard</span>
+                <span class="font-label-caps">Dashboard</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 bg-secondary-container text-gold-light border-r-2 border-gold-light transition-all duration-300 shadow-[0_0_15px_rgba(182,134,62,0.2)]">
+                <span class="material-symbols-outlined">architecture</span>
+                <span class="font-label-caps">Projeler</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-stone-grey hover:bg-surface-variant/10 hover:text-gold-light transition-all duration-300">
+                <span class="material-symbols-outlined">menu_book</span>
+                <span class="font-label-caps">Katalog</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-stone-grey hover:bg-surface-variant/10 hover:text-gold-light transition-all duration-300">
+                <span class="material-symbols-outlined">mail</span>
+                <span class="font-label-caps">Mesajlar</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-stone-grey hover:bg-surface-variant/10 hover:text-gold-light transition-all duration-300">
+                <span class="material-symbols-outlined">group</span>
+                <span class="font-label-caps">Kullanıcılar</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-stone-grey hover:bg-surface-variant/10 hover:text-gold-light transition-all duration-300">
+                <span class="material-symbols-outlined">settings</span>
+                <span class="font-label-caps">Genel Ayarlar</span>
+            </a>
+        </nav>
+
+        <div class="px-4 mt-auto space-y-1">
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-stone-grey hover:text-gold-light transition-colors">
+                <span class="material-symbols-outlined">help</span>
+                <span class="font-label-caps">Destek</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-stone-grey hover:text-error transition-colors">
+                <span class="material-symbols-outlined">logout</span>
+                <span class="font-label-caps">Çıkış</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content Canvas -->
+    <main class="ml-64 min-h-screen flex flex-row">
+        
+        <!-- Left: Project List -->
+        <section class="flex-1 p-margin-desktop overflow-y-auto">
+            <div class="flex justify-between items-end mb-8">
+                <div>
+                    <h2 class="font-headline-lg text-headline-lg text-cream-white">Proje Yönetimi</h2>
+                    <p class="text-stone-grey mt-2 font-body-md">Sistemdeki tüm portfolyo projelerini buradan yönetin.</p>
+                </div>
+                <div class="flex gap-4">
+                    <div class="relative">
+                        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-stone-grey text-sm">search</span>
+                        <input type="text" placeholder="Proje ara..." class="bg-surface-container-high border-outline-variant/30 text-cream-white text-sm pl-10 pr-4 py-2 rounded focus:ring-1 focus:ring-gold-light focus:border-gold-light w-64 transition-all">
+                    </div>
+                    <button onclick="toggleForm()" class="bg-gold-light hover:bg-gold-dark text-primary-container px-6 py-2 font-label-caps flex items-center gap-2 transition-all shadow-lg shadow-gold-light/10">
+                        <span class="material-symbols-outlined text-[18px]">add</span>
+                        Yeni Proje
+                    </button>
+                </div>
+            </div>
+
+            <!-- Project Table Container -->
+            <div class="bg-surface-container-low rounded-lg border border-outline-variant/10 overflow-hidden">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-surface-container-highest/30 border-b border-outline-variant/20">
+                            <th class="p-4 font-label-caps text-stone-grey text-[10px]">Kapak</th>
+                            <th class="p-4 font-label-caps text-stone-grey text-[10px]">Proje Adı</th>
+                            <th class="p-4 font-label-caps text-stone-grey text-[10px]">Tip Etiketi</th>
+                            <th class="p-4 font-label-caps text-stone-grey text-[10px]">Durum</th>
+                            <th class="p-4 font-label-caps text-stone-grey text-[10px] text-right">İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-outline-variant/10">
+                        <!-- Project Row 1 -->
+                        <tr class="hover:bg-surface-variant/5 transition-colors group">
+                            <td class="p-4">
+                                <div class="w-16 h-12 rounded overflow-hidden bg-surface-container-high">
+                                    <img src="https://images.unsplash.com/photo-1590059132213-f66d7347959b?auto=format&fit=crop&q=80&w=200" data-alt="A high-end architectural close-up of a luxury villa driveway featuring intricate interlocking stone patterns in shades of grey and charcoal. The lighting is late afternoon sun, casting long elegant shadows across the textured surfaces. The overall mood is industrial luxe with a focus on durability and craftsmanship, perfectly aligning with a premium construction brand aesthetic." class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                </div>
+                            </td>
+                            <td class="p-4">
+                                <p class="font-headline-md text-base text-cream-white">Elysium Villaları</p>
+                                <p class="text-stone-grey text-xs">Konya, Meram</p>
+                            </td>
+                            <td class="p-4">
+                                <span class="bg-gold-light/10 text-gold-light px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border border-gold-light/20">Konut</span>
+                            </td>
+                            <td class="p-4">
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" checked class="sr-only peer">
+                                    <div class="w-9 h-5 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-gold-light"></div>
+                                </label>
+                            </td>
+                            <td class="p-4 text-right">
+                                <div class="flex justify-end gap-2">
+                                    <button class="p-2 text-stone-grey hover:text-gold-light transition-colors"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+                                    <button class="p-2 text-stone-grey hover:text-error transition-colors"><span class="material-symbols-outlined text-[20px]">delete</span></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- Project Row 2 -->
+                        <tr class="hover:bg-surface-variant/5 transition-colors group">
+                            <td class="p-4">
+                                <div class="w-16 h-12 rounded overflow-hidden bg-surface-container-high">
+                                    <img src="https://images.unsplash.com/photo-1574362848149-11496d93a7c7?auto=format&fit=crop&q=80&w=200" data-alt="A wide-angle landscape shot of a modern public park plaza featuring large-scale geometric stone paving. The design uses light and dark grey granite to create a futuristic pavement pattern that guides pedestrians. The scene is bright and airy, representing a successful large-scale commercial project with high durability and architectural precision in a modern city environment." class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                </div>
+                            </td>
+                            <td class="p-4">
+                                <p class="font-headline-md text-base text-cream-white">Merkez Plaza Çevre</p>
+                                <p class="text-stone-grey text-xs">Ankara, Çankaya</p>
+                            </td>
+                            <td class="p-4">
+                                <span class="bg-surface-container-highest text-cream-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border border-outline-variant/30">Ticari</span>
+                            </td>
+                            <td class="p-4">
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" checked class="sr-only peer">
+                                    <div class="w-9 h-5 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-gold-light"></div>
+                                </label>
+                            </td>
+                            <td class="p-4 text-right">
+                                <div class="flex justify-end gap-2">
+                                    <button class="p-2 text-stone-grey hover:text-gold-light transition-colors"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+                                    <button class="p-2 text-stone-grey hover:text-error transition-colors"><span class="material-symbols-outlined text-[20px]">delete</span></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- Row 3 -->
+                        <tr class="hover:bg-surface-variant/5 transition-colors group">
+                            <td class="p-4">
+                                <div class="w-16 h-12 rounded overflow-hidden bg-surface-container-high">
+                                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=200" data-alt="A serene landscape project showing a high-end garden pathway made of natural stone slabs nestled in lush green grass. The image highlights the intersection of engineering and nature with precise stone placement and soft, warm evening lighting. The atmosphere is sophisticated and premium, targeting luxury homeowners looking for unique landscaping solutions." class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                </div>
+                            </td>
+                            <td class="p-4">
+                                <p class="font-headline-md text-base text-cream-white">Villa Safir Bahçe</p>
+                                <p class="text-stone-grey text-xs">Antalya, Belek</p>
+                            </td>
+                            <td class="p-4">
+                                <span class="bg-surface-container-highest text-cream-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border border-outline-variant/30">Peyzaj</span>
+                            </td>
+                            <td class="p-4">
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer">
+                                    <div class="w-9 h-5 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-gold-light"></div>
+                                </label>
+                            </td>
+                            <td class="p-4 text-right">
+                                <div class="flex justify-end gap-2">
+                                    <button class="p-2 text-stone-grey hover:text-gold-light transition-colors"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+                                    <button class="p-2 text-stone-grey hover:text-error transition-colors"><span class="material-symbols-outlined text-[20px]">delete</span></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="mt-6 flex justify-between items-center text-stone-grey text-sm">
+                <p>Toplam 42 projeden 1-10 arası gösteriliyor</p>
+                <div class="flex gap-2">
+                    <button class="w-10 h-10 flex items-center justify-center rounded border border-outline-variant/30 hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>
+                    <button class="w-10 h-10 flex items-center justify-center rounded bg-gold-light text-primary-container font-bold">1</button>
+                    <button class="w-10 h-10 flex items-center justify-center rounded border border-outline-variant/30 hover:bg-surface-container-high transition-colors">2</button>
+                    <button class="w-10 h-10 flex items-center justify-center rounded border border-outline-variant/30 hover:bg-surface-container-high transition-colors">3</button>
+                    <button class="w-10 h-10 flex items-center justify-center rounded border border-outline-variant/30 hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Right: Project Form Sidebar -->
+        <aside id="project-sidebar" class="w-[500px] bg-surface-container-low border-l border-outline-variant/20 h-screen overflow-y-auto transform transition-transform duration-500 translate-x-0 relative shadow-2xl z-40">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-8">
+                    <h3 class="font-headline-md text-headline-md text-gold-light">Yeni Proje Ekle</h3>
+                    <button onclick="toggleForm()" class="text-stone-grey hover:text-cream-white"><span class="material-symbols-outlined">close</span></button>
+                </div>
+
+                <form class="space-y-6">
+                    <!-- Basic Info -->
+                    <div class="space-y-4">
+                        <div class="flex flex-col gap-2">
+                            <label class="font-label-caps text-[10px] text-stone-grey uppercase tracking-widest">Proje Adı</label>
+                            <input type="text" placeholder="örn: Meram Konutları" class="bg-surface-container border-outline-variant/30 text-cream-white rounded p-3 focus:ring-gold-light focus:border-gold-light transition-all placeholder:text-stone-grey/50">
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex flex-col gap-2">
+                                <label class="font-label-caps text-[10px] text-stone-grey uppercase tracking-widest">Konum</label>
+                                <input type="text" placeholder="Şehir / İlçe" class="bg-surface-container border-outline-variant/30 text-cream-white rounded p-3 focus:ring-gold-light focus:border-gold-light transition-all">
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label class="font-label-caps text-[10px] text-stone-grey uppercase tracking-widest">Tip</label>
+                                <select class="bg-surface-container border-outline-variant/30 text-cream-white rounded p-3 focus:ring-gold-light focus:border-gold-light transition-all">
+                                    <option>Konut</option>
+                                    <option>Kamu</option>
+                                    <option>Ticari</option>
+                                    <option>Peyzaj</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex flex-col gap-2">
+                                <label class="font-label-caps text-[10px] text-stone-grey uppercase tracking-widest">Tarih</label>
+                                <input type="date" class="bg-surface-container border-outline-variant/30 text-cream-white rounded p-3 focus:ring-gold-light focus:border-gold-light transition-all">
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label class="font-label-caps text-[10px] text-stone-grey uppercase tracking-widest">Video URL</label>
+                                <input type="url" placeholder="YouTube/Vimeo Link" class="bg-surface-container border-outline-variant/30 text-cream-white rounded p-3 focus:ring-gold-light focus:border-gold-light transition-all">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Media Upload -->
+                    <div class="space-y-2">
+                        <label class="font-label-caps text-[10px] text-stone-grey uppercase tracking-widest">Çoklu Foto Galeri Yükleme</label>
+                        <div class="border-2 border-dashed border-outline-variant/30 rounded-lg p-8 flex flex-col items-center justify-center bg-surface-container/50 hover:border-gold-light/50 transition-all cursor-pointer group">
+                            <span class="material-symbols-outlined text-4xl text-stone-grey group-hover:text-gold-light transition-colors mb-2">cloud_upload</span>
+                            <p class="text-sm text-stone-grey">Dosyaları buraya sürükleyin veya tıklayın</p>
+                            <p class="text-[10px] text-stone-grey/50 mt-1 uppercase tracking-tighter">Maksimum 10MB - JPG, PNG</p>
+                        </div>
+                    </div>
+
+                    <!-- Stones Selection -->
+                    <div class="space-y-2">
+                        <label class="font-label-caps text-[10px] text-stone-grey uppercase tracking-widest">Kullanılan Taş Çeşitleri</label>
+                        <div class="flex flex-wrap gap-2 p-3 bg-surface-container border border-outline-variant/30 rounded min-h-[80px]">
+                            <span class="bg-gold-light text-primary-container text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1">Ani <span class="material-symbols-outlined text-xs">close</span></span>
+                            <span class="bg-gold-light text-primary-container text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1">Azure <span class="material-symbols-outlined text-xs">close</span></span>
+                            <span class="bg-gold-light text-primary-container text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1">Kilitli <span class="material-symbols-outlined text-xs">close</span></span>
+                            <button type="button" class="text-stone-grey hover:text-gold-light flex items-center text-xs ml-auto">
+                                <span class="material-symbols-outlined text-sm">add_circle</span>
+                                Seç
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Description Area -->
+                    <div class="space-y-2">
+                        <label class="font-label-caps text-[10px] text-stone-grey uppercase tracking-widest">Açıklama</label>
+                        <div class="bg-surface-container border border-outline-variant/30 rounded overflow-hidden">
+                            <div class="flex gap-2 p-2 border-b border-outline-variant/20 bg-surface-container-high">
+                                <button type="button" class="p-1 hover:text-gold-light"><span class="material-symbols-outlined text-sm">format_bold</span></button>
+                                <button type="button" class="p-1 hover:text-gold-light"><span class="material-symbols-outlined text-sm">format_italic</span></button>
+                                <button type="button" class="p-1 hover:text-gold-light"><span class="material-symbols-outlined text-sm">format_list_bulleted</span></button>
+                            </div>
+                            <textarea rows="4" class="w-full bg-transparent border-none focus:ring-0 text-sm text-cream-white p-4" placeholder="Proje detaylarını buraya giriniz..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Customer Feedback -->
+                    <div class="space-y-4 pt-4 border-t border-outline-variant/10">
+                        <div class="flex flex-col gap-2">
+                            <label class="font-label-caps text-[10px] text-stone-grey uppercase tracking-widest">Müşteri Adı</label>
+                            <input type="text" placeholder="Ad Soyad" class="bg-surface-container border-outline-variant/30 text-cream-white rounded p-3 focus:ring-gold-light focus:border-gold-light transition-all">
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="font-label-caps text-[10px] text-stone-grey uppercase tracking-widest">Müşteri Yorumu</label>
+                            <textarea rows="3" class="bg-surface-container border-outline-variant/30 text-cream-white rounded p-3 focus:ring-gold-light focus:border-gold-light transition-all text-sm"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Feature Toggle -->
+                    <div class="flex items-center justify-between p-4 bg-surface-container-high/50 rounded border border-outline-variant/10">
+                        <div>
+                            <p class="font-label-caps text-[11px] text-cream-white">Öne Çıkar</p>
+                            <p class="text-[10px] text-stone-grey mt-1">Anasayfada gösterilsin mi?</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" class="sr-only peer">
+                            <div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gold-light"></div>
+                        </label>
+                    </div>
+
+                    <!-- Save Action -->
+                    <div class="pt-4 pb-10">
+                        <button type="submit" class="w-full bg-gold-light hover:bg-gold-dark text-primary-container py-4 font-label-caps font-bold transition-all shadow-xl shadow-gold-light/10 flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined">save</span>
+                            Projeyi Kaydet
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- Footer Shell -->
+    <footer class="fixed bottom-0 right-0 left-64 bg-surface-container-lowest border-t border-outline-variant/10 z-30 transition-all">
+        <div class="w-full py-4 px-margin-desktop flex justify-between items-center">
+            <p class="font-body-md text-stone-grey text-xs">© 2024 Sekmen Zemin Tasarım. Tüm Hakları Saklıdır.</p>
+            <div class="flex gap-6">
+                <a href="#" class="font-label-caps text-[10px] text-stone-grey hover:text-gold-light transition-colors">Gizlilik Politikası</a>
+                <a href="#" class="font-label-caps text-[10px] text-stone-grey hover:text-gold-light transition-colors">Kullanım Koşulları</a>
+                <a href="#" class="font-label-caps text-[10px] text-stone-grey hover:text-gold-light transition-colors">Teknik Destek</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleForm() {
+            const sidebar = document.getElementById('project-sidebar');
+            if (sidebar.classList.contains('translate-x-0')) {
+                sidebar.classList.replace('translate-x-0', 'translate-x-full');
+                sidebar.classList.add('hidden');
+            } else {
+                sidebar.classList.remove('hidden');
+                setTimeout(() => {
+                    sidebar.classList.replace('translate-x-full', 'translate-x-0');
+                }, 10);
+            }
+        }
+
+        // Add visual micro-interaction for rows
+        document.querySelectorAll('tbody tr').forEach(row => {
+            row.addEventListener('click', () => {
+                // In a real app, this would load data into the form
+                const sidebar = document.getElementById('project-sidebar');
+                if (sidebar.classList.contains('hidden')) toggleForm();
+            });
+        });
+    </script>
+
+</body>
+</html></style></head><body></body></html>

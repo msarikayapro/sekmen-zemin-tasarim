@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Sekmen Admin Panel</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ffb4ab",
+                    "on-tertiary": "#452b00",
+                    "surface-container-highest": "#353434",
+                    "on-background": "#e5e2e1",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-primary": "#313030",
+                    "primary-container": "#0a0a0a",
+                    "surface-bright": "#3a3939",
+                    "on-secondary": "#313030",
+                    "on-error": "#690005",
+                    "outline-variant": "#444748",
+                    "on-tertiary-fixed": "#291800",
+                    "on-primary-fixed": "#1c1b1b",
+                    "surface-container-low": "#1c1b1b",
+                    "stone-grey": "#8A8A8A",
+                    "surface-container-high": "#2b2a2a",
+                    "on-primary-fixed-variant": "#474646",
+                    "on-secondary-fixed-variant": "#474746",
+                    "secondary-container": "#474746",
+                    "surface-dim": "#141313",
+                    "gold-light": "#D4A95C",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "inverse-surface": "#e5e2e1",
+                    "on-primary-container": "#7b7979",
+                    "surface-variant": "#353434",
+                    "surface-tint": "#c9c6c5",
+                    "on-secondary-container": "#b7b4b4",
+                    "tertiary-fixed-dim": "#f4bd6f",
+                    "surface-container": "#201f1f",
+                    "primary-fixed": "#e5e2e1",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "tertiary": "#f4bd6f",
+                    "on-tertiary-fixed-variant": "#624000",
+                    "on-tertiary-container": "#9e712b",
+                    "tertiary-fixed": "#ffddb2",
+                    "inverse-on-surface": "#313030",
+                    "secondary-fixed": "#e5e2e1",
+                    "inverse-primary": "#5f5e5e",
+                    "gold-dark": "#8C6526",
+                    "tertiary-container": "#120800",
+                    "cream-white": "#F5F2EC",
+                    "outline": "#8e9192",
+                    "on-surface-variant": "#c4c7c7",
+                    "on-surface": "#e5e2e1",
+                    "on-error-container": "#ffdad6",
+                    "primary": "#c9c6c5",
+                    "background": "#141313",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "surface": "#141313",
+                    "error-container": "#93000a",
+                    "secondary": "#c8c6c5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "headline-xl": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "body-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .gold-glow:active {
+            box-shadow: 0 0 20px rgba(212, 169, 92, 0.4);
+            transform: scale(0.96);
+        }
+        .bento-card {
+            background: linear-gradient(145deg, #201f1f 0%, #141313 100%);
+            border: 1px solid rgba(212, 169, 92, 0.1);
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+            overscroll-behavior-y: contain;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-24">
+<!-- Top AppBar -->
+<header class="sticky top-0 z-50 bg-surface/85 backdrop-blur-md px-margin-mobile py-4 flex justify-between items-center shadow-md border-b border-surface-variant">
+<div class="flex flex-col">
+<h1 class="font-headline-md text-headline-md font-bold text-gold-light uppercase tracking-wider">SEKMEN</h1>
+<span class="font-label-caps text-[10px] text-stone-grey uppercase">Admin Panel</span>
+</div>
+<div class="relative">
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-gold-light/30 flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-gold-light" data-icon="person">person</span>
+</div>
+<div class="absolute -top-1 -right-1 w-3 h-3 bg-gold-light rounded-full border-2 border-background animate-pulse"></div>
+</div>
+</header>
+<main class="px-margin-mobile pt-8 space-y-8 max-w-md mx-auto">
+<!-- Quick Stats Section -->
+<section class="space-y-4">
+<div class="flex justify-between items-end">
+<h2 class="font-headline-md text-headline-md text-on-surface">Panel Özeti</h2>
+<span class="font-label-caps text-gold-light">Canlı</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bento-card p-4 rounded-xl flex flex-col justify-between h-32 relative overflow-hidden group">
+<div class="z-10">
+<span class="material-symbols-outlined text-gold-light text-3xl" data-icon="request_quote">request_quote</span>
+<p class="font-label-caps text-stone-grey mt-2">BEKLEYEN TEKLİFLER</p>
+</div>
+<div class="flex items-baseline gap-2 z-10">
+<span class="text-3xl font-bold text-on-surface">12</span>
+<span class="text-[10px] bg-gold-light/20 text-gold-light px-2 py-0.5 rounded-full">+4 Yeni</span>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-8xl" data-icon="trending_up">trending_up</span>
+</div>
+</div>
+<div class="bento-card p-4 rounded-xl flex flex-col justify-between h-32 relative overflow-hidden group">
+<div class="z-10">
+<span class="material-symbols-outlined text-gold-light text-3xl" data-icon="reviews">reviews</span>
+<p class="font-label-caps text-stone-grey mt-2">YENİ YORUMLAR</p>
+</div>
+<div class="flex items-baseline gap-2 z-10">
+<span class="text-3xl font-bold text-on-surface">8</span>
+<span class="text-[10px] bg-error/20 text-error px-2 py-0.5 rounded-full">Kritik</span>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-8xl" data-icon="chat">chat</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Primary Actions (The "App" Feel) -->
+<section class="space-y-4">
+<h2 class="font-label-caps text-stone-grey">HIZLI İŞLEMLER</h2>
+<div class="grid grid-cols-2 gap-4">
+<!-- Action 1: Yeni Ürün -->
+<button class="gold-glow flex flex-col items-center justify-center p-6 bg-surface-container-high rounded-2xl border border-surface-variant transition-all duration-150">
+<div class="w-14 h-14 bg-gold-light text-primary-container rounded-full flex items-center justify-center mb-3 shadow-lg shadow-gold-dark/20">
+<span class="material-symbols-outlined text-3xl" data-icon="add_box" style="font-variation-settings: 'FILL' 1;">add_box</span>
+</div>
+<span class="font-label-caps text-on-surface">Yeni Ürün</span>
+</button>
+<!-- Action 2: Teklif Talepleri -->
+<button class="gold-glow flex flex-col items-center justify-center p-6 bg-surface-container-high rounded-2xl border border-surface-variant transition-all duration-150 relative">
+<div class="w-14 h-14 bg-surface-container-highest text-gold-light rounded-full flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-3xl" data-icon="description">description</span>
+</div>
+<span class="font-label-caps text-on-surface">Teklifler</span>
+<div class="absolute top-4 right-4 bg-gold-light text-primary-container text-[10px] font-bold px-1.5 py-0.5 rounded min-w-[1.25rem] text-center">12</div>
+</button>
+<!-- Action 3: Proje Ekle -->
+<button class="gold-glow flex flex-col items-center justify-center p-6 bg-surface-container-high rounded-2xl border border-surface-variant transition-all duration-150">
+<div class="w-14 h-14 bg-surface-container-highest text-gold-light rounded-full flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-3xl" data-icon="architecture">architecture</span>
+</div>
+<span class="font-label-caps text-on-surface">Proje Ekle</span>
+</button>
+<!-- Action 4: Yorum Yönet -->
+<button class="gold-glow flex flex-col items-center justify-center p-6 bg-surface-container-high rounded-2xl border border-surface-variant transition-all duration-150 relative">
+<div class="w-14 h-14 bg-surface-container-highest text-gold-light rounded-full flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-3xl" data-icon="forum">forum</span>
+</div>
+<span class="font-label-caps text-on-surface">Yorumlar</span>
+<div class="absolute top-4 right-4 bg-error text-on-error text-[10px] font-bold px-1.5 py-0.5 rounded min-w-[1.25rem] text-center">8</div>
+</button>
+</div>
+</section>
+<!-- Secondary Actions List -->
+<section class="space-y-3 pb-8">
+<h2 class="font-label-caps text-stone-grey">SİSTEM YÖNETİMİ</h2>
+<div class="space-y-2">
+<a class="flex items-center justify-between p-4 bg-surface-container/50 rounded-xl border border-surface-variant/30 active:bg-surface-variant transition-colors" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-stone-grey" data-icon="settings">settings</span>
+<span class="font-body-md font-medium text-on-surface">Genel Ayarlar</span>
+</div>
+<span class="material-symbols-outlined text-stone-grey text-sm" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 bg-surface-container/50 rounded-xl border border-surface-variant/30 active:bg-surface-variant transition-colors" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-stone-grey" data-icon="group">group</span>
+<span class="font-body-md font-medium text-on-surface">Kullanıcı Yönetimi</span>
+</div>
+<span class="material-symbols-outlined text-stone-grey text-sm" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 bg-surface-container/50 rounded-xl border border-surface-variant/30 active:bg-surface-variant transition-colors" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-stone-grey" data-icon="analytics">analytics</span>
+<span class="font-body-md font-medium text-on-surface">SEO Performansı</span>
+</div>
+<span class="material-symbols-outlined text-stone-grey text-sm" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mandatory Shared Component) -->
+<nav class="lg:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe pt-2 bg-surface/90 backdrop-blur-xl border-t border-surface-variant shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-gold-light bg-tertiary-container/20 rounded-xl px-3 py-1 scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-caps text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-grey active:bg-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span class="font-label-caps text-[10px]">Products</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-grey active:bg-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="contact_page">contact_page</span>
+<span class="font-label-caps text-[10px]">Leads</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-grey active:bg-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+<span class="font-label-caps text-[10px]">Content</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-grey active:bg-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-label-caps text-[10px]">Profile</span>
+</a>
+</nav>
+<!-- Visual Polish: Subtle Background Pattern -->
+<div class="fixed inset-0 pointer-events-none opacity-[0.03] z-[-1]" style="background-image: repeating-linear-gradient(45deg, #D4A95C 0, #D4A95C 1px, transparent 0, transparent 50%); background-size: 40px 40px;"></div>
+<script>
+        // Micro-interaction for buttons
+        document.querySelectorAll('button, a').forEach(elem => {
+            elem.addEventListener('touchstart', () => {
+                elem.classList.add('active-state');
+            });
+            elem.addEventListener('touchend', () => {
+                elem.classList.remove('active-state');
+            });
+        });
+    </script>
+</body></html>

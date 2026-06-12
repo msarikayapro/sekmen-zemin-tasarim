@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Hanken+Grotesk:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #141313;
+            color: #e5e2e1;
+            font-family: 'Hanken Grotesk', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(22, 22, 22, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(68, 71, 72, 0.5);
+        }
+        .gold-glow:hover {
+            box-shadow: 0 0 15px rgba(182, 134, 62, 0.2);
+            border-color: #B6863E;
+        }
+        .pavement-pattern {
+            background-image: linear-gradient(30deg, #1c1b1b 12%, transparent 12.5%, transparent 87%, #1c1b1b 87.5%, #1c1b1b),
+                              linear-gradient(150deg, #1c1b1b 12%, transparent 12.5%, transparent 87%, #1c1b1b 87.5%, #1c1b1b),
+                              linear-gradient(30deg, #1c1b1b 12%, transparent 12.5%, transparent 87%, #1c1b1b 87.5%, #1c1b1b),
+                              linear-gradient(150deg, #1c1b1b 12%, transparent 12.5%, transparent 87%, #1c1b1b 87.5%, #1c1b1b),
+                              linear-gradient(60deg, #201f1f 25%, transparent 25.5%, transparent 75%, #201f1f 75%, #201f1f),
+                              linear-gradient(60deg, #201f1f 25%, transparent 25.5%, transparent 75%, #201f1f 75%, #201f1f);
+            background-size: 80px 140px;
+            background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+            opacity: 0.05;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface": "#141313",
+                        "on-primary-fixed-variant": "#474646",
+                        "inverse-on-surface": "#313030",
+                        "tertiary-fixed": "#ffddb2",
+                        "surface-container-low": "#1c1b1b",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#291800",
+                        "on-primary": "#313030",
+                        "surface-container-high": "#2b2a2a",
+                        "gold-dark": "#8C6526",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-tertiary": "#452b00",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#e5e2e1",
+                        "tertiary": "#f4bd6f",
+                        "surface-variant": "#353434",
+                        "secondary-container": "#474746",
+                        "primary": "#c9c6c5",
+                        "on-surface": "#e5e2e1",
+                        "tertiary-container": "#120800",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#353434",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "on-background": "#e5e2e1",
+                        "background": "#141313",
+                        "on-tertiary-fixed-variant": "#624000",
+                        "surface-container": "#201f1f",
+                        "on-primary-fixed": "#1c1b1b",
+                        "primary-container": "#0a0a0a",
+                        "on-tertiary-container": "#9e712b",
+                        "on-error": "#690005",
+                        "on-secondary": "#313030",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary-container": "#b7b4b4",
+                        "surface-tint": "#c9c6c5",
+                        "secondary": "#c8c6c5",
+                        "cream-white": "#F5F2EC",
+                        "tertiary-fixed-dim": "#f4bd6f",
+                        "surface-dim": "#141313",
+                        "stone-grey": "#8A8A8A",
+                        "on-surface-variant": "#c4c7c7",
+                        "outline": "#8e9192",
+                        "inverse-surface": "#e5e2e1",
+                        "outline-variant": "#444748",
+                        "on-primary-container": "#7b7979",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#474746",
+                        "surface-bright": "#3a3939",
+                        "inverse-primary": "#5f5e5e",
+                        "gold-light": "#D4A95C"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Hanken Grotesk"],
+                        "label-caps": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Montserrat"],
+                        "headline-xl": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                        "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                        "headline-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "0.05em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="flex min-h-screen">
+<!-- SideNavBar Shell -->
+<aside class="docked left-0 h-screen w-64 bg-surface-container-low border-r border-outline-variant shadow-md flex flex-col h-full py-8 fixed z-50">
+<div class="px-6 mb-10">
+<h1 class="font-headline-md text-headline-md font-bold text-tertiary">Sekmen Zemin</h1>
+<p class="font-body-md text-body-md text-stone-grey">Yönetim Paneli</p>
+</div>
+<nav class="flex-grow">
+<ul class="space-y-1">
+<li><a class="flex items-center px-6 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200" href="#"><span class="material-symbols-outlined mr-3">dashboard</span> Dashboard</a></li>
+<li><a class="flex items-center px-6 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200" href="#"><span class="material-symbols-outlined mr-3">architecture</span> Projeler</a></li>
+<li><a class="flex items-center px-6 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200" href="#"><span class="material-symbols-outlined mr-3">construction</span> Hizmetler</a></li>
+<li><a class="flex items-center px-6 py-3 text-tertiary font-bold border-r-2 border-tertiary bg-surface-container-high transition-colors duration-200" href="#"><span class="material-symbols-outlined mr-3">settings</span> Sistem Ayarları</a></li>
+<li><a class="flex items-center px-6 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200" href="#"><span class="material-symbols-outlined mr-3">mail</span> Mesajlar</a></li>
+</ul>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full bg-gold-dark text-primary-container font-label-caps text-label-caps py-3 rounded-lg hover:bg-gold-light transition-all">Yeni Proje Ekle</button>
+<a class="flex items-center mt-6 text-on-surface-variant hover:text-error transition-colors duration-200" href="#"><span class="material-symbols-outlined mr-3">logout</span> Çıkış</a>
+</div>
+</aside>
+<main class="flex-grow ml-64 relative overflow-hidden flex flex-col">
+<div class="pavement-pattern absolute inset-0 pointer-events-none"></div>
+<!-- TopAppBar -->
+<header class="sticky top-0 z-40 flex justify-between items-center px-margin-desktop h-20 bg-surface/85 backdrop-blur-md border-b border-outline-variant shadow-sm">
+<h2 class="font-headline-md text-headline-md text-tertiary">PWA Yapılandırması</h2>
+<div class="flex items-center gap-6">
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-stone-grey">search</span>
+<input class="bg-surface-container-high border-none rounded-full py-2 pl-10 pr-4 text-body-md focus:ring-1 focus:ring-tertiary w-64 transition-all" placeholder="Ayarlarda ara..." type="text"/>
+</div>
+<button class="text-on-surface-variant hover:text-tertiary transition-all duration-300">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-tertiary transition-all duration-300">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="p-margin-desktop flex-grow space-y-10 max-w-container-max mx-auto w-full relative z-10">
+<!-- Section 1: PWA Health Check (Bento Top) -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="md:col-span-1 glass-panel p-6 rounded-xl flex flex-col justify-between gold-glow transition-all">
+<div>
+<p class="font-label-caps text-label-caps text-stone-grey mb-2 uppercase">Service Worker</p>
+<div class="flex items-center">
+<span class="w-3 h-3 bg-green-500 rounded-full mr-2"></span>
+<span class="font-headline-md text-headline-md text-on-surface">Aktif</span>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant mt-4">V2.4.1 Yayında</p>
+</div>
+<div class="md:col-span-1 glass-panel p-6 rounded-xl flex flex-col justify-between gold-glow transition-all">
+<div>
+<p class="font-label-caps text-label-caps text-stone-grey mb-2 uppercase">HTTPS Durumu</p>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-tertiary mr-2">verified_user</span>
+<span class="font-headline-md text-headline-md text-on-surface">Güvenli</span>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant mt-4">SSL Sertifikası Geçerli</p>
+</div>
+<div class="md:col-span-1 glass-panel p-6 rounded-xl flex flex-col justify-between gold-glow transition-all">
+<div>
+<p class="font-label-caps text-label-caps text-stone-grey mb-2 uppercase">Offline Destek</p>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-tertiary mr-2" data-weight="fill">cloud_done</span>
+<span class="font-headline-md text-headline-md text-on-surface">%100</span>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant mt-4">Kritik Sayfalar Önbellekte</p>
+</div>
+<div class="md:col-span-1 glass-panel p-6 rounded-xl flex flex-col justify-between gold-glow transition-all">
+<div>
+<p class="font-label-caps text-label-caps text-stone-grey mb-2 uppercase">Yüklenebilirlik</p>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-tertiary mr-2">check_circle</span>
+<span class="font-headline-md text-headline-md text-on-surface">Uygun</span>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant mt-4">Manifest Kriterleri Karşılandı</p>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Section 2: App Manifest Settings -->
+<div class="lg:col-span-2 glass-panel p-8 rounded-xl space-y-8 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-9xl">settings_applications</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-tertiary border-b border-outline-variant pb-4">Uygulama Manifest Ayarları</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-stone-grey block">Uygulama Adı</label>
+<input class="w-full bg-surface-container border border-outline-variant rounded-lg px-4 py-3 font-body-md text-on-surface focus:border-tertiary outline-none transition-all" type="text" value="Sekmen Zemin Tasarım"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-stone-grey block">Kısa Ad</label>
+<input class="w-full bg-surface-container border border-outline-variant rounded-lg px-4 py-3 font-body-md text-on-surface focus:border-tertiary outline-none transition-all" type="text" value="Sekmen PWA"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-stone-grey block">Tema Rengi (Hex)</label>
+<div class="flex gap-2">
+<div class="w-12 h-12 rounded bg-[#B6863E] border border-outline-variant"></div>
+<input class="flex-grow bg-surface-container border border-outline-variant rounded-lg px-4 py-3 font-body-md text-on-surface focus:border-tertiary outline-none transition-all" type="text" value="#B6863E"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-stone-grey block">Arka Plan Rengi (Hex)</label>
+<div class="flex gap-2">
+<div class="w-12 h-12 rounded bg-[#0A0A0A] border border-outline-variant"></div>
+<input class="flex-grow bg-surface-container border border-outline-variant rounded-lg px-4 py-3 font-body-md text-on-surface focus:border-tertiary outline-none transition-all" type="text" value="#0A0A0A"/>
+</div>
+</div>
+</div>
+<div class="pt-6">
+<button class="bg-gold-dark hover:bg-gold-light text-on-primary-fixed font-label-caps text-label-caps px-8 py-4 rounded transition-all shadow-lg shadow-gold-dark/10">MANIFESTİ GÜNCELLE</button>
+</div>
+</div>
+<!-- Section 3: Installation Prompts -->
+<div class="glass-panel p-8 rounded-xl space-y-6">
+<h3 class="font-headline-md text-headline-md text-tertiary">Yükleme İstemleri</h3>
+<p class="font-body-md text-body-md text-stone-grey">Kullanıcılara PWA yükleme teklifinin nasıl sunulacağını yönetin.</p>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-surface-container rounded-lg border border-outline-variant/30">
+<div>
+<p class="font-body-md text-on-surface">Otomatik İstem</p>
+<p class="text-xs text-stone-grey">Tarayıcı varsayılanı</p>
+</div>
+<div class="relative inline-block w-12 h-6 transition duration-200 ease-in-out bg-surface-container-highest rounded-full border border-outline cursor-pointer">
+<div class="absolute left-1 top-1 w-4 h-4 bg-tertiary rounded-full transform translate-x-6"></div>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container rounded-lg border border-outline-variant/30">
+<div>
+<p class="font-body-md text-on-surface">Özel Banner</p>
+<p class="text-xs text-stone-grey">Sayfa içi CTA butonu</p>
+</div>
+<div class="relative inline-block w-12 h-6 transition duration-200 ease-in-out bg-surface-container-highest rounded-full border border-outline cursor-pointer">
+<div class="absolute left-1 top-1 w-4 h-4 bg-stone-grey rounded-full"></div>
+</div>
+</div>
+<div class="space-y-2 mt-6">
+<label class="font-label-caps text-label-caps text-stone-grey block">Gecikme Süresi (sn)</label>
+<input class="w-full accent-tertiary" max="60" min="0" type="range" value="15"/>
+<div class="flex justify-between text-[10px] text-stone-grey">
+<span>Anında</span>
+<span>60 Saniye</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 4: Icon Management -->
+<section class="glass-panel p-8 rounded-xl">
+<h3 class="font-headline-md text-headline-md text-tertiary mb-8">İkon ve Splash Screen Yönetimi</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Icon Slot 1 -->
+<div class="group relative aspect-square bg-surface-container-highest rounded-xl border-2 border-dashed border-outline-variant flex flex-col items-center justify-center p-6 hover:border-tertiary transition-all cursor-pointer">
+<img class="w-24 h-24 rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition-opacity" data-alt="A high-resolution minimalist industrial logo icon with a gold geometric 'S' on a deep charcoal black circular background, designed for a high-end architectural mobile application. The lighting is soft and professional, highlighting the metallic gold textures of the icon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtHWCl7PdygLmJW6DP79Ljq_VVBPYvff5QJ3HDaeWK58iv1vWpjxT-f5MwtH3MLmnNjX6SbdVTXEsV51RbDWEnGtQUrJgTvFr2hA2asIqUwfckKFcsMvo2emYpUvIz4zAUc72O76ZNer-mLFO3a4GMVI6VE0W3R4oAmso4yI9hpiY8l0ZZ6etFB0uD_mKWjALhKbbPzcSoJaFZX1mmcLKfk4JbF1d0uJDEcrO3CpVNSJd96Vf9wGiz68e3sanjgt7xVvfIszbrmU4B"/>
+<p class="font-label-caps text-label-caps text-stone-grey">192x192 px</p>
+<p class="text-[10px] text-on-surface-variant mt-1 text-center">Android/Chrome Standart</p>
+<div class="absolute inset-0 bg-gold-dark/10 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-tertiary">upload_file</span>
+</div>
+</div>
+<!-- Icon Slot 2 -->
+<div class="group relative aspect-square bg-surface-container-highest rounded-xl border-2 border-dashed border-outline-variant flex flex-col items-center justify-center p-6 hover:border-tertiary transition-all cursor-pointer">
+<img class="w-32 h-32 rounded-lg mb-4 opacity-80 group-hover:opacity-100 transition-opacity" data-alt="A high-definition large format app icon featuring a refined industrial stone texture background with a central golden architectural emblem. The aesthetic is ultra-premium and dark-mode oriented, with sharp edges and metallic glints suggesting engineering precision and luxury craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcHALkIvfEfNxN_ydGJUUtU7OR6sSbbgD0OJZgeHmJ0OM-VzvJHTmiQ6HwTC5jqszuLO255eicbUxZNv4IpYmnY45V-ObjeknQjD4FauO5GsN6iIoFBCuZiehFB_tI6OmICVyaUy56_bAb47NhYwMcV24S9B-TaVJOQNFxNOx9BSQkJcjce64PnlVh8GrGYrwthlhJ85UTbSSifQZyRCHNNwQPIJnGlyeD4pErhWv8ki2rdK6hrV37m-0hAvn1lAE5e9-rpAd5gmfw"/>
+<p class="font-label-caps text-label-caps text-stone-grey">512x512 px</p>
+<p class="text-[10px] text-on-surface-variant mt-1 text-center">Splash Screen / HD</p>
+<div class="absolute inset-0 bg-gold-dark/10 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-tertiary">upload_file</span>
+</div>
+</div>
+<!-- Icon Slot 3 (Maskable) -->
+<div class="group relative aspect-square bg-surface-container-highest rounded-xl border-2 border-dashed border-outline-variant flex flex-col items-center justify-center p-6 hover:border-tertiary transition-all cursor-pointer">
+<div class="w-24 h-24 rounded-full border-4 border-tertiary/30 bg-surface flex items-center justify-center mb-4 overflow-hidden">
+<span class="material-symbols-outlined text-4xl text-tertiary">masks</span>
+</div>
+<p class="font-label-caps text-label-caps text-stone-grey">Maskable Icon</p>
+<p class="text-[10px] text-on-surface-variant mt-1 text-center">Android Adaptive</p>
+<div class="absolute inset-0 bg-gold-dark/10 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-tertiary">upload_file</span>
+</div>
+</div>
+<!-- Icon Slot 4 (Apple) -->
+<div class="group relative aspect-square bg-surface-container-highest rounded-xl border-2 border-dashed border-outline-variant flex flex-col items-center justify-center p-6 hover:border-tertiary transition-all cursor-pointer">
+<img class="w-24 h-24 rounded-2xl mb-4 opacity-80 group-hover:opacity-100 transition-opacity" data-alt="A premium iOS app touch icon featuring a sophisticated charcoal stone texture and a polished gold insignia. The icon has the signature Apple rounded corner radius and is set against a dark, minimalist industrial background to emphasize its luxury architectural branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnfUKJEqkKgoEpdwY73mh2E-eLUjljHddacExj8_cogzo3poZkF4IFIrs2d6kabAygbPApUWfwjLHA7sx84xjCGaJyigyS5Et66uAU5mzut_N1R319r-qb5MSiCPsEEpYCD3oGdMPnvG-Pfwf9c6EZ-GKwRN5b2SY7UPmj_-8a1ibGRAGly9MeDguQ9PgtJGlZujf1uk_lYIzJiIdC-eUlHviTSr_i5F6fIV-6LoUoTwzj-dGIuPtLN3cVn9V3AKu5KqSVG6ejaY7g"/>
+<p class="font-label-caps text-label-caps text-stone-grey">Apple Touch</p>
+<p class="text-[10px] text-on-surface-variant mt-1 text-center">180x180 px iOS</p>
+<div class="absolute inset-0 bg-gold-dark/10 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-tertiary">upload_file</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer Shell -->
+<footer class="w-full py-4 mt-auto border-t border-outline-variant flex justify-between items-center px-margin-desktop bg-surface-container-lowest">
+<p class="font-label-caps text-label-caps text-stone-grey">© 2024 Sekmen Zemin Tasarım - Endüstriyel Lüks Sistem Paneli</p>
+<div class="flex gap-6">
+<a class="font-label-caps text-label-caps text-stone-grey hover:text-gold-light transition-all opacity-80 hover:opacity-100" href="#">Kullanım Koşulları</a>
+<a class="font-label-caps text-label-caps text-stone-grey hover:text-gold-light transition-all opacity-80 hover:opacity-100" href="#">Gizlilik Politikası</a>
+<a class="font-label-caps text-label-caps text-stone-grey hover:text-gold-light transition-all opacity-80 hover:opacity-100" href="#">Destek</a>
+</div>
+</footer>
+</main>
+<!-- Floating Action Element for Status -->
+<div class="fixed bottom-24 right-8 z-50">
+<button class="bg-tertiary text-on-tertiary-fixed font-bold w-14 h-14 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform group">
+<span class="material-symbols-outlined group-hover:rotate-180 transition-transform duration-500">sync</span>
+</button>
+</div>
+<script>
+        // Micro-interactions for interactive elements
+        document.querySelectorAll('.glass-panel').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-4px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Toggle logic for switches
+        document.querySelectorAll('.relative.inline-block.w-12.h-6').forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const dot = toggle.querySelector('.absolute');
+                if (dot.classList.contains('translate-x-6')) {
+                    dot.classList.remove('translate-x-6');
+                    dot.classList.replace('bg-tertiary', 'bg-stone-grey');
+                } else {
+                    dot.classList.add('translate-x-6');
+                    dot.classList.replace('bg-stone-grey', 'bg-tertiary');
+                }
+            });
+        });
+    </script>
+</body></html>
