@@ -28,12 +28,13 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps           # TLS desteği için MUTLAKA ftps
-          timeout: 3600000         # 1 saat — vendor dahil büyük yükleme yarıda kesilmesin
+          timeout: 600000          # En az 10 dk
           server-dir: ./           # FTP hesabı zaten proje içinde
           exclude: |
             **/.git*
             **/.github/**
             **/node_modules/**
+            **/vendor/**
             .env
             bootstrap/cache/*
             storage/*.key
