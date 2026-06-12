@@ -20,8 +20,9 @@
 /public/storage
 /storage/*.key
 /storage/pail
-/vendor
 _ide_helper.php
 Homestead.json
 Homestead.yaml
 Thumbs.db
+# DB yedeği public repoya gönderilmez (müşteri PII + parola hash'leri içerir)
+/sekmen_zemin.sql
