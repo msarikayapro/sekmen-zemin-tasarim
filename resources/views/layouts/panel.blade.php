@@ -27,6 +27,7 @@
             ['panel.yorumlar.index', 'reviews', 'Yorumlar', false],
             ['panel.sss.index', 'quiz', 'SSS', false],
             ['panel.bannerlar.index', 'view_carousel', 'Banner / Slider', false],
+            ['panel.showcases.index', 'collections', 'Vitrin Yönetimi', false],
             ['panel.sayfalar.index', 'edit_note', 'İçerik Sayfaları', false],
             ['panel.blog.index', 'article', 'Blog', false],
             ['panel.seo-landing.index', 'travel_explore', 'SEO Landing', false],

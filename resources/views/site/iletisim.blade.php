@@ -86,15 +86,15 @@
         <div class="lg:col-span-2 space-y-4">
             <div class="bg-surface-container-low border border-surface-variant rounded-2xl p-6 space-y-5">
                 <a href="{{ tel_link(ayar('telefon')) }}" data-track="phone_click" class="flex items-center gap-4 group">
-                    <span class="w-11 h-11 rounded-full bg-gold-light/10 text-gold-light flex items-center justify-center material-symbols-outlined">call</span>
+                    <span class="w-11 h-11 shrink-0 rounded-full bg-gold-light/10 text-gold-light flex items-center justify-center material-symbols-outlined">call</span>
                     <div><p class="text-[10px] uppercase text-stone-grey">Telefon</p><p class="text-on-surface group-hover:text-gold-light transition-colors">{{ ayar('telefon') }}</p></div>
                 </a>
                 <a href="{{ whatsapp_link() }}" data-track="whatsapp_click" target="_blank" class="flex items-center gap-4 group">
-                    <span class="w-11 h-11 rounded-full bg-[#25D366]/15 text-[#25D366] flex items-center justify-center material-symbols-outlined">chat</span>
+                    <span class="w-11 h-11 shrink-0 rounded-full bg-[#25D366]/15 text-[#25D366] flex items-center justify-center material-symbols-outlined">chat</span>
                     <div><p class="text-[10px] uppercase text-stone-grey">WhatsApp</p><p class="text-on-surface group-hover:text-gold-light transition-colors">Hemen Yazın</p></div>
                 </a>
                 <a href="mailto:{{ ayar('email') }}" data-track="email_click" class="flex items-center gap-4 group">
-                    <span class="w-11 h-11 rounded-full bg-gold-light/10 text-gold-light flex items-center justify-center material-symbols-outlined">mail</span>
+                    <span class="w-11 h-11 shrink-0 rounded-full bg-gold-light/10 text-gold-light flex items-center justify-center material-symbols-outlined">mail</span>
                     <div><p class="text-[10px] uppercase text-stone-grey">E-posta</p><p class="text-on-surface group-hover:text-gold-light transition-colors break-all">{{ ayar('email') }}</p></div>
                 </a>
                 <div class="flex items-start gap-4">

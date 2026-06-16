@@ -5,16 +5,15 @@
 
 @section('content')
     {{-- 1. HERO --}}
-    <section class="relative min-h-[88vh] w-full overflow-hidden flex items-center">
+    <section class="relative w-full overflow-hidden">
+        {{-- Arka plan ambiyansı (kaldırım motifi + gradyan) --}}
         <div class="absolute inset-0 z-0">
-            @if($banner && $banner->gorsel)
-                <img src="{{ gorsel($banner->gorsel) }}" alt="{{ $banner->alt_metin }}" class="w-full h-full object-cover">
-            @else
-                <div class="w-full h-full bg-gradient-to-br from-surface-container to-surface-container-lowest pavement-pattern"></div>
-            @endif
-            <div class="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent"></div>
+            <div class="w-full h-full bg-gradient-to-br from-surface-container to-surface-container-lowest pavement-pattern"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-transparent"></div>
         </div>
-        <div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full">
+
+        <div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-gutter items-center py-16 md:py-20 lg:min-h-[88vh]">
+            {{-- Metin --}}
             <div class="max-w-2xl space-y-6">
                 <span class="inline-block text-gold-light font-label-caps text-label-caps tracking-widest uppercase">Sekmen Zemin Tasarım · Konya</span>
                 <h1 class="font-headline-xl text-4xl md:text-headline-xl text-cream-white leading-tight">
@@ -26,30 +25,67 @@
                     <a href="{{ route('urunler.index') }}" class="border border-gold-light text-cream-white px-8 py-4 rounded-lg font-label-caps text-label-caps font-bold hover:bg-gold-light/10 transition-all uppercase">Ürünleri İncele</a>
                 </div>
             </div>
+
+            {{-- Şık görsel alanı --}}
+            <div class="relative w-full max-w-md mx-auto lg:mx-0 lg:justify-self-end">
+                {{-- Dekoratif gold çerçeve (offset) --}}
+                <div class="absolute -inset-3 md:-inset-4 border border-gold-light/25 rounded-3xl pointer-events-none"></div>
+                {{-- Yumuşak gold ışıma --}}
+                <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-gold-light/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                {{-- Asıl görsel --}}
+                <div class="relative rounded-2xl overflow-hidden border border-gold-light/20 shadow-2xl shadow-black/50 aspect-[4/5]">
+                    <img src="{{ gorsel($banner?->gorsel) }}" alt="{{ $banner?->alt_metin ?: ayar('site_basligi', 'Sekmen Zemin Tasarım') }}" class="w-full h-full object-cover" {{ $banner?->gorsel ? '' : 'loading=lazy' }}>
+                    <div class="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent"></div>
+                </div>
+
+                {{-- Yüzen kuruluş rozeti --}}
+                <div class="absolute -bottom-4 -left-4 bg-surface-container-high/90 backdrop-blur border border-gold-light/30 rounded-xl px-5 py-3 shadow-xl">
+                    <p class="font-headline-lg text-2xl text-gold-light font-bold leading-none">{{ ayar('kurulus_yili', 2010) }}</p>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-grey mt-1">Yılından Beri</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    {{-- 2. RAKAMLARLA BİZ --}}
-    <section class="bg-surface-container-low border-y border-surface-variant/30 py-12">
-        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div class="space-y-2">
-                <div class="text-gold-light font-headline-lg text-3xl md:text-headline-lg font-bold" data-counter="{{ (int) ayar('kurulus_yili', 2010) }}">{{ ayar('kurulus_yili') }}</div>
-                <div class="text-stone-grey font-label-caps text-[10px] tracking-[0.2em] uppercase">Kuruluş Yılı</div>
-            </div>
-            <div class="space-y-2">
-                <div class="text-gold-light font-headline-lg text-3xl md:text-headline-lg font-bold" data-counter="{{ (int) ayar('uygulama_m2', 1000000) }}" data-suffix="+ m²">0</div>
-                <div class="text-stone-grey font-label-caps text-[10px] tracking-[0.2em] uppercase">Uygulama Alanı</div>
-            </div>
-            <div class="space-y-2">
-                <div class="text-gold-light font-headline-lg text-3xl md:text-headline-lg font-bold" data-counter="{{ (int) ayar('proje_sayisi', 800) }}" data-suffix="+">0</div>
-                <div class="text-stone-grey font-label-caps text-[10px] tracking-[0.2em] uppercase">Tamamlanan Proje</div>
-            </div>
-            <div class="space-y-2">
-                <div class="text-gold-light font-headline-lg text-3xl md:text-headline-lg font-bold" data-counter="{{ (int) ayar('mutlu_musteri', 1000) }}" data-suffix="+">0</div>
-                <div class="text-stone-grey font-label-caps text-[10px] tracking-[0.2em] uppercase">Mutlu Müşteri</div>
+    {{-- 2. VİTRİN (Showcase) galerisi --}}
+    @if($showcases->isNotEmpty())
+    <section class="py-16 md:py-20 bg-surface-container-low border-y border-surface-variant/30 overflow-hidden">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <x-bolum-baslik ust="Vitrin" baslik="Vitrinden Ötesi" aciklama="Sahadan en yeni uygulamalarımız — fotoğraf ve videolarla. Bir karta dokunun, galeride gezinin." />
+            <div class="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory pb-4 reveal [scrollbar-width:thin]">
+                @foreach($showcases as $s)
+                    <a href="{{ gorsel($s->media_path) }}"
+                       class="glightbox group relative shrink-0 w-[68%] sm:w-56 md:w-60 lg:w-64 snap-start rounded-2xl overflow-hidden border border-surface-variant/50 aspect-[9/16] bg-surface-container-lowest"
+                       data-gallery="vitrin"@if($s->isVideo()) data-type="video"@endif>
+                        <img src="{{ gorsel($s->kapak) }}" loading="lazy"
+                             class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Sekmen Zemin Tasarım vitrin">
+                        <div class="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent"></div>
+                        @if($s->isVideo())
+                            <span class="absolute inset-0 flex items-center justify-center">
+                                <span class="w-14 h-14 rounded-full bg-background/50 backdrop-blur border border-gold-light/40 flex items-center justify-center text-gold-light material-symbols-outlined text-3xl group-hover:scale-110 transition-transform">play_arrow</span>
+                            </span>
+                        @endif
+                    </a>
+                @endforeach
             </div>
         </div>
     </section>
+
+    @push('head')
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+    @endpush
+    @push('scripts')
+        <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+        <script>
+            window.addEventListener('load', function () {
+                if (window.GLightbox) {
+                    GLightbox({ selector: '.glightbox', loop: true, touchNavigation: true });
+                }
+            });
+        </script>
+    @endpush
+    @endif
 
     {{-- 3. ÖNE ÇIKAN ÜRÜNLER --}}
     <section class="py-20 md:py-24 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">

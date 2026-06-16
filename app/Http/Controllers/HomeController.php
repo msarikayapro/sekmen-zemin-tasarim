@@ -7,6 +7,7 @@ use App\Models\Hizmet;
 use App\Models\OncesiSonrasi;
 use App\Models\Proje;
 use App\Models\Sayfa;
+use App\Models\Showcase;
 use App\Models\Urun;
 use App\Models\Yorum;
 use App\Support\SssService;
@@ -32,11 +33,14 @@ class HomeController extends Controller
             ->whereNot('oncesi_gorsel', '')->whereNot('sonrasi_gorsel', '')
             ->orderBy('sira')->first();
 
+        $showcases = Showcase::aktif()->sirali()->get();
+
         $sayfa  = Sayfa::anahtar('home');
         $ssler  = SssService::sayfaSsleri('ana_sayfa');
 
         return view('site.home', [
             'banner'          => $banner,
+            'showcases'       => $showcases,
             'oneCikanUrunler' => $oneCikanUrunler,
             'hizmetler'       => $hizmetler,
             'projeler'        => $projeler,

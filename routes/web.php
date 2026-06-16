@@ -55,7 +55,7 @@ Route::prefix('panel')->name('panel.')->group(function () {
         // Ürünler
         Route::post('/urunler/sirala', [Panel\UrunController::class, 'sirala'])->name('urunler.sirala');
         Route::delete('/urun-gorsel/{gorsel}', [Panel\UrunController::class, 'gorselSilFn'])->name('urunler.gorsel.sil');
-        Route::resource('urunler', Panel\UrunController::class)->except('show');
+        Route::resource('urunler', Panel\UrunController::class)->except('show')->parameters(['urunler' => 'urun']);
 
         // Kategoriler
         Route::resource('kategoriler', Panel\KategoriController::class)->except('show')->parameters(['kategoriler' => 'kategori']);
@@ -78,6 +78,10 @@ Route::prefix('panel')->name('panel.')->group(function () {
 
         // Banner
         Route::resource('bannerlar', Panel\BannerController::class)->except('show')->parameters(['bannerlar' => 'banner']);
+
+        // Vitrin (Showcase)
+        Route::post('/showcases/sirala', [Panel\ShowcaseController::class, 'sirala'])->name('showcases.sirala');
+        Route::resource('showcases', Panel\ShowcaseController::class)->except('show')->parameters(['showcases' => 'showcase']);
 
         // Blog (faz 2)
         Route::resource('blog', Panel\BlogController::class)->except('show');
