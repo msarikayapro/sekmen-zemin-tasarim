@@ -42,7 +42,7 @@
                             <div class="relative group rounded-lg overflow-hidden border border-surface-variant" data-id="{{ $g->id }}">
                                 <img src="{{ gorsel($g->yol) }}" class="w-full aspect-square object-cover" alt="">
                                 <span class="g-handle absolute bottom-1 left-1 cursor-grab text-cream-white/90 bg-background/60 rounded-md p-0.5 material-symbols-outlined text-lg select-none">drag_indicator</span>
-                                <x-panel.sil-btn :action="route('panel.urunler.gorsel.sil', $g)" onay="Bu görseli silmek istiyor musunuz?" class="absolute top-1 right-1 bg-background/80 !text-error opacity-0 group-hover:opacity-100" />
+                                <x-panel.sil-btn :ajax="true" :action="route('panel.urunler.gorsel.sil', $g)" onay="Bu görseli silmek istiyor musunuz?" class="absolute top-1 right-1 bg-background/80 !text-error opacity-0 group-hover:opacity-100" />
                             </div>
                         @endforeach
                     </div>

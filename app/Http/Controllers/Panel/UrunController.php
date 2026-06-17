@@ -78,10 +78,14 @@ class UrunController extends Controller
     }
 
     /** Galeri görselini sil. */
-    public function gorselSilFn(UrunGorsel $gorsel)
+    public function gorselSilFn(Request $request, UrunGorsel $gorsel)
     {
         $this->gorselSil($gorsel->yol);
         $gorsel->delete();
+
+        if ($request->expectsJson()) {
+            return response()->json(['ok' => true]);
+        }
 
         return back()->with('basari', 'Görsel silindi.');
     }
@@ -142,6 +146,7 @@ class UrunController extends Controller
         $veri['renk_secenekleri'] = $this->satirlar($request->renkler);
         $veri['kullanim_alanlari'] = $this->satirlar($request->kullanim);
         $veri['one_cikan'] = $request->boolean('one_cikan');
+        $veri['sira'] = $request->integer('sira'); // NOT NULL kolon — boşsa 0
         unset($veri['renkler'], $veri['kullanim']);
 
         return $veri;

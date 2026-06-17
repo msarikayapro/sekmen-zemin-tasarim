@@ -72,10 +72,14 @@ class ProjeController extends Controller
         return redirect()->route('panel.projeler.index')->with('basari', 'Proje silindi.');
     }
 
-    public function gorselSilFn(ProjeGorsel $gorsel)
+    public function gorselSilFn(Request $request, ProjeGorsel $gorsel)
     {
         $this->gorselSil($gorsel->yol);
         $gorsel->delete();
+
+        if ($request->expectsJson()) {
+            return response()->json(['ok' => true]);
+        }
 
         return back()->with('basari', 'Görsel silindi.');
     }
@@ -98,6 +102,7 @@ class ProjeController extends Controller
             'kapak_gorsel' => ['nullable', 'image', 'max:4096'],
         ]);
         $veri['one_cikan'] = $request->boolean('one_cikan');
+        $veri['sira'] = $request->integer('sira'); // NOT NULL kolon — boşsa 0
 
         return $veri;
     }

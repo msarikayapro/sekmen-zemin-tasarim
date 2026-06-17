@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('baslik', 'Yönetim Paneli') — Sekmen Zemin</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -148,6 +149,31 @@
             </a>
         @endforeach
     </nav>
+
+    {{-- Form içindeki AJAX silme butonları (data-sil-url) — nested form veri-kaybı hatasını önler --}}
+    <script>
+        document.addEventListener('click', async (e) => {
+            const btn = e.target.closest('[data-sil-url]');
+            if (! btn) return;
+            e.preventDefault();
+            if (! confirm(btn.dataset.silOnay || 'Silmek istediğinize emin misiniz?')) return;
+            btn.disabled = true;
+            try {
+                const res = await fetch(btn.dataset.silUrl, {
+                    method: 'DELETE',
+                    headers: {
+                        'X-CSRF-TOKEN': document.querySelector('meta[name=csrf-token]').content,
+                        'Accept': 'application/json',
+                    },
+                });
+                if (! res.ok) throw new Error();
+                (btn.closest('[data-sil-item]') || btn.closest('.group') || btn.parentElement).remove();
+            } catch {
+                btn.disabled = false;
+                alert('Silme işlemi başarısız oldu. Lütfen tekrar deneyin.');
+            }
+        });
+    </script>
 
     @stack('scripts')
 </body>

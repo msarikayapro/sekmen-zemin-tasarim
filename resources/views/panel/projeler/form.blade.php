@@ -27,7 +27,7 @@
                         @foreach($proje->gorseller as $g)
                             <div class="relative group">
                                 <img src="{{ gorsel($g->yol) }}" class="w-full aspect-square object-cover rounded-lg" alt="">
-                                <x-panel.sil-btn :action="route('panel.projeler.gorsel.sil', $g)" class="absolute top-1 right-1 bg-background/80 !text-error opacity-0 group-hover:opacity-100" />
+                                <x-panel.sil-btn :ajax="true" :action="route('panel.projeler.gorsel.sil', $g)" onay="Bu görseli silmek istiyor musunuz?" class="absolute top-1 right-1 bg-background/80 !text-error opacity-0 group-hover:opacity-100" />
                             </div>
                         @endforeach
                     </div>

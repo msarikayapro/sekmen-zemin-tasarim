@@ -70,7 +70,7 @@ class OncesiSonrasiController extends Controller
 
     protected function dogrula(Request $request, bool $yeni): array
     {
-        return $request->validate([
+        $veri = $request->validate([
             'baslik' => ['nullable', 'string', 'max:160'],
             'proje_id' => ['nullable', 'exists:projeler,id'],
             'sira' => ['nullable', 'integer'],
@@ -78,5 +78,10 @@ class OncesiSonrasiController extends Controller
             'oncesi_gorsel' => [$yeni ? 'required' : 'nullable', 'image', 'max:4096'],
             'sonrasi_gorsel' => [$yeni ? 'required' : 'nullable', 'image', 'max:4096'],
         ]);
+
+        // sira kolonu NOT NULL — boş bırakılırsa 0'a sabitle (null insert hatasını önler).
+        $veri['sira'] = $request->integer('sira');
+
+        return $veri;
     }
 }
