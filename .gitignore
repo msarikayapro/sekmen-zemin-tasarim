@@ -25,5 +25,6 @@ _ide_helper.php
 Homestead.json
 Homestead.yaml
 Thumbs.db
+COMMIT_MSG.tmp
 # DB yedeği public repoya gönderilmez (müşteri PII + parola hash'leri içerir)
 /sekmen_zemin.sql
