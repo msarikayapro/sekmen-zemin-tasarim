@@ -31,6 +31,30 @@ class SystemController extends Controller
         }
     }
 
+    /**
+     * storage:link — public/storage sembolik bağını oluşturur.
+     * cPanel'de panelden yüklenen görsellerin (storage/app/public) web'den
+     * erişilebilmesi için şarttır; FTP deploy symlink taşımadığından elle tetiklenir.
+     */
+    public function storageLink()
+    {
+        try {
+            // Var olan (muhtemelen kırık) bağı da kapsaması için --force.
+            Artisan::call('storage:link', ['--force' => true]);
+            $cikti = trim(Artisan::output());
+
+            // Doğrula: bağ gerçekten oluştu mu? (symlink() bazı paylaşımlı sunucularda kapalı olabilir)
+            $link = public_path('storage');
+            if (! is_link($link) && ! is_dir($link)) {
+                return back()->withErrors(['sistem' => 'Sembolik bağ oluşturulamadı. Sunucuda symlink() devre dışı olabilir. cPanel Terminal ile elle oluşturun: ln -s ../storage/app/public public/storage']);
+            }
+
+            return back()->with('basari', 'Storage link oluşturuldu (public/storage → storage/app/public). Görseller artık görünmelidir.<br><pre class="text-xs mt-2 whitespace-pre-wrap">' . e($cikti) . '</pre>');
+        } catch (\Throwable $e) {
+            return back()->withErrors(['sistem' => 'Storage link hatası: ' . $e->getMessage() . ' — Sunucuda symlink() devre dışı olabilir; cPanel Terminal ile elle oluşturun.']);
+        }
+    }
+
     /** optimize:clear + view:clear + önbellek dosyalarını sil */
     public function clearCache()
     {

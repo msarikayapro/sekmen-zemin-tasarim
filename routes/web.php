@@ -125,6 +125,7 @@ Route::prefix('panel')->name('panel.')->group(function () {
             Route::prefix('sistem-' . $secret)->name('sistem.')->group(function () {
                 Route::get('/', [Panel\SystemController::class, 'panel'])->name('panel');
                 Route::post('/migrate', [Panel\SystemController::class, 'runUpdate'])->name('migrate');
+                Route::post('/storage-link', [Panel\SystemController::class, 'storageLink'])->name('storage-link');
                 Route::post('/cache', [Panel\SystemController::class, 'clearCache'])->name('cache');
             });
         });

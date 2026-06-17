@@ -12,6 +12,13 @@
             </form>
         </x-panel.card>
 
+        <x-panel.card baslik="Görsel Bağı (Storage Link)">
+            <p class="text-sm text-stone-grey"><code class="text-gold-light">public/storage</code> sembolik bağını oluşturur. Panelden yüklenen görseller görünmüyorsa (404) bunu çalıştırın.</p>
+            <form method="POST" action="{{ route('panel.sistem.storage-link') }}">@csrf
+                <button class="inline-flex items-center gap-2 bg-gold-light text-background px-5 py-3 rounded-lg font-bold text-sm uppercase hover:bg-gold-dark"><span class="material-symbols-outlined">link</span> Storage Link Oluştur</button>
+            </form>
+        </x-panel.card>
+
         <x-panel.card baslik="Önbellek Temizleme">
             <p class="text-sm text-stone-grey">Tüm Laravel önbelleklerini temizler (config, route, view, cache + bootstrap/cache).</p>
             <form method="POST" action="{{ route('panel.sistem.cache') }}">@csrf
