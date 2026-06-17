@@ -86,11 +86,21 @@ class UrunController extends Controller
         return back()->with('basari', 'Görsel silindi.');
     }
 
-    /** Sürükle-bırak sıralama (AJAX). */
+    /** Ürün listesi sürükle-bırak sıralama (AJAX). */
     public function sirala(Request $request)
     {
         foreach ($request->input('sira', []) as $index => $id) {
             Urun::where('id', $id)->update(['sira' => $index + 1]);
+        }
+
+        return response()->json(['ok' => true]);
+    }
+
+    /** Galeri görselleri sürükle-bırak sıralama (AJAX). */
+    public function gorselSirala(Request $request, Urun $urun)
+    {
+        foreach ($request->input('sira', []) as $index => $id) {
+            $urun->gorseller()->whereKey($id)->update(['sira' => $index]);
         }
 
         return response()->json(['ok' => true]);
@@ -119,7 +129,14 @@ class UrunController extends Controller
             'durum'        => ['required', 'in:yayin,taslak'],
             'meta_title'   => ['nullable', 'string', 'max:255'],
             'meta_desc'    => ['nullable', 'string', 'max:255'],
-            'one_cikan_gorsel' => ['nullable', 'image', 'max:4096'],
+            'one_cikan_gorsel' => ['nullable', 'image', 'max:8192'],
+            'galeri'       => ['nullable', 'array'],
+            'galeri.*'     => ['image', 'max:8192'],
+        ], [
+            'one_cikan_gorsel.image' => 'Kapak görseli geçerli bir resim dosyası olmalı (jpg, png, webp).',
+            'one_cikan_gorsel.max'   => 'Kapak görseli en fazla 8 MB olabilir.',
+            'galeri.*.image'         => 'Galeri dosyaları resim olmalı (jpg, png, webp).',
+            'galeri.*.max'           => 'Her galeri görseli en fazla 8 MB olabilir.',
         ]);
 
         $veri['renk_secenekleri'] = $this->satirlar($request->renkler);

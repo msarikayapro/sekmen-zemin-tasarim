@@ -36,18 +36,20 @@
 
             <x-panel.card baslik="Galeri Görselleri">
                 @if($urun->exists && $urun->gorseller->isNotEmpty())
-                    <div class="grid grid-cols-3 sm:grid-cols-4 gap-3">
+                    <p class="text-xs text-stone-grey mb-2">Sıralamayı değiştirmek için görselleri sürükleyip bırakın. İlk görsel, kapak tanımlı değilse kapak olarak kullanılır.</p>
+                    <div id="galeri-liste" class="grid grid-cols-3 sm:grid-cols-4 gap-3">
                         @foreach($urun->gorseller as $g)
-                            <div class="relative group">
-                                <img src="{{ gorsel($g->yol) }}" class="w-full aspect-square object-cover rounded-lg" alt="">
+                            <div class="relative group rounded-lg overflow-hidden border border-surface-variant" data-id="{{ $g->id }}">
+                                <img src="{{ gorsel($g->yol) }}" class="w-full aspect-square object-cover" alt="">
+                                <span class="g-handle absolute bottom-1 left-1 cursor-grab text-cream-white/90 bg-background/60 rounded-md p-0.5 material-symbols-outlined text-lg select-none">drag_indicator</span>
                                 <x-panel.sil-btn :action="route('panel.urunler.gorsel.sil', $g)" onay="Bu görseli silmek istiyor musunuz?" class="absolute top-1 right-1 bg-background/80 !text-error opacity-0 group-hover:opacity-100" />
                             </div>
                         @endforeach
                     </div>
                 @endif
-                <div class="space-y-1.5">
-                    <label class="block font-label-caps text-[11px] text-stone-grey uppercase">Görsel Ekle (çoklu seçilebilir)</label>
-                    <input type="file" name="galeri[]" multiple accept="image/*" class="block w-full text-sm text-stone-grey file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-gold-light file:text-background file:font-bold file:cursor-pointer">
+                <div class="space-y-1.5 mt-4">
+                    <label class="block font-label-caps text-[11px] text-stone-grey uppercase">Görsel Ekle (çoklu seçilebilir · görsel başına en fazla 8 MB)</label>
+                    <input type="file" name="galeri[]" multiple accept="image/*" data-max-mb="8" class="block w-full text-sm text-stone-grey file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-gold-light file:text-background file:font-bold file:cursor-pointer">
                 </div>
             </x-panel.card>
 
@@ -69,7 +71,8 @@
 
             <x-panel.card baslik="Kapak Görseli">
                 @if($urun->one_cikan_gorsel)<img src="{{ gorsel($urun->one_cikan_gorsel) }}" class="w-full aspect-square object-cover rounded-lg mb-3" alt="">@endif
-                <input type="file" name="one_cikan_gorsel" accept="image/*" class="block w-full text-sm text-stone-grey file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-gold-light file:text-background file:font-bold file:cursor-pointer">
+                <input type="file" name="one_cikan_gorsel" accept="image/*" data-max-mb="8" class="block w-full text-sm text-stone-grey file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-gold-light file:text-background file:font-bold file:cursor-pointer">
+                <p class="text-xs text-stone-grey mt-2">@if($urun->one_cikan_gorsel)Yeni dosya seçip kaydedince mevcut kapak değişir. @endifEn fazla 8 MB (jpg, png, webp).</p>
             </x-panel.card>
 
             <x-panel.card baslik="Kategoriler">
@@ -86,4 +89,41 @@
             <x-panel.kaydet-bar :geri="route('panel.urunler.index')" />
         </div>
     </form>
+
+    @push('scripts')
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.6/Sortable.min.js"></script>
+    <script>
+        // Galeri sürükle-bırak sıralama
+        @if($urun->exists)
+        const galeri = document.getElementById('galeri-liste');
+        if (galeri && window.Sortable) {
+            new Sortable(galeri, {
+                handle: '.g-handle', animation: 150,
+                onEnd() {
+                    const sira = [...galeri.children].map(el => el.dataset.id).filter(Boolean);
+                    fetch('{{ route('panel.urunler.gorsel.sirala', $urun) }}', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json', 'X-CSRF-TOKEN': '{{ csrf_token() }}'},
+                        body: JSON.stringify({sira})
+                    });
+                }
+            });
+        }
+        @endif
+
+        // Dosya boyutu önden uyarı (sunucu limitine takılıp sessizce başarısız olmasın)
+        document.querySelectorAll('input[type=file][data-max-mb]').forEach(input => {
+            input.addEventListener('change', () => {
+                const limit = parseFloat(input.dataset.maxMb) * 1024 * 1024;
+                const buyuk = [...input.files].filter(f => f.size > limit);
+                if (buyuk.length) {
+                    alert('Seçilen dosya(lar) ' + input.dataset.maxMb + ' MB sınırını aşıyor:\n' +
+                        buyuk.map(f => '• ' + f.name + ' (' + (f.size/1024/1024).toFixed(1) + ' MB)').join('\n') +
+                        '\n\nLütfen daha küçük bir görsel seçin; aksi halde yükleme başarısız olur.');
+                    input.value = '';
+                }
+            });
+        });
+    </script>
+    @endpush
 @endsection

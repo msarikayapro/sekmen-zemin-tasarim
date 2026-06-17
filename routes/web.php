@@ -54,6 +54,7 @@ Route::prefix('panel')->name('panel.')->group(function () {
 
         // Ürünler
         Route::post('/urunler/sirala', [Panel\UrunController::class, 'sirala'])->name('urunler.sirala');
+        Route::post('/urunler/{urun}/galeri-sirala', [Panel\UrunController::class, 'gorselSirala'])->name('urunler.gorsel.sirala');
         Route::delete('/urun-gorsel/{gorsel}', [Panel\UrunController::class, 'gorselSilFn'])->name('urunler.gorsel.sil');
         Route::resource('urunler', Panel\UrunController::class)->except('show')->parameters(['urunler' => 'urun']);
 
