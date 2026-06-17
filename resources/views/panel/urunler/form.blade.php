@@ -72,7 +72,10 @@
             <x-panel.card baslik="Kapak Görseli">
                 @if($urun->one_cikan_gorsel)<img src="{{ gorsel($urun->one_cikan_gorsel) }}" class="w-full aspect-square object-cover rounded-lg mb-3" alt="">@endif
                 <input type="file" name="one_cikan_gorsel" accept="image/*" data-max-mb="8" class="block w-full text-sm text-stone-grey file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-gold-light file:text-background file:font-bold file:cursor-pointer">
-                <p class="text-xs text-stone-grey mt-2">@if($urun->one_cikan_gorsel)Yeni dosya seçip kaydedince mevcut kapak değişir. @endifEn fazla 8 MB (jpg, png, webp).</p>
+                <p class="text-xs text-stone-grey mt-2">
+                    @if($urun->one_cikan_gorsel)Yeni dosya seçip kaydedince mevcut kapak değişir. @endif
+                    En fazla 8 MB (jpg, png, webp).
+                </p>
             </x-panel.card>
 
             <x-panel.card baslik="Kategoriler">

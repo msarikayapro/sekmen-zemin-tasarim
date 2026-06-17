@@ -47,6 +47,19 @@ class KapakGorselTest extends TestCase
         Storage::disk('public')->assertExists($urun->one_cikan_gorsel);
     }
 
+    public function test_urun_duzenleme_sayfasi_render_olur(): void
+    {
+        $admin = User::factory()->create(['rol' => 'admin', 'aktif' => true]);
+
+        $urun = Urun::create(['ad' => 'Render', 'slug' => 'render', 'durum' => 'yayin']);
+        $urun->gorseller()->create(['yol' => 'urunler/galeri/x.jpg', 'sira' => 0]);
+
+        $this->actingAs($admin)
+            ->get('/panel/urunler/' . $urun->slug . '/edit')
+            ->assertOk()
+            ->assertSee('Galeri Görselleri');
+    }
+
     public function test_galeri_surukle_birak_siralama(): void
     {
         $admin = User::factory()->create(['rol' => 'admin', 'aktif' => true]);
