@@ -16,6 +16,11 @@
         </x-panel.card>
 
         <x-panel.card baslik="Rakamlarla Biz">
+            <label class="flex items-center gap-3 mb-4 cursor-pointer select-none">
+                <input type="checkbox" name="rakamlar_aktif" value="1" @checked($a('rakamlar_aktif', '1'))
+                       class="w-5 h-5 rounded border-outline-variant bg-surface-container-lowest text-gold-light focus:ring-gold-light">
+                <span class="text-sm text-on-surface">Bu bölümü anasayfada göster <span class="text-stone-grey">(kapatırsanız sayaç bölümü gizlenir)</span></span>
+            </label>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <x-panel.input label="Kuruluş Yılı" name="kurulus_yili" :value="$a('kurulus_yili')" />
                 <x-panel.input label="Uygulama m²" name="uygulama_m2" :value="$a('uygulama_m2')" />

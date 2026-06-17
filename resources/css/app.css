@@ -126,6 +126,16 @@
     }
 }
 
+/*
+ | Material Symbols + flex aynı elemanda kullanıldığında ikon kayması düzeltmesi.
+ | Google Fonts'un katmansız (unlayered) `.material-symbols-outlined { display:inline-block }`
+ | kuralı, Tailwind'in @layer utilities içindeki `.flex`/`.inline-flex`'ini cascade gereği ezer;
+ | bu yüzden ortalama bozulur. Aşağıdaki kural katmansız ve daha yüksek özgüllükte (iki sınıf)
+ | olduğundan ikonu yeniden flex yapıp ortalamayı korur. (Bilerek @layer dışında.)
+*/
+.material-symbols-outlined.flex { display: flex; }
+.material-symbols-outlined.inline-flex { display: inline-flex; }
+
 @layer components {
     /* Gold ışıma — hover (frontend) */
     .gold-glow {

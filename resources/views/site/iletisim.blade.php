@@ -17,9 +17,18 @@
         <div class="lg:col-span-3">
             <div class="bg-surface-container-low border border-surface-variant rounded-2xl p-6 md:p-8">
                 @if(session('basari'))
-                    <div class="mb-6 flex items-start gap-3 bg-success/10 border border-success/30 text-success rounded-xl px-4 py-4">
-                        <span class="material-symbols-outlined">check_circle</span>
-                        <div><p class="font-bold">Teşekkürler!</p><p class="text-sm">{{ session('basari') }}</p></div>
+                    <div class="mb-6 bg-success/10 border border-success/30 rounded-xl px-4 py-4">
+                        <div class="flex items-start gap-3 text-success">
+                            <span class="material-symbols-outlined">check_circle</span>
+                            <div><p class="font-bold">Teşekkürler!</p><p class="text-sm">{{ session('basari') }}</p></div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-success/20">
+                            <p class="text-xs text-stone-grey mb-2">Beklemek istemez misiniz? Hemen yazın, anında dönüş yapalım.</p>
+                            <a href="{{ whatsapp_link('Merhaba, az önce teklif formu doldurdum. Hızlıca görüşebilir miyiz?') }}" data-track="whatsapp_click" target="_blank" rel="noopener"
+                               class="inline-flex items-center gap-2 bg-[#25D366] text-white font-bold px-5 py-3 rounded-lg uppercase tracking-wide text-sm hover:bg-[#1ebe5b] transition-colors">
+                                <span class="material-symbols-outlined">chat</span> WhatsApp'tan Hızlı İletişim Kur
+                            </a>
+                        </div>
                     </div>
                 @endif
                 @if($errors->any())
@@ -86,23 +95,23 @@
         <div class="lg:col-span-2 space-y-4">
             <div class="bg-surface-container-low border border-surface-variant rounded-2xl p-6 space-y-5">
                 <a href="{{ tel_link(ayar('telefon')) }}" data-track="phone_click" class="flex items-center gap-4 group">
-                    <span class="w-11 h-11 shrink-0 rounded-full bg-gold-light/10 text-gold-light flex items-center justify-center material-symbols-outlined">call</span>
+                    <span class="w-11 h-11 shrink-0 rounded-full bg-gold-light/10 text-gold-light flex items-center justify-center"><span class="material-symbols-outlined">call</span></span>
                     <div><p class="text-[10px] uppercase text-stone-grey">Telefon</p><p class="text-on-surface group-hover:text-gold-light transition-colors">{{ ayar('telefon') }}</p></div>
                 </a>
                 <a href="{{ whatsapp_link() }}" data-track="whatsapp_click" target="_blank" class="flex items-center gap-4 group">
-                    <span class="w-11 h-11 shrink-0 rounded-full bg-[#25D366]/15 text-[#25D366] flex items-center justify-center material-symbols-outlined">chat</span>
+                    <span class="w-11 h-11 shrink-0 rounded-full bg-[#25D366]/15 text-[#25D366] flex items-center justify-center"><span class="material-symbols-outlined">chat</span></span>
                     <div><p class="text-[10px] uppercase text-stone-grey">WhatsApp</p><p class="text-on-surface group-hover:text-gold-light transition-colors">Hemen Yazın</p></div>
                 </a>
                 <a href="mailto:{{ ayar('email') }}" data-track="email_click" class="flex items-center gap-4 group">
-                    <span class="w-11 h-11 shrink-0 rounded-full bg-gold-light/10 text-gold-light flex items-center justify-center material-symbols-outlined">mail</span>
+                    <span class="w-11 h-11 shrink-0 rounded-full bg-gold-light/10 text-gold-light flex items-center justify-center"><span class="material-symbols-outlined">mail</span></span>
                     <div><p class="text-[10px] uppercase text-stone-grey">E-posta</p><p class="text-on-surface group-hover:text-gold-light transition-colors break-all">{{ ayar('email') }}</p></div>
                 </a>
                 <div class="flex items-start gap-4">
-                    <span class="w-11 h-11 rounded-full bg-gold-light/10 text-gold-light flex items-center justify-center material-symbols-outlined shrink-0">location_on</span>
+                    <span class="w-11 h-11 shrink-0 rounded-full bg-gold-light/10 text-gold-light flex items-center justify-center"><span class="material-symbols-outlined">location_on</span></span>
                     <div><p class="text-[10px] uppercase text-stone-grey">Adres</p><p class="text-on-surface text-sm">{{ ayar('adres') }}</p></div>
                 </div>
                 <div class="flex items-start gap-4">
-                    <span class="w-11 h-11 rounded-full bg-gold-light/10 text-gold-light flex items-center justify-center material-symbols-outlined shrink-0">schedule</span>
+                    <span class="w-11 h-11 shrink-0 rounded-full bg-gold-light/10 text-gold-light flex items-center justify-center"><span class="material-symbols-outlined">schedule</span></span>
                     <div><p class="text-[10px] uppercase text-stone-grey">Çalışma Saatleri</p><p class="text-on-surface text-sm">{{ ayar('calisma_saatleri') }}</p></div>
                 </div>
             </div>

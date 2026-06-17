@@ -93,7 +93,7 @@ class ShowcaseController extends Controller
     {
         $tip = $request->input('type');
 
-        return $request->validate([
+        $veri = $request->validate([
             'type'      => ['required', 'in:image,video'],
             'order'     => ['nullable', 'integer'],
             'is_active' => ['nullable', 'boolean'],
@@ -116,5 +116,10 @@ class ShowcaseController extends Controller
             'media.image'         => 'Görsel için geçerli bir resim dosyası yükleyin.',
             'thumbnail.required'  => 'Video için kapak fotoğrafı (thumbnail) zorunludur.',
         ]);
+
+        // "Sıra" boş bırakılırsa NOT NULL ihlali olmasın diye 0'a düşür.
+        $veri['order'] = (int) ($veri['order'] ?? 0);
+
+        return $veri;
     }
 }

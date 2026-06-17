@@ -48,7 +48,31 @@
         </div>
     </section>
 
-    {{-- 2. VİTRİN (Showcase) galerisi --}}
+    {{-- 2. RAKAMLARLA BİZ (sayaç animasyonu — panelden aktif/pasif) --}}
+    @if(ayar('rakamlar_aktif', '1'))
+    <section class="bg-surface-container-low border-y border-surface-variant/30 py-12">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div class="space-y-2">
+                <div class="text-gold-light font-headline-lg text-3xl md:text-headline-lg font-bold tabular-nums" data-counter="{{ (int) ayar('kurulus_yili', 2010) }}">{{ ayar('kurulus_yili') }}</div>
+                <div class="text-stone-grey font-label-caps text-[10px] tracking-[0.2em] uppercase">Kuruluş Yılı</div>
+            </div>
+            <div class="space-y-2">
+                <div class="text-gold-light font-headline-lg text-3xl md:text-headline-lg font-bold tabular-nums" data-counter="{{ (int) ayar('uygulama_m2', 1000000) }}" data-suffix="+ m²">0</div>
+                <div class="text-stone-grey font-label-caps text-[10px] tracking-[0.2em] uppercase">Uygulama Alanı</div>
+            </div>
+            <div class="space-y-2">
+                <div class="text-gold-light font-headline-lg text-3xl md:text-headline-lg font-bold tabular-nums" data-counter="{{ (int) ayar('proje_sayisi', 800) }}" data-suffix="+">0</div>
+                <div class="text-stone-grey font-label-caps text-[10px] tracking-[0.2em] uppercase">Tamamlanan Proje</div>
+            </div>
+            <div class="space-y-2">
+                <div class="text-gold-light font-headline-lg text-3xl md:text-headline-lg font-bold tabular-nums" data-counter="{{ (int) ayar('mutlu_musteri', 1000) }}" data-suffix="+">0</div>
+                <div class="text-stone-grey font-label-caps text-[10px] tracking-[0.2em] uppercase">Mutlu Müşteri</div>
+            </div>
+        </div>
+    </section>
+    @endif
+
+    {{-- 3. VİTRİN (Showcase) galerisi --}}
     @if($showcases->isNotEmpty())
     <section class="py-16 md:py-20 bg-surface-container-low border-y border-surface-variant/30 overflow-hidden">
         <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">

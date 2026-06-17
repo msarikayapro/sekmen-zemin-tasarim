@@ -30,6 +30,9 @@ class AyarController extends Controller
             $veri[$alan] = $request->input($alan, '');
         }
 
+        // Anasayfa "Rakamlarla Biz" sayaç bölümü aç/kapa (checkbox).
+        $veri['rakamlar_aktif'] = $request->boolean('rakamlar_aktif') ? '1' : '0';
+
         // Görsel ayarları (logo / koyu logo / favicon / katalog)
         foreach (['logo', 'logo_koyu', 'favicon'] as $g) {
             if ($request->hasFile($g)) {
